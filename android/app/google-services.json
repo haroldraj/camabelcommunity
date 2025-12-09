@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "455488282428",
+    "project_id": "camabelcommunity",
+    "storage_bucket": "camabelcommunity.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455488282428:android:0a8e3de70324d4caf14839",
+        "android_client_info": {
+          "package_name": "com.hrajaona.camabelcommunity.camabelcommunity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASQnm_IQzgdrPilhQN2p0xrR0I4HmYRaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
