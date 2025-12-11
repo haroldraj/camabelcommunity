@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:logger/logger.dart';
 
+var logger = Logger();
 void main() {
   runApp(const InitializeApp());
 }
@@ -14,11 +17,14 @@ class InitializeApp extends StatelessWidget {
       future: Firebase.initializeApp(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
+          logger.e("Error Firebase");
           return FirebaseError();
         }
         if (snapshot.connectionState == ConnectionState.done) {
+          logger.i("Firebase connection done");
           return MyApp();
         }
+        logger.i("Firebase Loading");
         return FirebaseLoading();
       },
     );
@@ -72,11 +78,29 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final databaseReference = FirebaseFirestore.instance;
 
   void _incrementCounter() {
     setState(() {
       _counter++;
     });
+  }
+
+  void testDataSending() {
+    try {
+      databaseReference
+          .collection("songs")
+          .add({
+            "title": "Isaorana ianao",
+            "book": "Hasina",
+            "page": 447,
+            "lyrics": null,
+            "keywords": ["isaorana", "ianao"],
+          })
+          .then((onValue) => logger.i("Success: $onValue"));
+    } catch (error) {
+      logger.e(error);
+    }
   }
 
   @override
@@ -94,6 +118,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            OutlinedButton(
+              onPressed: () {
+                testDataSending();
+              },
+              child: Text("Test data sending"),
             ),
           ],
         ),
