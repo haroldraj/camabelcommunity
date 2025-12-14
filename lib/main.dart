@@ -1,3 +1,5 @@
+import 'package:camabelcommunity/models/song_model.dart';
+import 'package:camabelcommunity/screens/song_lyrics_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -61,9 +63,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Camabel Community',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Camabel Community'),
     );
   }
 }
@@ -79,19 +81,54 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final databaseReference = FirebaseFirestore.instance;
 
-
   void testDataSending() {
     try {
       databaseReference
           .collection("songs")
           .add({
-            "title": "Isaorana ianao",
-            "book": "Hasina",
-            "page": 447,
-            "lyrics": null,
-            "keywords": ["isaorana", "ianao"],
+            "title": "Zaho mino an'ilay Zagnahary",
+            "book": null,
+            "page": null,
+            "lyrics": """
+Zaho mino, zaho mino
+Zaho mino an’ilay Zagnahary e
+
+1-  Zaho mino an’i Zagnahary
+Nanao ny lanitra sy ny tany
+Zaho mino an’i Jesoa Tompo
+Zanany tokana Tompontsika e e e
+
+Naterak’i Maria virjiny
+Dia nijaly sy nampahoriana
+Nofantsihana tamin’ny hazo
+Dia maty ary koa nalevina e e e
+
+Fa nony tonga kosa tamin’ny andro fahatelo
+Nitsangana Izy e e e
+Dia nipetraka eo an-kavanan-dRay
+Velona Izy e e (4)
+
+Zaho mino, zaho mino
+Zaho mino an’ilay Zagnahary e
+
+2-  Niakatra any an-danitra Izy
+Nipetraka eo an-kavanan’ny Ray
+Mbola ho avy amim-boninahitra
+Hitsara ny velona sy ny maty e e e
+
+Zaho mino ny Fanahy Masina
+Tompo sy loharanon’aina
+Tsaohina sy omem-boninahitra
+Miaraka amin’ny Ray sy ny Zanaka e e e
+
+Zaho mino ny Eglizy masin’i Kristy
+Tompontsika e e
+Ny Batemy tokana manala ny fahotana
+Mino isika e e (4)
+                      """,
+            "keywords": ["zaho", "mino", "zagnahary"],
           })
-          .then((onValue) => logger.i("Success: $onValue"));
+          .then((onValue) => logger.i("Success: song id: ${onValue.id}"));
     } catch (error) {
       logger.e(error);
     }
@@ -104,21 +141,64 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: .center,
-          children: [
-           
-            OutlinedButton(
-              onPressed: () {
-                testDataSending();
-              },
-              child: Text("Test data sending"),
-            ),
-          ],
-        ),
+      body: Column(children: [Expanded(child: ListSection())]),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          testDataSending();
+        },
+        child: Icon(Icons.add),
       ),
-    
+    );
+  }
+}
+
+class ListSection extends StatelessWidget {
+  ListSection({super.key});
+  final dataReference = FirebaseFirestore.instance;
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: dataReference.collection("songs").snapshots(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+
+        if (snapshot.hasError) {
+          return const Center(child: Text("Something went wrong"));
+        }
+
+        if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+          return const Center(child: Text("No songs found"));
+        }
+
+        return ListView(
+          children: snapshot.data!.docs.map((document) {
+            return ListTile(
+              title: TextButton(
+                onPressed: () {
+                  final SongModel songModel = SongModel(
+                    document["title"],
+                    document["book"],
+                    document["page"],
+                    List<String>.from(document["keywords"] ?? []),
+                    document["lyrics"] as String,
+                  );
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => SongLyricsScreen(songModel: songModel),
+                    ),
+                  );
+                },
+                child: Text(
+                  document["title"] ?? "",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            );
+          }).toList(),
+        );
+      },
     );
   }
 }
