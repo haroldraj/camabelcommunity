@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/constants/app_theme.dart';
 import 'package:camabelcommunity/models/song_model.dart';
 import 'package:camabelcommunity/screens/song_lyrics_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Camabel Community',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      theme: appTheme,
       home: const MyHomePage(title: 'Camabel Community'),
     );
   }
@@ -88,40 +89,40 @@ class _MyHomePageState extends State<MyHomePage> {
           .add({
             "title": "Zaho mino an'ilay Zagnahary",
             "book": null,
-            "page": null,
+            "page": 45,
             "lyrics": """
 Zaho mino, zaho mino
-Zaho mino an’ilay Zagnahary e
+Zaho mino an'ilay Zagnahary e
 
-1-  Zaho mino an’i Zagnahary
+1-  Zaho mino an'i Zagnahary
 Nanao ny lanitra sy ny tany
-Zaho mino an’i Jesoa Tompo
+Zaho mino an'i Jesoa Tompo
 Zanany tokana Tompontsika e e e
 
-Naterak’i Maria virjiny
+Naterak'i Maria virjiny
 Dia nijaly sy nampahoriana
-Nofantsihana tamin’ny hazo
+Nofantsihana tamin'ny hazo
 Dia maty ary koa nalevina e e e
 
-Fa nony tonga kosa tamin’ny andro fahatelo
+Fa nony tonga kosa tamin'ny andro fahatelo
 Nitsangana Izy e e e
 Dia nipetraka eo an-kavanan-dRay
 Velona Izy e e (4)
 
 Zaho mino, zaho mino
-Zaho mino an’ilay Zagnahary e
+Zaho mino an'ilay Zagnahary e
 
 2-  Niakatra any an-danitra Izy
-Nipetraka eo an-kavanan’ny Ray
+Nipetraka eo an-kavanan'ny Ray
 Mbola ho avy amim-boninahitra
 Hitsara ny velona sy ny maty e e e
 
 Zaho mino ny Fanahy Masina
-Tompo sy loharanon’aina
+Tompo sy loharanon'aina
 Tsaohina sy omem-boninahitra
-Miaraka amin’ny Ray sy ny Zanaka e e e
+Miaraka amin'ny Ray sy ny Zanaka e e e
 
-Zaho mino ny Eglizy masin’i Kristy
+Zaho mino ny Eglizy masin'i Kristy
 Tompontsika e e
 Ny Batemy tokana manala ny fahotana
 Mino isika e e (4)
@@ -137,10 +138,7 @@ Mino isika e e (4)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(centerTitle: true, title: Text(widget.title)),
       body: Column(children: [Expanded(child: ListSection())]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -191,8 +189,8 @@ class ListSection extends StatelessWidget {
                   );
                 },
                 child: Text(
-                  document["title"] ?? "",
-                  style: TextStyle(fontSize: 20),
+                  "Rakitra: ${document["title"]} - Hasina P. ${document["page"] ?? ""}",
+                  style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
               ),
             );

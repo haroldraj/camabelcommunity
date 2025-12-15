@@ -8,14 +8,7 @@ class SongLyricsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        title: Text(
-          songModel.title,
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-        backgroundColor: Colors.blue[900],
-      ),
+      appBar: AppBar(title: Text(songModel.title)),
       body: Container(
         margin: .symmetric(vertical: 15, horizontal: 25),
         child: SingleChildScrollView(
