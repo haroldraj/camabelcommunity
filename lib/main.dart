@@ -1,5 +1,6 @@
 import 'package:camabelcommunity/constants/app_theme.dart';
 import 'package:camabelcommunity/models/song_model.dart';
+import 'package:camabelcommunity/screens/events/event_list_screen.dart';
 import 'package:camabelcommunity/screens/song_lyrics_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Camabel Community',
       theme: appTheme,
-      home: const MyHomePage(title: 'Camabel Community'),
+      home: EventListScreen(),
+      //home: const MyHomePage(title: 'Camabel Community'),
     );
   }
 }
