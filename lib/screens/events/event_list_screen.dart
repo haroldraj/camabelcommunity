@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/constants/custom_colors.dart';
 import 'package:camabelcommunity/screens/events/event_detail_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,7 @@ class EventListScreen extends StatelessWidget {
                               vertical: 5,
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.blue,
+                              color: CustomColors.darkBlue,
                               borderRadius: BorderRadius.circular(40),
                             ),
                             child: Text(
