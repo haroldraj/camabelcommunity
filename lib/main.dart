@@ -1,4 +1,5 @@
 import 'package:camabelcommunity/core/theme/app_theme.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/home_screen.dart';
 import 'package:camabelcommunity/models/song_model.dart';
 import 'package:camabelcommunity/screens/events/event_list_screen.dart';
 import 'package:camabelcommunity/screens/mass_program_screen.dart';
@@ -68,7 +69,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Camabel Community',
       theme: appTheme,
-      home: MassProgramScreen(),
+      home: HomeScreen(),
+      //home: MassProgramScreen(),
       //home: EventListScreen(),
       //home: const MyHomePage(title: 'Camabel Community'),
     );
