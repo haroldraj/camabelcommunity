@@ -1,4 +1,4 @@
-import 'package:camabelcommunity/constants/app_theme.dart';
+import 'package:camabelcommunity/core/theme/app_theme.dart';
 import 'package:camabelcommunity/models/song_model.dart';
 import 'package:camabelcommunity/screens/events/event_list_screen.dart';
 import 'package:camabelcommunity/screens/mass_program_screen.dart';

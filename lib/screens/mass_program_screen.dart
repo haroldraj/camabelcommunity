@@ -1,4 +1,4 @@
-import 'package:camabelcommunity/constants/custom_colors.dart';
+import 'package:camabelcommunity/core/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class MassProgramScreen extends StatelessWidget {
