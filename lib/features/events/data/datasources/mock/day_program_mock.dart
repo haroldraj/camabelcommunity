@@ -21,6 +21,6 @@ final List<Map<String, String>> dayProgramMock = [
     "title": "Célébration Eucharistique",
     "startAt": "2026-01-14 15:00:12.961340",
     "description": "Début de la célébration Eucharistique",
-    "type": "dayTimeline",
+    "type": "massProgram",
   },
 ];

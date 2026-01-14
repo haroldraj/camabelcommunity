@@ -3,11 +3,12 @@ import 'package:camabelcommunity/features/events/domain/entities/song.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/home_screen.dart';
 // import 'package:camabelcommunity/models/song_model.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/event_list_screen.dart';
-import 'package:camabelcommunity/screens/mass_program_screen.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/mass_program_screen.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:intl/date_symbol_data_file.dart';
 import 'package:logger/logger.dart';
 
 var logger = Logger();
@@ -29,7 +30,6 @@ class InitializeApp extends StatelessWidget {
         }
         if (snapshot.connectionState == ConnectionState.done) {
           logger.i("Firebase connection done");
-          print(DateTime.now());
           return MyApp();
         }
         logger.i("Firebase Loading");

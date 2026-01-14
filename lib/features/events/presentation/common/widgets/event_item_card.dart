@@ -1,5 +1,5 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
-import 'package:camabelcommunity/screens/events/event_detail_screen.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/event_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class EventItemCard extends StatelessWidget {
