@@ -1,11 +1,13 @@
 import 'package:camabelcommunity/features/events/domain/enums/mass_part.dart';
-import 'package:camabelcommunity/features/events/domain/enums/program_item_content_type.dart';
+import 'package:camabelcommunity/features/events/domain/enums/mass_item_type.dart';
 
-class ProgramItem {
+class MassProgramItem {
   final String id;
   final int order;
-  final ProgramItemContentType contentType;
+  final MassItemType contentType;
   final MassPart? massPart;
+
+  final String? text;
 
   final String? songId;
   final String? songTitle;
@@ -13,11 +15,12 @@ class ProgramItem {
   final int? page;
   final bool hasLyrics;
 
-  const ProgramItem({
+  const MassProgramItem({
     required this.id,
     required this.order,
     required this.contentType,
     this.massPart,
+    this.text,
     this.songId,
     this.songTitle,
     this.book,

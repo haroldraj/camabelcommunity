@@ -1,0 +1,15 @@
+import 'package:camabelcommunity/features/events/domain/enums/program_type.dart';
+
+class DayProgramItem {
+  final String title;
+  final DateTime startAt;
+  final String? description;
+  final ProgramType type;
+
+  DayProgramItem({
+    required this.title,
+    required this.startAt,
+    required this.type,
+    this.description,
+  });
+}

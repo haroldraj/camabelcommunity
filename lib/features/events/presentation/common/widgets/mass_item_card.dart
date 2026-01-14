@@ -1,17 +1,17 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
-import 'package:camabelcommunity/features/events/domain/entities/program_item.dart';
-import 'package:camabelcommunity/features/events/domain/enums/program_item_content_type.dart';
+import 'package:camabelcommunity/features/events/domain/entities/mass_program_item.dart';
+import 'package:camabelcommunity/features/events/domain/enums/mass_item_type.dart';
 import 'package:flutter/material.dart';
 
 class MassItemCard extends StatelessWidget {
-  final ProgramItem item;
+  final MassProgramItem item;
   final VoidCallback? onTap;
 
   const MassItemCard({super.key, required this.item, this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    final isSong = item.contentType == ProgramItemContentType.song;
+    final isSong = item.contentType == MassItemType.song;
 
     return Card(
       color: Colors.white,

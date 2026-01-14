@@ -13,18 +13,18 @@ class EventListScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 5),
-            InkWell(
-              onTap: () {
-                Navigator.of(
-                  context,
-                ).push(MaterialPageRoute(builder: (_) => EventDetailScreen()));
-              },
-              child: Card(
-                elevation: 5,
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadiusGeometry.circular(20),
-                ),
+            Card(
+              elevation: 5,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadiusGeometry.circular(20),
+              ),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => EventDetailScreen()),
+                  );
+                },
                 child: Stack(
                   children: [
                     ClipRRect(

@@ -1,9 +1,10 @@
 import 'package:camabelcommunity/core/theme/app_theme.dart';
+import 'package:camabelcommunity/features/events/domain/entities/song.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/home_screen.dart';
-import 'package:camabelcommunity/models/song_model.dart';
-import 'package:camabelcommunity/screens/events/event_list_screen.dart';
+// import 'package:camabelcommunity/models/song_model.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/event_list_screen.dart';
 import 'package:camabelcommunity/screens/mass_program_screen.dart';
-import 'package:camabelcommunity/screens/song_lyrics_screen.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -28,6 +29,7 @@ class InitializeApp extends StatelessWidget {
         }
         if (snapshot.connectionState == ConnectionState.done) {
           logger.i("Firebase connection done");
+          print(DateTime.now());
           return MyApp();
         }
         logger.i("Firebase Loading");
@@ -69,9 +71,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Camabel Community',
       theme: appTheme,
-      home: HomeScreen(),
-      //home: MassProgramScreen(),
-      //home: EventListScreen(),
+      // home: HomeScreen(),
+      // home: MassProgramScreen(),
+      home: EventListScreen(),
       //home: const MyHomePage(title: 'Camabel Community'),
     );
   }
@@ -181,18 +183,18 @@ class ListSection extends StatelessWidget {
             return ListTile(
               title: TextButton(
                 onPressed: () {
-                  final SongModel songModel = SongModel(
-                    document["title"],
-                    document["book"],
-                    document["page"],
-                    List<String>.from(document["keywords"] ?? []),
-                    document["lyrics"] as String,
-                  );
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => SongLyricsScreen(songModel: songModel),
-                    ),
-                  );
+                  // final songModel = Song();
+                  // songModel.title = document["title"],
+                  //   document["book"],
+                  //   document["page"],
+                  //   List<String>.from(document["keywords"] ?? []),
+                  //   document["lyrics"] as String,
+                  // );
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (_) => SongLyricsScreen(songModel: songModel),
+                  //   ),
+                  // );
                 },
                 child: Text(
                   "Rakitra: ${document["title"]} - Hasina P. ${document["page"] ?? ""}",

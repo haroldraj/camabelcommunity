@@ -1,4 +1,6 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
+import 'package:camabelcommunity/features/events/domain/entities/song.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
 import 'package:flutter/material.dart';
 
 class MassProgramScreen extends StatelessWidget {
@@ -34,14 +36,64 @@ class MassProgramScreen extends StatelessWidget {
                 subtitle: Column(
                   crossAxisAlignment: .start,
                   children: [
-                    Text("Mesia sy mpaminjy", style: TextStyle(fontSize: 20)),
+                    Text("Mesia sy mpamonjy", style: TextStyle(fontSize: 20)),
                     Text(
                       "Hasina P. 56",
                       style: TextStyle(fontSize: 19, color: Colors.grey[600]),
                     ),
                   ],
                 ),
-                onTap: () {},
+                onTap: () {
+                  final song = Song(
+                    id: "id",
+                    title: "Mesia sy mapmonjy",
+                    keywords: ["Messy", "mpamonjy"],
+                    hasLyrics: true,
+                    lyrics: """
+Zaho mino, zaho mino
+Zaho mino an'ilay Zagnahary e
+
+1-  Zaho mino an'i Zagnahary
+Nanao ny lanitra sy ny tany
+Zaho mino an'i Jesoa Tompo
+Zanany tokana Tompontsika e e e
+
+Naterak'i Maria virjiny
+Dia nijaly sy nampahoriana
+Nofantsihana tamin'ny hazo
+Dia maty ary koa nalevina e e e
+
+Fa nony tonga kosa tamin'ny andro fahatelo
+Nitsangana Izy e e e
+Dia nipetraka eo an-kavanan-dRay
+Velona Izy e e (4)
+
+Zaho mino, zaho mino
+Zaho mino an'ilay Zagnahary e
+
+2-  Niakatra any an-danitra Izy
+Nipetraka eo an-kavanan'ny Ray
+Mbola ho avy amim-boninahitra
+Hitsara ny velona sy ny maty e e e
+
+Zaho mino ny Fanahy Masina
+Tompo sy loharanon'aina
+Tsaohina sy omem-boninahitra
+Miaraka amin'ny Ray sy ny Zanaka e e e
+
+Zaho mino ny Eglizy masin'i Kristy
+Tompontsika e e
+Ny Batemy tokana manala ny fahotana
+Mino isika e e (4)
+                      """,
+                  );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => SongLyricsScreen(song: song),
+                    ),
+                  );
+                },
               ),
             ),
             Card(
@@ -612,7 +664,10 @@ class MassProgramScreen extends StatelessWidget {
             Card(
               color: Colors.white,
               child: ListTile(
-                leading: Icon(Icons.logout, color: CustomColors.darkBlue),
+                leading: Icon(
+                  Icons.music_note_outlined,
+                  color: CustomColors.darkBlue,
+                ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: CustomColors.darkBlue,

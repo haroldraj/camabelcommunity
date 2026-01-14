@@ -17,6 +17,7 @@ dependencies:
   cloud_firestore: ^6.1.0
   logger: ^2.6.2
   flutter_launcher_icons: ^0.14.4
+  flutter_bloc: ^9.1.1
 
 dev_dependencies:
   flutter_test:

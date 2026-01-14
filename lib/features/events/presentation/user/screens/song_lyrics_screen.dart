@@ -1,18 +1,18 @@
-import 'package:camabelcommunity/models/song_model.dart';
+import 'package:camabelcommunity/features/events/domain/entities/song.dart';
 import 'package:flutter/material.dart';
 
 class SongLyricsScreen extends StatelessWidget {
-  final SongModel songModel;
-  const SongLyricsScreen({required this.songModel, super.key});
+  final Song song;
+  const SongLyricsScreen({required this.song, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(songModel.title)),
+      appBar: AppBar(title: Text(song.title)),
       body: Container(
         margin: .symmetric(vertical: 15, horizontal: 25),
         child: SingleChildScrollView(
-          child: Text(songModel.lyrics ?? "", style: TextStyle(fontSize: 22)),
+          child: Text(song.lyrics ?? "", style: TextStyle(fontSize: 22)),
         ),
       ),
     );
