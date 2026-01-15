@@ -1,7 +1,6 @@
-import 'package:camabelcommunity/features/events/data/datasources/mock/day_program_mock.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/mock_day_program.dart';
 import 'package:camabelcommunity/features/events/domain/enums/program_type.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/mass_program_screen.dart';
-import 'package:camabelcommunity/main.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -11,7 +10,7 @@ class EventDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = "Messe du ${DateFormat("d/MM/yyyy").format(DateTime.now())}";
-    final programItems = dayProgramMock;
+    final programItems = mockDayProgram;
 
     return Scaffold(
       appBar: AppBar(title: Text(title)),

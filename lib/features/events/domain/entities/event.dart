@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/features/events/domain/entities/day_program_item.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event_cover.dart';
 import 'package:camabelcommunity/features/events/domain/enums/event_status.dart';
 import 'package:camabelcommunity/features/events/domain/enums/event_type.dart';
@@ -9,12 +10,14 @@ class Event {
   final String locationAddress;
   final String? locationLat;
   final String? locationLong;
-  // final String resume;
+  final String? headline;
   final EventType type;
   final DateTime date;
   final EventStatus status;
   final EventCover cover;
   final bool hasMassProgram;
+  final List<DayProgramItem> dayProgramItems;
+  final DateTime createdAt;
 
   Event({
     required this.id,
@@ -26,6 +29,9 @@ class Event {
     required this.status,
     required this.cover,
     required this.hasMassProgram,
+    required this.dayProgramItems,
+    required this.createdAt,
+    this.headline,
     this.locationLat,
     this.locationLong,
   });

@@ -12,7 +12,7 @@ class MassItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isSong = item.contentType == MassItemType.song;
-
+    final songPreview = item.songPreview!;
     return Card(
       color: Colors.white,
       child: ListTile(
@@ -20,7 +20,7 @@ class MassItemCard extends StatelessWidget {
           isSong ? Icons.music_note_rounded : Icons.menu_book_rounded,
           color: CustomColors.darkBlue,
         ),
-        trailing: isSong && item.hasLyrics
+        trailing: isSong && songPreview.hasLyrics
             ? Icon(Icons.arrow_forward_ios, color: CustomColors.darkBlue)
             : null,
         title: Text(
@@ -34,11 +34,10 @@ class MassItemCard extends StatelessWidget {
         subtitle: Column(
           crossAxisAlignment: .start,
           children: [
-            if (item.songTitle != null)
-              Text(item.songTitle!, style: TextStyle(fontSize: 20)),
-            if (item.book != null && item.page != null)
+            Text(songPreview.title, style: TextStyle(fontSize: 20)),
+            if (songPreview.book != null && songPreview.page != null)
               Text(
-                "${item.book} P. ${item.page}",
+                "${songPreview.book} P. ${songPreview.page}",
                 style: TextStyle(fontSize: 19, color: Colors.grey[600]),
               ),
           ],

@@ -1,4 +1,4 @@
-final List<Map<String, String>> dayProgramMock = [
+final List<Map<String, String>> mockDayProgram = [
   {
     "title": "Accueil",
     "startAt": "2026-01-14 12:30:12.961340",

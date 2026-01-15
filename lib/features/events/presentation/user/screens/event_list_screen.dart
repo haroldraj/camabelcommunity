@@ -50,7 +50,7 @@ class EventListScreen extends StatelessWidget {
                     ),
                     Positioned(
                       bottom: 20,
-                      left: 10,
+                      left: 20,
                       right: 10,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +75,7 @@ class EventListScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 5),
                           Text(
-                            "Vendredi 15 décembre 2025\n1150 Bruxelles",
+                            "Dimanche 15 décembre 2025\n1150 Bruxelles",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
