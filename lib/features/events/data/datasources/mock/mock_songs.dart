@@ -1,3 +1,5 @@
+import 'package:camabelcommunity/features/events/domain/entities/song.dart';
+
 final List<Song> mockSongs = [
   Song(
     id: "song_001",
@@ -9,7 +11,6 @@ final List<Song> mockSongs = [
     lyrics: null,
     keywords: ["vavaka", "tompo", "finoana"],
   ),
-
   Song(
     id: "song_002",
     title: "Misaotra Anao Izahay",
@@ -17,13 +18,9 @@ final List<Song> mockSongs = [
     page: 45,
     key: "G",
     hasLyrics: true,
-    lyrics: """
-Misaotra Anao izahay ry Tompo
-Fa tia anay Ianao
-""",
+    lyrics: "Misaotra Anao izahay ry Tompo\nFa tia anay Ianao",
     keywords: ["fisaorana", "tompo"],
   ),
-
   Song(
     id: "song_003",
     title: "Fanahy Masina",
@@ -34,7 +31,6 @@ Fa tia anay Ianao
     lyrics: null,
     keywords: ["fanahy masina", "pentekosta"],
   ),
-
   Song(
     id: "song_004",
     title: "Hira Fiderana",
@@ -42,13 +38,9 @@ Fa tia anay Ianao
     page: null,
     key: "A",
     hasLyrics: true,
-    lyrics: """
-Hira fiderana no asandratra
-Ho an’Ilay Ray be fitiavana
-""",
+    lyrics: "Hira fiderana no asandratra\nHo an’Ilay Ray be fitiavana",
     keywords: ["fiderana", "hira vaovao"],
   ),
-
   Song(
     id: "song_005",
     title: "Tompo ô Mamelà",
@@ -56,26 +48,11 @@ Ho an’Ilay Ray be fitiavana
     page: 88,
     key: "E",
     hasLyrics: true,
-    lyrics: """
-Tompo ô mamelà ny helokay
-Diovy ny fonay
-""",
-    keywords: ["famelankeloka", "fibebahana"],
+    lyrics: "Tompo ô mamelà ny helokay\nDiovy ny fonay",
+    keywords: ["fibebahana", "famelankeloka"],
   ),
-
   Song(
     id: "song_006",
-    title: "Hira Fandraisana",
-    book: null,
-    page: null,
-    key: null,
-    hasLyrics: false,
-    lyrics: null,
-    keywords: ["fandraisana", "messe"],
-  ),
-
-  Song(
-    id: "song_007",
     title: "Andriamanitra Ray",
     book: "Fihirana",
     page: 12,
@@ -84,43 +61,44 @@ Diovy ny fonay
     lyrics: null,
     keywords: ["ray", "andriamanitra"],
   ),
-
   Song(
-    id: "song_008",
+    id: "song_007",
     title: "Mifalia",
     book: null,
     page: null,
     key: "G",
     hasLyrics: true,
-    lyrics: """
-Mifalia ry vahoakako
-Fa velona ny Tompo
-""",
+    lyrics: "Mifalia ry vahoakako\nFa velona ny Tompo",
     keywords: ["paska", "fifaliana"],
   ),
-
   Song(
-    id: "song_009",
+    id: "song_008",
     title: "Hira Fampiraisana",
     book: "Fihirana",
     page: 302,
     key: "Bb",
     hasLyrics: false,
     lyrics: null,
-    keywords: ["fampiraisana", "komonio"],
+    keywords: ["komonio", "fampiraisana"],
   ),
-
   Song(
-    id: "song_010",
+    id: "song_009",
     title: "Hira Famaranana",
     book: null,
     page: null,
     key: "D",
     hasLyrics: true,
-    lyrics: """
-Handeha izahay hitory
-Ny fitiavanao ry Tompo
-""",
+    lyrics: "Handeha izahay hitory\nNy fitiavanao ry Tompo",
     keywords: ["famaranana", "iraka"],
+  ),
+  Song(
+    id: "song_010",
+    title: "Aoka ho iray",
+    book: "Fihirana",
+    page: 155,
+    key: "Am",
+    hasLyrics: true,
+    lyrics: "Aoka ho iray izahay\nAo aminao ry Tompo",
+    keywords: ["firaisankina", "vavaka"],
   ),
 ];

@@ -1,4 +1,4 @@
-import 'package:camabelcommunity/features/events/data/datasources/mock/mock_day_program.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/build_mock_day_program_items.dart';
 import 'package:camabelcommunity/features/events/domain/enums/program_type.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/mass_program_screen.dart';
 import 'package:flutter/material.dart';
