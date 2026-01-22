@@ -5,17 +5,17 @@ final List<EventCover> mockEventCovers = [
   EventCover(
     source: CoverSource.byDefault,
     url: null,
-    path: "assets/covers/default_1.jpg",
+    path: "assets/covers/default.jpg",
   ),
   EventCover(
     source: CoverSource.byDefault,
     url: null,
-    path: "assets/covers/default_2.jpg",
+    path: "assets/covers/default.jpg",
   ),
   EventCover(
     source: CoverSource.byDefault,
     url: null,
-    path: "assets/covers/default_3.jpg",
+    path: "assets/covers/default.jpg",
   ),
   EventCover(
     source: CoverSource.custom,
@@ -35,12 +35,12 @@ final List<EventCover> mockEventCovers = [
   EventCover(
     source: CoverSource.byDefault,
     url: null,
-    path: "assets/covers/default_4.jpg",
+    path: "assets/covers/default.jpg",
   ),
   EventCover(
     source: CoverSource.byDefault,
     url: null,
-    path: "assets/covers/default_5.jpg",
+    path: "assets/covers/default.jpg",
   ),
   EventCover(
     source: CoverSource.custom,
@@ -50,6 +50,6 @@ final List<EventCover> mockEventCovers = [
   EventCover(
     source: CoverSource.byDefault,
     url: null,
-    path: "assets/covers/default_6.jpg",
+    path: "assets/covers/default.jpg",
   ),
 ];

@@ -1,5 +1,6 @@
 import 'package:camabelcommunity/core/theme/app_theme.dart';
 import 'package:camabelcommunity/features/events/domain/entities/song.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_events.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/home_screen.dart';
 // import 'package:camabelcommunity/models/song_model.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/event_list_screen.dart';

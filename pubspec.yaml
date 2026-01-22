@@ -1,6 +1,6 @@
 name: camabelcommunity
 
-description: "A new Flutter project."
+description: "Camabel Community App"
 
 publish_to: 'none' 
 
@@ -31,6 +31,7 @@ flutter:
     - img/logo_camabel.png
     - img/messe_noel_2025.jpg
     - img/messe_simple.jpg
+    - assets/covers/default.jpg
 
 
 flutter_launcher_icons:

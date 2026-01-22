@@ -1,6 +1,7 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/event_detail_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/web.dart';
 
 class EventListScreen extends StatelessWidget {
   const EventListScreen({super.key});
@@ -21,6 +22,8 @@ class EventListScreen extends StatelessWidget {
               ),
               child: InkWell(
                 onTap: () {
+                  Logger().i("Event tapped");
+                  Logger().d();
                   // Navigator.of(context).push(
                   //   MaterialPageRoute(builder: (_) => EventDetailScreen()),
                   // );
