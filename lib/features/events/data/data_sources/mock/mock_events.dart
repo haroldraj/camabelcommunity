@@ -1,7 +1,7 @@
-import 'package:camabelcommunity/features/events/data/datasources/mock/build_mock_day_program_items.dart';
-import 'package:camabelcommunity/features/events/data/datasources/mock/mock_event_covers.dart';
-import 'package:camabelcommunity/features/events/data/datasources/mock/mock_mass_program_items.dart';
-import 'package:camabelcommunity/features/events/data/datasources/mock/mock_mass_programs.dart';
+import 'package:camabelcommunity/features/events/data/data_sources/mock/build_mock_day_program_items.dart';
+import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_event_covers.dart';
+import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_mass_program_items.dart';
+import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_mass_programs.dart';
 import 'package:camabelcommunity/features/events/domain/entities/day_program_item.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/entities/mass_program.dart';
@@ -56,6 +56,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
       ? buildMockDayProgramItems(baseDate: date, massProgram: massProgram!)
       : [
           DayProgramItem(
+            id: "DayId1",
             title: "Accueil",
             startAt: DateTime(date.year, date.month, date.day, 18, 30),
             description: "Accueil des participants",
@@ -63,6 +64,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
             massProgram: null,
           ),
           DayProgramItem(
+            id: "DayId2",
             title: "Réunion",
             startAt: DateTime(date.year, date.month, date.day, 19, 0),
             description: "Temps de partage et organisation",
@@ -70,6 +72,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
             massProgram: null,
           ),
           DayProgramItem(
+            id: "DayId3",
             title: "Clôture",
             startAt: DateTime(date.year, date.month, date.day, 20, 30),
             description: "Fin de la rencontre",
@@ -77,6 +80,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
             massProgram: null,
           ),
           DayProgramItem(
+            id: "DayId3",
             title: "Message",
             startAt: DateTime(date.year, date.month, date.day, 20, 35),
             description: "Annonce importante",
@@ -84,6 +88,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
             massProgram: null,
           ),
           DayProgramItem(
+            id: "DayId4",
             title: "Rangement",
             startAt: DateTime(date.year, date.month, date.day, 20, 45),
             description: "Rangement de la salle",
@@ -91,6 +96,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
             massProgram: null,
           ),
           DayProgramItem(
+            id: "DayId5",
             title: "Départ",
             startAt: DateTime(date.year, date.month, date.day, 21, 0),
             description: "Retour à la maison",
@@ -98,6 +104,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
             massProgram: null,
           ),
           DayProgramItem(
+            id: "DayId6",
             title: "After",
             startAt: DateTime(date.year, date.month, date.day, 21, 10),
             description: "Discussion libre",
@@ -105,6 +112,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
             massProgram: null,
           ),
           DayProgramItem(
+            id: "DayId7",
             title: "Point prière",
             startAt: DateTime(date.year, date.month, date.day, 21, 25),
             description: "Courte prière",
@@ -112,6 +120,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
             massProgram: null,
           ),
           DayProgramItem(
+            id: "DayId8",
             title: "Infos prochaines dates",
             startAt: DateTime(date.year, date.month, date.day, 21, 35),
             description: "Dates importantes à venir",
@@ -119,6 +128,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
             massProgram: null,
           ),
           DayProgramItem(
+            id: "DayId9",
             title: "Fin",
             startAt: DateTime(date.year, date.month, date.day, 21, 45),
             description: "Fin de l’événement",

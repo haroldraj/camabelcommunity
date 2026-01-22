@@ -21,9 +21,9 @@ class EventListScreen extends StatelessWidget {
               ),
               child: InkWell(
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => EventDetailScreen()),
-                  );
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(builder: (_) => EventDetailScreen()),
+                  // );
                 },
                 child: Stack(
                   children: [

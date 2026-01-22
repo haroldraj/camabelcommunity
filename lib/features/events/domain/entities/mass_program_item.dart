@@ -6,15 +6,15 @@ class MassProgramItem {
   final String id;
   final int order;
   final MassItemType contentType;
-  final MassPart? massPart;
+  final MassPart massPart;
   final String? text;
   final SongPreview? songPreview;
 
-  const MassProgramItem({
+  MassProgramItem({
     required this.id,
     required this.order,
     required this.contentType,
-    this.massPart,
+    required this.massPart,
     this.text,
     this.songPreview,
   });

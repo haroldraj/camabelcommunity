@@ -1,12 +1,11 @@
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/event_repository.dart';
 
-class GetEvents {
-  final EventRepository eventRepository;
+class GetEventById {
+  EventRepository eventRepository;
 
-  GetEvents(this.eventRepository);
-
-  Future<List<Event>> call() {
-    return eventRepository.getEvents();
+  GetEventById(this.eventRepository);
+  Future<Event?> call(String id) {
+    return eventRepository.getEventById(id);
   }
 }
