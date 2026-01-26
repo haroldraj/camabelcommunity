@@ -1,4 +1,4 @@
-import 'package:camabelcommunity/core/error/failure.dart';
+import 'package:camabelcommunity/core/error/failures.dart';
 import 'package:fpdart/fpdart.dart';
 
 abstract interface class UseCase<SuccessType, Params> {

@@ -1,4 +1,4 @@
-import 'package:camabelcommunity/core/error/failure.dart';
+import 'package:camabelcommunity/core/error/failures.dart';
 import 'package:camabelcommunity/core/usecase/usecase.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/event_repository.dart';
@@ -10,11 +10,7 @@ class GetEvents implements UseCase<List<Event>, NoParams> {
   GetEvents(this.eventRepository);
 
   @override
-  Future<Either<Failure, List<Event>>> call(NoParams params) {
-    return eventRepository.getEvents() ;
-  }
-
-  Future<List<Event>> call() {
-    return eventRepository.getEvents();
+  Future<Either<Failure, List<Event>>> call(NoParams params) async{
+    return await eventRepository.getEvents();
   }
 }

@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/core/dependency_injection.dart';
 import 'package:camabelcommunity/core/theme/app_theme.dart';
 import 'package:camabelcommunity/features/events/domain/entities/song.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_events.dart';
@@ -14,6 +15,8 @@ import 'package:logger/logger.dart';
 
 var logger = Logger();
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setup();
   runApp(const InitializeApp());
 }
 
@@ -74,7 +77,7 @@ class MyApp extends StatelessWidget {
       theme: appTheme,
       // home: HomeScreen(),
       // home: MassProgramScreen(),
-      home: EventListScreen(),
+      home: EventListScreen(getEvents: ,),
       //home: const MyHomePage(title: 'Camabel Community'),
     );
   }

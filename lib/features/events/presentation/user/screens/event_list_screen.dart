@@ -1,10 +1,13 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
+import 'package:camabelcommunity/core/usecase/usecase.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_events.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/event_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/web.dart';
 
 class EventListScreen extends StatelessWidget {
-  const EventListScreen({super.key});
+  final GetEvents getEvents;
+  const EventListScreen({super.key, required this.getEvents});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +24,10 @@ class EventListScreen extends StatelessWidget {
                 borderRadius: BorderRadiusGeometry.circular(20),
               ),
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  final current = getEvents(NoParams());
                   Logger().i("Event tapped");
-                  Logger().d();
+                  Logger().d(current);
                   // Navigator.of(context).push(
                   //   MaterialPageRoute(builder: (_) => EventDetailScreen()),
                   // );
