@@ -2,6 +2,7 @@ import 'package:camabelcommunity/core/dependency_injection.dart';
 import 'package:camabelcommunity/core/theme/app_theme.dart';
 import 'package:camabelcommunity/features/events/domain/entities/song.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_events.dart';
+import 'package:camabelcommunity/features/events/presentation/bloc/events_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/home_screen.dart';
 // import 'package:camabelcommunity/models/song_model.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/event_list_screen.dart';
@@ -10,23 +11,32 @@ import 'package:camabelcommunity/features/events/presentation/user/screens/song_
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_file.dart';
 import 'package:logger/logger.dart';
 
 var logger = Logger();
-void main() {
+Future<void> main() async {
+  // void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  setup();
-  runApp(const InitializeApp());
+  // await Firebase.initializeApp();
+  await setup();
+  runApp(const MyApp());
 }
 
 class InitializeApp extends StatelessWidget {
   const InitializeApp({super.key});
 
+  Future<void> _init() async {
+    await Firebase.initializeApp();
+    await setup();
+    logger.i("Setup done");
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: Firebase.initializeApp(),
+      future: _init(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           logger.e("Error Firebase");
@@ -71,13 +81,18 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Camabel Community',
-      theme: appTheme,
+    return BlocProvider(
+      create: (context) => sl<EventsBloc>(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Camabel Community',
+        theme: appTheme,
+        home: HomeScreen(),
+      ),
+
       // home: HomeScreen(),
       // home: MassProgramScreen(),
-      home: EventListScreen(getEvents: ,),
+      //home: EventListScreen(getEvents: ,),
       //home: const MyHomePage(title: 'Camabel Community'),
     );
   }
