@@ -1,5 +1,6 @@
 import 'package:camabelcommunity/core/dependency_injection.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/events_bloc.dart';
+import 'package:camabelcommunity/features/events/presentation/common/widgets/event_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,14 +37,21 @@ class _HomeScreenState extends State<HomeScreen> {
             ).showSnackBar(SnackBar(content: Text(state.errorMessage)));
           }
           if (state is! EventsSucces) {
-            return Center(child: CircularProgressIndicator());
+            return Center(
+              child: Column(
+                children: [
+                  CircularProgressIndicator(),
+                  Text("Chargement des données..."),
+                ],
+              ),
+            );
           }
 
           final events = state.events;
           return ListView.builder(
             itemCount: events.length,
             itemBuilder: (context, index) {
-              return ListTile(title: Text(events[index].title));
+              return EventItemCard(event: events[index]);
             },
           );
         },

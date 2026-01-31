@@ -16,12 +16,12 @@ import 'package:intl/date_symbol_data_file.dart';
 import 'package:logger/logger.dart';
 
 var logger = Logger();
-Future<void> main() async {
-  // void main() {
+// Future<void> main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
-  await setup();
-  runApp(const MyApp());
+  //await setup();
+  runApp(const InitializeApp());
 }
 
 class InitializeApp extends StatelessWidget {

@@ -1,9 +1,13 @@
+import 'package:camabelcommunity/core/constants/app_images.dart';
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
+import 'package:camabelcommunity/features/events/domain/entities/event.dart';
+import 'package:camabelcommunity/features/events/domain/enums/event_type.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/event_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class EventItemCard extends StatelessWidget {
-  const EventItemCard({super.key});
+  final Event event;
+  const EventItemCard({super.key, required this.event});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class EventItemCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(20),
               child: Image.asset(
-                "img/messe_noel_2025.jpg",
+                AppImages.defaultEvent,
                 height: 300,
                 width: double.maxFinite,
                 fit: BoxFit.cover,
@@ -56,7 +60,7 @@ class EventItemCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(40),
                     ),
                     child: Text(
-                      "Messe",
+                      EventType.mass.label,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -66,7 +70,7 @@ class EventItemCard extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    "Vendredi 15 décembre 2025\n1150 Bruxelles",
+                    event.date.toString(),
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
