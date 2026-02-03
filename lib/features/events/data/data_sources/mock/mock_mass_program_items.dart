@@ -7,7 +7,7 @@ final List<MassProgramItem> mockMassProgramItems = [
   MassProgramItem(
     id: "mpi_001",
     order: 1,
-    contentType: MassItemType.text,
+    contentType: MassItemType.song,
     massPart: MassPart.fidirana,
     text: "Fandraisana sy fidirana ao am-piangonana",
     songPreview: null,
@@ -23,7 +23,7 @@ final List<MassProgramItem> mockMassProgramItems = [
   MassProgramItem(
     id: "mpi_003",
     order: 3,
-    contentType: MassItemType.text,
+    contentType: MassItemType.song,
     massPart: MassPart.fifonana,
     text: "Fifonana sy fangatahana famelan-keloka",
     songPreview: null,

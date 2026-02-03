@@ -2,8 +2,10 @@ import 'package:camabelcommunity/core/constants/app_images.dart';
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/enums/event_type.dart';
+import 'package:camabelcommunity/features/events/presentation/bloc/events_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/event_detail_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EventItemCard extends StatelessWidget {
   final Event event;
@@ -12,6 +14,7 @@ class EventItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.all(10),
       elevation: 5,
       color: Colors.white,
       shape: RoundedRectangleBorder(
@@ -19,9 +22,9 @@ class EventItemCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          // Navigator.of(
-          //   context,
-          // ).push(MaterialPageRoute(builder: (_) => EventDetailScreen()));
+          Navigator.of(
+            context,
+          ).push(MaterialPageRoute(builder: (_) => EventDetailScreen(event: event)));
         },
         child: Stack(
           children: [

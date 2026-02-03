@@ -23,13 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("Home"), centerTitle: true),
       body: BlocBuilder<EventsBloc, EventsState>(
-        // listener: (context, state) {
-        //   if (state is EventsFailure) {
-        //     ScaffoldMessenger.of(
-        //       context,
-        //     ).showSnackBar(SnackBar(content: Text(state.errorMessage)));
-        //   }
-        // },
         builder: (context, state) {
           if (state is EventsFailure) {
             ScaffoldMessenger.of(
@@ -39,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           if (state is! EventsSucces) {
             return Center(
               child: Column(
+                mainAxisAlignment: .center,
                 children: [
                   CircularProgressIndicator(),
                   Text("Chargement des données..."),

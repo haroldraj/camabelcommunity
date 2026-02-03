@@ -12,16 +12,18 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/date_symbol_data_file.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:logger/logger.dart';
 
 var logger = Logger();
-// Future<void> main() async {
-void main() {
+Future<void> main() async {
+  // void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
-  //await setup();
-  runApp(const InitializeApp());
+  await setup();
+  //runApp(const InitializeApp());
+  await initializeDateFormatting("fr_FR");
+  runApp(MyApp());
 }
 
 class InitializeApp extends StatelessWidget {

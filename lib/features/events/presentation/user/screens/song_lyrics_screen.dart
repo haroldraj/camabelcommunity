@@ -1,12 +1,14 @@
+import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_songs.dart';
 import 'package:camabelcommunity/features/events/domain/entities/song.dart';
 import 'package:flutter/material.dart';
 
 class SongLyricsScreen extends StatelessWidget {
-  final Song song;
-  const SongLyricsScreen({required this.song, super.key});
+  final String songId;
+  const SongLyricsScreen({required this.songId, super.key});
 
   @override
   Widget build(BuildContext context) {
+    final song = mockSongs.firstWhere((song) => song.id == songId);
     return Scaffold(
       appBar: AppBar(title: Text(song.title)),
       body: Container(
