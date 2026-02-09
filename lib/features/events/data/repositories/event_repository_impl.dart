@@ -1,6 +1,6 @@
 import 'package:camabelcommunity/core/error/exceptions.dart';
 import 'package:camabelcommunity/core/error/failures.dart';
-import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_events.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/mock_events.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/event_repository.dart';
 import 'package:fpdart/fpdart.dart';

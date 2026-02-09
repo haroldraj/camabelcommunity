@@ -1,6 +1,6 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
-import 'package:camabelcommunity/features/events/data/data_sources/mock/build_mock_day_program_items.dart';
-import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_mass_programs.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/build_mock_day_program_items.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/mock_mass_programs.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/enums/program_type.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/mass_program_screen.dart';

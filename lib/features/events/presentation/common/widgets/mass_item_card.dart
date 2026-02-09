@@ -1,5 +1,5 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
-import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_song_previews.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/mock_song_previews.dart';
 import 'package:camabelcommunity/features/events/domain/entities/mass_program_item.dart';
 import 'package:camabelcommunity/features/events/domain/enums/mass_item_type.dart';
 import 'package:camabelcommunity/features/events/domain/enums/mass_part.dart';

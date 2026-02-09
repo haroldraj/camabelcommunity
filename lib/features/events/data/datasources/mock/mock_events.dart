@@ -1,7 +1,7 @@
-import 'package:camabelcommunity/features/events/data/data_sources/mock/build_mock_day_program_items.dart';
-import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_event_covers.dart';
-import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_mass_program_items.dart';
-import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_mass_programs.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/build_mock_day_program_items.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/mock_event_covers.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/mock_mass_program_items.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/mock_mass_programs.dart';
 import 'package:camabelcommunity/features/events/domain/entities/day_program_item.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/entities/mass_program.dart';

@@ -1,4 +1,4 @@
-import 'package:camabelcommunity/features/events/data/data_sources/mock/mock_songs.dart';
+import 'package:camabelcommunity/features/events/data/datasources/mock/mock_songs.dart';
 import 'package:camabelcommunity/features/events/domain/entities/song.dart';
 import 'package:flutter/material.dart';
 
