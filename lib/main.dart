@@ -20,10 +20,11 @@ Future<void> main() async {
   // void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
-  await setup();
-  //runApp(const InitializeApp());
-  await initializeDateFormatting("fr_FR");
-  runApp(MyApp());
+  //await setup();
+  //await initializeDateFormatting("fr_FR");
+  runApp(const InitializeApp());
+
+  //runApp(MyApp());
 }
 
 class InitializeApp extends StatelessWidget {
@@ -31,6 +32,7 @@ class InitializeApp extends StatelessWidget {
 
   Future<void> _init() async {
     await Firebase.initializeApp();
+    await initializeDateFormatting("fr_FR");
     await setup();
     logger.i("Setup done");
   }
@@ -81,6 +83,13 @@ class FirebaseLoading extends StatelessWidget {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  Future<void> print_song() async {
+    final dataReference = FirebaseFirestore.instance;
+    final songs = dataReference.collection("songs").get();
+    Logger().i(songs);
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -89,7 +98,14 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Camabel Community',
         theme: appTheme,
-        home: HomeScreen(),
+        home: Scaffold(
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              print_song();
+            },
+          ),
+        ),
+        //home: HomeScreen(),
       ),
 
       // home: HomeScreen(),

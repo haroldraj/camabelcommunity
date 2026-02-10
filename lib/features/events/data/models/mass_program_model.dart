@@ -1,5 +1,5 @@
 class MassProgramModel {
-    final String id;
+  final String id;
   final String eventId;
   final String title;
 
