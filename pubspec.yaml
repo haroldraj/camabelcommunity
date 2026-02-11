@@ -22,6 +22,7 @@ dependencies:
   fpdart: ^1.2.0
   get_it: ^9.2.0
   dio: ^5.9.0
+  google_fonts: ^8.0.1
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +36,7 @@ flutter:
     - img/messe_noel_2025.jpg
     - img/messe_simple.jpg
     - assets/covers/default.jpg
+    - assets/covers/mass_default_cover.png
 
 
 flutter_launcher_icons:

@@ -20,11 +20,11 @@ Future<void> main() async {
   // void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
-  //await setup();
-  //await initializeDateFormatting("fr_FR");
-  runApp(const InitializeApp());
+  await setup();
+  await initializeDateFormatting("fr_FR");
+  // runApp(const InitializeApp());
 
-  //runApp(MyApp());
+  runApp(MyApp());
 }
 
 class InitializeApp extends StatelessWidget {
@@ -98,14 +98,14 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Camabel Community',
         theme: appTheme,
-        home: Scaffold(
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              print_song();
-            },
-          ),
-        ),
-        //home: HomeScreen(),
+        // home: Scaffold(
+        //   floatingActionButton: FloatingActionButton(
+        //     onPressed: () {
+        //       print_song();
+        //     },
+        //   ),
+        // ),
+        home: HomeScreen(),
       ),
 
       // home: HomeScreen(),

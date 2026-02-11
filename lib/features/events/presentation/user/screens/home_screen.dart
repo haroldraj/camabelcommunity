@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home"), centerTitle: true),
+      appBar: AppBar(title: Text("Messes à venir"), centerTitle: true),
       body: BlocBuilder<EventsBloc, EventsState>(
         builder: (context, state) {
           if (state is EventsFailure) {
