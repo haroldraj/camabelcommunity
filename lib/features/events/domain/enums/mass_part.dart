@@ -14,7 +14,7 @@ enum MassPart {
   fanatitra,
   fanolorana,
   masina,
-  fanandratana,
+  anaminezy,
   rainay,
   fiadanana,
   zanakondry,
@@ -56,8 +56,8 @@ extension MassPartLabel on MassPart {
         return "Fanoloran";
       case MassPart.masina:
         return "Masina";
-      case MassPart.fanandratana:
-        return "Fanandratana";
+      case MassPart.anaminezy:
+        return "Anaminezy";
       case MassPart.rainay:
         return "Rainay";
       case MassPart.fiadanana:
