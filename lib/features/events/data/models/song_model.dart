@@ -18,4 +18,25 @@ class SongModel {
     this.book,
     this.key,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      "title": title,
+      "book": book,
+      "keywords": keywords,
+      "page": page,
+      "lyrics": lyrics,
+      "hasLyrics": hasLyrics,
+      "key": key,
+    };
+  }
+
+  factory SongModel.fromJson(Map<String, dynamic> json, {String? id}) {
+    return SongModel(
+      id: id ?? json["id"],
+      title: json["title"],
+      keywords: json["keywords"],
+      hasLyrics: json["hasLyrics"],
+    );
+  }
 }

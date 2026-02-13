@@ -19,7 +19,7 @@ var logger = Logger();
 Future<void> main() async {
   // void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+  await Firebase.initializeApp();
   await setup();
   await initializeDateFormatting("fr_FR");
   // runApp(const InitializeApp());
@@ -83,12 +83,6 @@ class FirebaseLoading extends StatelessWidget {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  Future<void> print_song() async {
-    final dataReference = FirebaseFirestore.instance;
-    final songs = dataReference.collection("songs").get();
-    Logger().i(songs);
-  }
 
   @override
   Widget build(BuildContext context) {

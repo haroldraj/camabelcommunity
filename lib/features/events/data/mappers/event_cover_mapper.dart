@@ -12,4 +12,12 @@ class EventCoverMapper {
       url: eventCoverModel.url,
     );
   }
+
+  static EventCoverModel toModel(EventCover eventCover) {
+    return EventCoverModel(
+      source: eventCover.source.name,
+      path: eventCover.path,
+      url: eventCover.url,
+    );
+  }
 }

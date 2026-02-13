@@ -14,4 +14,28 @@ class DayProgramItemModel {
     this.description,
     this.massProgramId,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      "title": title,
+      "startAt": startAt.toIso8601String(),
+      "description": description,
+      "type": type,
+      "massProgramId": massProgramId,
+    };
+  }
+
+  factory DayProgramItemModel.fromJson(
+    Map<String, dynamic> json, {
+    String? id,
+  }) {
+    return DayProgramItemModel(
+      id: id ?? json["id"],
+      title: json["title"],
+      startAt: DateTime.parse(json["startAt"]).toLocal(),
+      description: json["description"],
+      type: json["type"],
+      massProgramId: json["maddProgramId"],
+    );
+  }
 }

@@ -1,4 +1,5 @@
 import 'package:camabelcommunity/features/events/data/models/event_cover_model.dart';
+import 'package:logger/web.dart';
 
 class EventModel {
   final String id;
@@ -14,6 +15,7 @@ class EventModel {
   final EventCoverModel cover;
   final bool hasMassProgram;
   final DateTime createdAt;
+  final String dayProgramId;
 
   EventModel({
     required this.id,
@@ -26,8 +28,47 @@ class EventModel {
     required this.cover,
     required this.hasMassProgram,
     required this.createdAt,
+    required this.dayProgramId,
     this.headline,
     this.locationLat,
     this.locationLong,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      "title": title,
+      "locationName": locationName,
+      "locationAddress": locationAddress,
+      "locationLat": locationLat,
+      "locationLong": locationLong,
+      "headline": headline,
+      "type": type,
+      "date": date.toIso8601String(),
+      "status": status,
+      "cover": cover.toJson(),
+      "hasMassProgram": hasMassProgram,
+      "createdAt": createdAt.toIso8601String(),
+      "dayProgramId":dayProgramId
+    };
+
+  }
+
+  factory EventModel.fromJson(Map<String, dynamic> json, {String? id}) {
+    Logger().i(json);
+    return EventModel(
+      id: id ?? json["id"],
+      title: json["title"],
+      date: DateTime.parse(json["date"]).toLocal(),
+      locationName: json["locationName"],
+      locationAddress: json["locationAddress"],
+      locationLat: json["locationLat"],
+      locationLong: json["locationLong"],
+      type: json["type"],
+      status: json["status"],
+      cover: EventCoverModel.fromJson(json["cover"]),
+      hasMassProgram: json["hasMassProgram"],
+      createdAt: DateTime.parse(json["createdAt"]).toLocal(),
+      dayProgramId: json["dayProgramId"]
+    );
+  }
 }

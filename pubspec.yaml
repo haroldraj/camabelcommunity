@@ -32,11 +32,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - img/logo_camabel.png
-    - img/messe_noel_2025.jpg
-    - img/messe_simple.jpg
-    - assets/covers/default.jpg
-    - assets/covers/mass_default_cover.png
+    - img/
+    - assets/covers/
+    - assets/data_sample/
 
 
 flutter_launcher_icons:

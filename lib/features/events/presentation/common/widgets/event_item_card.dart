@@ -2,12 +2,9 @@ import 'package:camabelcommunity/core/constants/app_images.dart';
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/enums/event_type.dart';
-import 'package:camabelcommunity/features/events/presentation/bloc/events_bloc.dart';
-import 'package:camabelcommunity/features/events/presentation/common/widgets/image_expendable_card.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/event_detail_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 class EventItemCard extends StatelessWidget {
   final Event event;
@@ -74,7 +71,9 @@ class EventItemCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "26",
+                          DateFormat.d(
+                            "fr_FR",
+                          ).format(event.date).toString().toUpperCase(),
                           style: TextStyle(
                             height: 1,
                             fontWeight: FontWeight.w900,
@@ -83,7 +82,9 @@ class EventItemCard extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "NOV",
+                          DateFormat.MMM(
+                            "fr_FR",
+                          ).format(event.date).toString().toUpperCase(),
                           style: TextStyle(
                             height: 1,
                             fontWeight: FontWeight.w900,
@@ -93,7 +94,9 @@ class EventItemCard extends StatelessWidget {
                         ),
 
                         Text(
-                          "2026",
+                          DateFormat.y(
+                            "fr_FR",
+                          ).format(event.date).toString().toUpperCase(),
                           style: TextStyle(
                             height: 1,
                             fontWeight: FontWeight.w900,
@@ -154,7 +157,7 @@ class EventItemCard extends StatelessWidget {
                         crossAxisAlignment: .start,
                         children: [
                           Text(
-                            "MESSE",
+                            event.type.label,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w900,
@@ -162,7 +165,7 @@ class EventItemCard extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "Forum Saint-Michel",
+                            event.locationName,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -180,7 +183,7 @@ class EventItemCard extends StatelessWidget {
                                 color: Colors.white,
                               ),
                               Text(
-                                "12:30",
+                                DateFormat.Hm().format(event.date).toString(),
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w900,
@@ -198,7 +201,7 @@ class EventItemCard extends StatelessWidget {
                     children: [
                       Icon(Icons.location_on_outlined, color: Colors.white),
                       Text(
-                        "Bd Saint-Michel 24, 1040 Bruxelles",
+                        event.locationAddress,
                         style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ],

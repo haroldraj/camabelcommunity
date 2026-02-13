@@ -10,7 +10,7 @@ class GetEvents implements UseCase<List<Event>, NoParams> {
   GetEvents(this.eventRepository);
 
   @override
-  Future<Either<Failure, List<Event>>> call(NoParams params) async{
-    return await eventRepository.getEvents();
+  Future<Either<Failure, List<Event>>> call(NoParams params) async {
+    return await eventRepository.getAllEventsFromJson();
   }
 }

@@ -12,7 +12,7 @@ class DayProgramItemMapper {
         (type) => type.name == dayProgramItemModel.type,
       ),
       description: dayProgramItemModel.description,
-      massProgramId: dayProgramItemModel.massProgramId
+      massProgramId: dayProgramItemModel.massProgramId,
     );
   }
 }

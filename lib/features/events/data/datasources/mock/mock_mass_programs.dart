@@ -10,13 +10,13 @@ final List<MassProgram> mockMassPrograms = [
     id: "mass_001",
     eventId: "event_001",
     title: "Programme de la messe - Dimanche 18 Janvier 2026",
-    massProgramItems: mockMassProgramItems,
+    items: mockMassProgramItems,
   ),
   MassProgram(
     id: "mass_002",
     eventId: "event_002",
     title: "Programme de la messe - Dimanche 25 Janvier 2026",
-    massProgramItems: [
+    items: [
       ...mockMassProgramItems.map((e) {
         if (e.id == "mpi_002") {
           return MassProgramItem(
@@ -43,7 +43,7 @@ final List<MassProgram> mockMassPrograms = [
     id: "mass_003",
     eventId: "event_003",
     title: "Programme de la messe - Fête spéciale",
-    massProgramItems: [
+    items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
             e.massPart == MassPart.komonio) {
@@ -71,7 +71,7 @@ final List<MassProgram> mockMassPrograms = [
     id: "mass_004",
     eventId: "event_004",
     title: "Programme de la messe - Messe des jeunes",
-    massProgramItems: [
+    items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
             e.massPart == MassPart.fanirahana) {
@@ -99,7 +99,7 @@ final List<MassProgram> mockMassPrograms = [
     id: "mass_005",
     eventId: "event_005",
     title: "Programme de la messe - Messe commémorative",
-    massProgramItems: [
+    items: [
       ...mockMassProgramItems.map(
         (e) => MassProgramItem(
           id: "mp5_${e.id}",
@@ -116,7 +116,7 @@ final List<MassProgram> mockMassPrograms = [
     id: "mass_006",
     eventId: "event_006",
     title: "Programme de la messe - Temps ordinaire",
-    massProgramItems: [
+    items: [
       ...mockMassProgramItems.map(
         (e) => MassProgramItem(
           id: "mp6_${e.id}",
@@ -133,7 +133,7 @@ final List<MassProgram> mockMassPrograms = [
     id: "mass_007",
     eventId: "event_007",
     title: "Programme de la messe - Messe en semaine",
-    massProgramItems: [
+    items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
             e.massPart == MassPart.salamo) {
@@ -161,7 +161,7 @@ final List<MassProgram> mockMassPrograms = [
     id: "mass_008",
     eventId: "event_008",
     title: "Programme de la messe - Messe de la communauté",
-    massProgramItems: [
+    items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
             e.massPart == MassPart.voninahitra) {
@@ -189,7 +189,7 @@ final List<MassProgram> mockMassPrograms = [
     id: "mass_009",
     eventId: "event_009",
     title: "Programme de la messe - Messe d’action de grâce",
-    massProgramItems: [
+    items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
             e.massPart == MassPart.fidirana) {
@@ -217,7 +217,7 @@ final List<MassProgram> mockMassPrograms = [
     id: "mass_010",
     eventId: "event_010",
     title: "Programme de la messe - Messe de clôture",
-    massProgramItems: [
+    items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
             e.massPart == MassPart.fanirahana) {

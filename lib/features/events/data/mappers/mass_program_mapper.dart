@@ -12,7 +12,7 @@ class MassProgramMapper {
       id: massProgramModel.id,
       eventId: massProgramModel.eventId,
       title: massProgramModel.title,
-      massProgramItems: massProgramItemModels
+      items: massProgramItemModels
           .map(MassProgramItemMapper.toEntity)
           .toList(),
     );

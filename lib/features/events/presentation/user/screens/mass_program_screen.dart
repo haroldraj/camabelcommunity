@@ -17,21 +17,21 @@ class MassProgramScreen extends StatelessWidget {
       appBar: AppBar(title: Text("Programme Liturjique"), centerTitle: true),
       backgroundColor: Colors.grey[200],
       body: ListView.builder(
-        itemCount: massProgram.massProgramItems.length,
+        itemCount: massProgram.items.length,
         itemBuilder: (BuildContext context, int index) {
           return MassItemCard(
-            item: massProgram.massProgramItems[index],
+            item: massProgram.items[index],
             index: index,
             onTap: () {
-              if (massProgram.massProgramItems[index].contentType.name ==
+              if (massProgram.items[index].contentType.name ==
                       MassItemType.song.name &&
-                  massProgram.massProgramItems[index].songPreview != null) {
+                  massProgram.items[index].songPreview != null) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (_) => SongLyricsScreen(
                       songId:
-                          massProgram.massProgramItems[index].songPreview!.id,
+                          massProgram.items[index].songPreview!.id,
                     ),
                   ),
                 );

@@ -45,6 +45,6 @@ class EventsBloc extends Bloc<EventsEvent, EventsState> {
   @override
   void onEvent(EventsEvent event) {
     super.onEvent(event);
-    Logger().i("evetn called $event");
+    Logger().i("event called $event");
   }
 }

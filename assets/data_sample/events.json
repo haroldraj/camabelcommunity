@@ -1,10 +1,9 @@
 [
     {
         "id": "event1",
-        "eventCoverId": "cover1",
-        "hassMassProgram": true,
-        "date": "2026-02-1T12:30:00Z",
-        "createdAt": "2026-02-1T1:30:00Z",
+        "hasMassProgram": true,
+        "date": "2026-02-01T12:30:00",
+        "createdAt": "2026-02-01T01:30:00",
         "headline": "Fanolorana an'I Jesoa tao an-Tempoly",
         "locationAddress": "Bd Saint-Michel 24, 1040 Bruxelles",
         "locationLat": null,
@@ -12,6 +11,12 @@
         "locationName": "Forum Saint-Michel",
         "status": "published",
         "type": "mass",
-        "title": "Fankalazana ny naolorana ny Tompo"
+        "title": "Fankalazana ny naolorana ny Tompo",
+        "dayProgramId": "day1",
+        "cover": {
+            "source": "byDefault",
+            "path": null,
+            "url": null
+        }
     }
 ]

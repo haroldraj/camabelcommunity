@@ -35,7 +35,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
               id: "mass_fallback_$eventId",
               eventId: eventId,
               title: "Programme de la messe - $eventId",
-              massProgramItems: mockMassProgramItems
+              items: mockMassProgramItems
                   .map(
                     (e) => MassProgramItem(
                       id: "fb_${eventId}_${e.id}",
@@ -154,7 +154,7 @@ final List<Event> mockEvents = List.generate(10, (index) {
     status: status,
     cover: mockEventCovers[index],
     hasMassProgram: hasMassProgram,
-    dayProgramItems: dayProgramItems,
     createdAt: DateTime(2026, 1, 1).add(Duration(days: i)),
+    dayProgramId: "dayProgramId",
   );
 });

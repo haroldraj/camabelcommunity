@@ -2,7 +2,7 @@
     {
         "id": "mass1",
         "eventId": "event1",
-        "title": "Sorona Masina",
+        "label": "Sorona Masina",
         "items": [
             {
                 "id": "massItem1",

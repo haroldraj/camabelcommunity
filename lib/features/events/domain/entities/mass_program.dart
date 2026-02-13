@@ -4,12 +4,12 @@ class MassProgram {
   final String id;
   final String eventId;
   final String title;
-  final List<MassProgramItem> massProgramItems;
+  final List<MassProgramItem> items;
 
   MassProgram({
     required this.id,
     required this.eventId,
     required this.title,
-    required this.massProgramItems,
+    required this.items,
   });
 }
