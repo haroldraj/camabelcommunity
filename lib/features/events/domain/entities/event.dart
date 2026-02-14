@@ -1,4 +1,3 @@
-import 'package:camabelcommunity/features/events/domain/entities/day_program_item.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event_cover.dart';
 import 'package:camabelcommunity/features/events/domain/enums/event_status.dart';
 import 'package:camabelcommunity/features/events/domain/enums/event_type.dart';

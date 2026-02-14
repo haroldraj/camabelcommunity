@@ -2,7 +2,7 @@ import 'package:camabelcommunity/core/constants/app_images.dart';
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/enums/event_type.dart';
-import 'package:camabelcommunity/features/events/presentation/user/screens/event_detail_screen.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/day_program_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -21,8 +21,11 @@ class EventItemCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
+          print("tapped");
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => EventDetailScreen(event: event)),
+            MaterialPageRoute(
+              builder: (_) => DayProgramScreen(dayProgramId: event.dayProgramId),
+            ),
           );
         },
         child: Column(

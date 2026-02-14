@@ -15,4 +15,13 @@ class DayProgramItemMapper {
       massProgramId: dayProgramItemModel.massProgramId,
     );
   }
+
+  static DayProgramItemModel toModel(DayProgramItem dayProgramItem) {
+    return DayProgramItemModel(
+      id: dayProgramItem.id,
+      title: dayProgramItem.title,
+      startAt: dayProgramItem.startAt,
+      type: dayProgramItem.type.name,
+    );
+  }
 }

@@ -1,4 +1,3 @@
-import 'package:camabelcommunity/features/events/data/mappers/day_program_item_mapper.dart';
 import 'package:camabelcommunity/features/events/data/mappers/event_cover_mapper.dart';
 import 'package:camabelcommunity/features/events/data/models/event_model.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';

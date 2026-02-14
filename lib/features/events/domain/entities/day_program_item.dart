@@ -1,4 +1,3 @@
-import 'package:camabelcommunity/features/events/domain/entities/mass_program.dart';
 import 'package:camabelcommunity/features/events/domain/enums/program_type.dart';
 
 class DayProgramItem {
@@ -8,7 +7,6 @@ class DayProgramItem {
   final String? description;
   final ProgramType type;
   final String? massProgramId;
-  final MassProgram? massProgram;
 
   DayProgramItem({
     required this.id,
@@ -17,6 +15,5 @@ class DayProgramItem {
     required this.type,
     this.description,
     this.massProgramId,
-    this.massProgram,
   });
 }

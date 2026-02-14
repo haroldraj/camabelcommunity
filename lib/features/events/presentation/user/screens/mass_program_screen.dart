@@ -1,15 +1,11 @@
-import 'package:camabelcommunity/core/theme/custom_colors.dart';
-import 'package:camabelcommunity/features/events/domain/entities/mass_program.dart';
-import 'package:camabelcommunity/features/events/domain/entities/mass_program_item.dart';
-import 'package:camabelcommunity/features/events/domain/entities/song.dart';
 import 'package:camabelcommunity/features/events/domain/enums/mass_item_type.dart';
 import 'package:camabelcommunity/features/events/presentation/common/widgets/mass_item_card.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
 import 'package:flutter/material.dart';
 
 class MassProgramScreen extends StatelessWidget {
-  final MassProgram massProgram;
-  const MassProgramScreen({super.key, required this.massProgram});
+  final String massProgramId;
+  const MassProgramScreen({super.key, required this.massProgramId});
 
   @override
   Widget build(BuildContext context) {

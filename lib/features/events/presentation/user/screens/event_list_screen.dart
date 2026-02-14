@@ -1,12 +1,11 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
 import 'package:camabelcommunity/core/usecase/usecase.dart';
-import 'package:camabelcommunity/features/events/domain/usecases/get_events.dart';
-import 'package:camabelcommunity/features/events/presentation/user/screens/event_detail_screen.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_events_use_case.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/web.dart';
 
 class EventListScreen extends StatelessWidget {
-  final GetEvents getEvents;
+  final GetEventsUseCase getEvents;
   const EventListScreen({super.key, required this.getEvents});
 
   @override

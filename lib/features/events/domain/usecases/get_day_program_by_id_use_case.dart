@@ -4,10 +4,10 @@ import 'package:camabelcommunity/features/events/domain/entities/day_program.dar
 import 'package:camabelcommunity/features/events/domain/repositories/day_program_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
-class GetDayProgramById implements UseCase<DayProgram, String> {
+class GetDayProgramByIdUseCase implements UseCase<DayProgram, String> {
   final DayProgramRepository dayProgramRepository;
 
-  GetDayProgramById(this.dayProgramRepository);
+  GetDayProgramByIdUseCase(this.dayProgramRepository);
 
   @override
   Future<Either<Failure, DayProgram>> call(String id) async {
