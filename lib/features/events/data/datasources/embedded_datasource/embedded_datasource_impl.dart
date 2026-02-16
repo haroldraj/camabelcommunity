@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:camabelcommunity/features/events/data/datasources/embedded_datasource/embedded_datasource.dart';
 import 'package:camabelcommunity/features/events/data/models/day_program_model.dart';
 import 'package:camabelcommunity/features/events/data/models/event_model.dart';
-import 'package:camabelcommunity/features/events/data/models/mass_program_item_model.dart';
 import 'package:camabelcommunity/features/events/data/models/mass_program_model.dart';
 import 'package:camabelcommunity/features/events/data/models/song_model.dart';
 import 'package:flutter/services.dart';
@@ -34,21 +33,11 @@ class EmbeddedDatasourceImpl implements EmbeddedDatasource {
       );
       final List<dynamic> data = await json.decode(response);
 
-      return data.map((item) => DayProgramModel.fromJson(item)).toList();
-    } catch (e) {
-      throw Exception(e.toString());
-    }
-  }
-
-  @override
-  Future<List<MassProgramItemModel>> getAllMassProgramItems() async {
-    try {
-      final response = await rootBundle.loadString(
-        "$_basePath/mass_program_items.json",
-      );
-      final List<dynamic> data = json.decode(response);
-
-      return data.map((item) => MassProgramItemModel.fromJson(item)).toList();
+      return data
+          .map<DayProgramModel>(
+            (item) => DayProgramModel.fromJson(item as Map<String, dynamic>),
+          )
+          .toList();
     } catch (e) {
       throw Exception(e.toString());
     }
@@ -88,6 +77,16 @@ class EmbeddedDatasourceImpl implements EmbeddedDatasource {
     try {
       final List<DayProgramModel> dayPrograms = await getAllDayPrograms();
       return dayPrograms.firstWhere((dayProgram) => dayProgram.id == id);
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
+
+  @override
+  Future<MassProgramModel> getMassProgramById(String id) async {
+    try {
+      final List<MassProgramModel> massPrograms = await getAllMassPrograms();
+      return massPrograms.firstWhere((massProgram) => massProgram.id == id);
     } catch (e) {
       throw Exception(e.toString());
     }

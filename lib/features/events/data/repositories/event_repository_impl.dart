@@ -16,7 +16,7 @@ class EventRepositoryImpl implements EventRepository {
   EventRepositoryImpl(this.eventRemoteDatasource, this.embeddedDatasource);
 
   @override
-  Future<Either<Failure, List<Event>>> getEvents() async {
+  Future<Either<Failure, List<Event>>> getAllEvents() async {
     try {
       await Future.delayed(Duration(seconds: 1));
       return right(mockEvents);
@@ -38,7 +38,7 @@ class EventRepositoryImpl implements EventRepository {
     try {
       final List<EventModel> events = await embeddedDatasource.getAllEvents();
 
-      return right(events.map((e) => EventMapper.toEntity(e)).toList());
+      return right(events.map((event) => EventMapper.toEntity(event)).toList());
     } catch (e) {
       return left(Failure(e.toString()));
     }

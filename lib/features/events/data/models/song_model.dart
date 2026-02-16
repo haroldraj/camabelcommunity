@@ -37,6 +37,10 @@ class SongModel {
       title: json["title"],
       keywords: json["keywords"],
       hasLyrics: json["hasLyrics"],
+      page: json["page"],
+      book: json["book"],
+      key: json["key"],
+      lyrics: json["lyrics"],
     );
   }
 }

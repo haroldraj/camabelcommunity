@@ -2,14 +2,18 @@ import 'package:camabelcommunity/features/events/domain/entities/mass_program_it
 
 class MassProgram {
   final String id;
-  final String eventId;
-  final String title;
+  final String label;
   final List<MassProgramItem> items;
 
   MassProgram({
     required this.id,
-    required this.eventId,
-    required this.title,
-    required this.items,
-  });
+    required this.label,
+    required List<MassProgramItem> items,
+  }) : items = List.unmodifiable(
+         List<MassProgramItem>.of(items)..sort(_compareItems),
+       );
+
+  static int _compareItems(MassProgramItem a, MassProgramItem b) {
+    return a.order.compareTo(b.order);
+  }
 }

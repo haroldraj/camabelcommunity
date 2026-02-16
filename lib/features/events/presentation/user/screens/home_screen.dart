@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<EventsBloc>().add(GetEventsRequested());
+    context.read<EventsBloc>().add(GetAllEventsRequested());
   }
 
   @override
@@ -56,11 +56,16 @@ class _HomeScreenState extends State<HomeScreen> {
             }
             // if (state is EventsSucces) {
             final events = state.events;
-            return ListView.builder(
-              itemCount: events.length,
-              itemBuilder: (context, index) {
-                return EventItemCard(event: events[index]);
-              },
+            return RefreshIndicator(
+              backgroundColor: Colors.white,
+              onRefresh: () async =>
+                  context.read<EventsBloc>().add(GetAllEventsRequested()),
+              child: ListView.builder(
+                itemCount: events.length,
+                itemBuilder: (context, index) {
+                  return EventItemCard(event: events[index]);
+                },
+              ),
             );
             // }
             // return const SizedBox();

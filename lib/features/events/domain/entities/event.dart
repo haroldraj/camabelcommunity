@@ -17,6 +17,7 @@ class Event {
   final bool hasMassProgram;
   final DateTime createdAt;
   final String dayProgramId;
+  final String? massProgramId;
 
   Event({
     required this.id,
@@ -30,6 +31,7 @@ class Event {
     required this.hasMassProgram,
     required this.createdAt,
     required this.dayProgramId,
+    required this.massProgramId,
     this.headline,
     this.locationLat,
     this.locationLong,

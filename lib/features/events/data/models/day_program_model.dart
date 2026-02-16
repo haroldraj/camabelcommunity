@@ -21,7 +21,7 @@ class DayProgramModel {
       id: id ?? json["id"],
       label: json["label"],
       date: DateTime.parse(json["date"]),
-      items: (json["items"] as List<dynamic>)
+      items: (json["items"] as List)
           .map((item) => DayProgramItemModel.fromJson(item))
           .toList(),
     );

@@ -1,7 +1,8 @@
 import 'package:camabelcommunity/core/dependency_injection.dart';
 import 'package:camabelcommunity/core/theme/app_theme.dart';
-import 'package:camabelcommunity/features/events/presentation/bloc/day_programs/day_programs_bloc.dart';
+import 'package:camabelcommunity/features/events/presentation/bloc/day_program/day_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/events/events_bloc.dart';
+import 'package:camabelcommunity/features/events/presentation/bloc/mass_program/mass_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/home_screen.dart';
 // import 'package:camabelcommunity/models/song_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -85,8 +86,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => sl<EventsBloc>()),
-
-        BlocProvider(create: (context) => sl<DayProgramsBloc>()),
+        BlocProvider(create: (context) => sl<DayProgramBloc>()),
+        BlocProvider(create: (context) => sl<MassProgramBloc>())
       ],
 
       child: MaterialApp(

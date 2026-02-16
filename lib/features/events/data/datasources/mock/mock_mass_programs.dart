@@ -8,14 +8,12 @@ import 'package:camabelcommunity/features/events/domain/enums/mass_part.dart';
 final List<MassProgram> mockMassPrograms = [
   MassProgram(
     id: "mass_001",
-    eventId: "event_001",
-    title: "Programme de la messe - Dimanche 18 Janvier 2026",
+    label: "Programme de la messe - Dimanche 18 Janvier 2026",
     items: mockMassProgramItems,
   ),
   MassProgram(
     id: "mass_002",
-    eventId: "event_002",
-    title: "Programme de la messe - Dimanche 25 Janvier 2026",
+    label: "Programme de la messe - Dimanche 25 Janvier 2026",
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.id == "mpi_002") {
@@ -41,8 +39,7 @@ final List<MassProgram> mockMassPrograms = [
   ),
   MassProgram(
     id: "mass_003",
-    eventId: "event_003",
-    title: "Programme de la messe - Fête spéciale",
+    label: "Programme de la messe - Fête spéciale",
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -69,8 +66,7 @@ final List<MassProgram> mockMassPrograms = [
   ),
   MassProgram(
     id: "mass_004",
-    eventId: "event_004",
-    title: "Programme de la messe - Messe des jeunes",
+    label: "Programme de la messe - Messe des jeunes",
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -97,8 +93,7 @@ final List<MassProgram> mockMassPrograms = [
   ),
   MassProgram(
     id: "mass_005",
-    eventId: "event_005",
-    title: "Programme de la messe - Messe commémorative",
+    label: "Programme de la messe - Messe commémorative",
     items: [
       ...mockMassProgramItems.map(
         (e) => MassProgramItem(
@@ -114,8 +109,7 @@ final List<MassProgram> mockMassPrograms = [
   ),
   MassProgram(
     id: "mass_006",
-    eventId: "event_006",
-    title: "Programme de la messe - Temps ordinaire",
+    label: "Programme de la messe - Temps ordinaire",
     items: [
       ...mockMassProgramItems.map(
         (e) => MassProgramItem(
@@ -131,8 +125,7 @@ final List<MassProgram> mockMassPrograms = [
   ),
   MassProgram(
     id: "mass_007",
-    eventId: "event_007",
-    title: "Programme de la messe - Messe en semaine",
+    label: "Programme de la messe - Messe en semaine",
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -159,8 +152,7 @@ final List<MassProgram> mockMassPrograms = [
   ),
   MassProgram(
     id: "mass_008",
-    eventId: "event_008",
-    title: "Programme de la messe - Messe de la communauté",
+    label: "Programme de la messe - Messe de la communauté",
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -187,8 +179,7 @@ final List<MassProgram> mockMassPrograms = [
   ),
   MassProgram(
     id: "mass_009",
-    eventId: "event_009",
-    title: "Programme de la messe - Messe d’action de grâce",
+    label: "Programme de la messe - Messe d’action de grâce",
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -215,8 +206,7 @@ final List<MassProgram> mockMassPrograms = [
   ),
   MassProgram(
     id: "mass_010",
-    eventId: "event_010",
-    title: "Programme de la messe - Messe de clôture",
+    label: "Programme de la messe - Messe de clôture",
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&

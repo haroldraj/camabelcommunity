@@ -24,7 +24,8 @@ class EventMapper {
       //     .map(DayProgramItemMapper.toEntity)
       //     .toList(),
       createdAt: eventModel.createdAt,
-      dayProgramId: eventModel.dayProgramId
+      dayProgramId: eventModel.dayProgramId,
+      massProgramId: eventModel.massProgramId
     );
   }
 
@@ -40,7 +41,8 @@ class EventMapper {
       cover: EventCoverMapper.toModel(event.cover),
       hasMassProgram: event.hasMassProgram,
       createdAt: event.createdAt,
-      dayProgramId: event.dayProgramId
+      dayProgramId: event.dayProgramId,
+      massProgramId: event.massProgramId
     );
   }
 }

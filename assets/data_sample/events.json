@@ -13,6 +13,7 @@
         "type": "mass",
         "title": "Fankalazana ny naolorana ny Tompo",
         "dayProgramId": "day1",
+        "massProgramId": "mass1",
         "cover": {
             "source": "byDefault",
             "path": null,

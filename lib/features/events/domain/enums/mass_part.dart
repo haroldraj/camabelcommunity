@@ -11,6 +11,7 @@ enum MassPart {
   fiekempinoana,
   ranombavaka,
   rakitra,
+  rakitraFanolorana,
   fanatitra,
   fanolorana,
   masina,
@@ -50,10 +51,12 @@ extension MassPartLabel on MassPart {
         return "Ranombavaka";
       case MassPart.rakitra:
         return "Rakitra";
+      case MassPart.rakitraFanolorana:
+        return "Rakitra + Fanolorana";
       case MassPart.fanatitra:
         return "Fanatitra";
       case MassPart.fanolorana:
-        return "Fanoloran";
+        return "Fanolorana";
       case MassPart.masina:
         return "Masina";
       case MassPart.anaminezy:

@@ -14,6 +14,19 @@ class MassProgramItemMapper {
       massPart: MassPart.values.firstWhere(
         (part) => part.name == massProgramItemModel.massPart,
       ),
+      text: massProgramItemModel.text,
+      songId: massProgramItemModel.songId,
+    );
+  }
+
+  static MassProgramItemModel toModel(MassProgramItem massProgramItem) {
+    return MassProgramItemModel(
+      id: massProgramItem.id,
+      order: massProgramItem.order,
+      contentType: massProgramItem.contentType.name,
+      massPart: massProgramItem.massPart.name,
+      text: massProgramItem.text,
+      songId: massProgramItem.songId,
     );
   }
 }

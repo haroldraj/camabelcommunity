@@ -16,6 +16,7 @@ class EventModel {
   final bool hasMassProgram;
   final DateTime createdAt;
   final String dayProgramId;
+  final String? massProgramId;
 
   EventModel({
     required this.id,
@@ -29,6 +30,7 @@ class EventModel {
     required this.hasMassProgram,
     required this.createdAt,
     required this.dayProgramId,
+    required this.massProgramId,
     this.headline,
     this.locationLat,
     this.locationLong,
@@ -48,9 +50,9 @@ class EventModel {
       "cover": cover.toJson(),
       "hasMassProgram": hasMassProgram,
       "createdAt": createdAt.toIso8601String(),
-      "dayProgramId":dayProgramId
+      "dayProgramId": dayProgramId,
+      "massProgramId": massProgramId,
     };
-
   }
 
   factory EventModel.fromJson(Map<String, dynamic> json, {String? id}) {
@@ -68,7 +70,8 @@ class EventModel {
       cover: EventCoverModel.fromJson(json["cover"]),
       hasMassProgram: json["hasMassProgram"],
       createdAt: DateTime.parse(json["createdAt"]).toLocal(),
-      dayProgramId: json["dayProgramId"]
+      dayProgramId: json["dayProgramId"],
+      massProgramId: json["massProgramId"],
     );
   }
 }

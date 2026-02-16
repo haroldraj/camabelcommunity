@@ -35,7 +35,7 @@ class DayProgramItemModel {
       startAt: DateTime.parse(json["startAt"]).toLocal(),
       description: json["description"],
       type: json["type"],
-      massProgramId: json["maddProgramId"],
+      massProgramId: json["massProgramId"],
     );
   }
 }

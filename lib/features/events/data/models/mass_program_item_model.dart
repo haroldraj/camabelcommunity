@@ -34,6 +34,8 @@ class MassProgramItemModel {
       order: json["order"],
       contentType: json["contentType"],
       massPart: json["massPart"],
+      songId: json["songId"],
+      text: json["text"]
     );
   }
 }

@@ -18,8 +18,8 @@ class DayProgramRepositoryImpl implements DayProgramRepository {
           .getDayProgramById(id);
 
       return right(DayProgramMapper.toEntity(dayProgram));
-    } catch (e) {
-      return left(Failure(e.toString()));
+    } catch (error) {
+      return left(Failure(error.toString()));
     }
   }
 }
