@@ -91,4 +91,14 @@ class EmbeddedDatasourceImpl implements EmbeddedDatasource {
       throw Exception(e.toString());
     }
   }
+
+  @override
+  Future<SongModel> getSongById(String id) async {
+    try {
+      final List<SongModel> songs = await getAllSongs();
+      return songs.firstWhere((song) => song.id == id);
+    } catch (error) {
+      throw Exception(error.toString());
+    }
+  }
 }

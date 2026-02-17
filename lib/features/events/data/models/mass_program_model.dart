@@ -15,7 +15,7 @@ class MassProgramModel {
     return {
       "label": label,
       "items": items.map((item) => item.toJson()).toList(),
-    };
+    }..removeWhere((key, value) => value == null);
   }
 
   factory MassProgramModel.fromJson(Map<String, dynamic> json, {String? id}) {

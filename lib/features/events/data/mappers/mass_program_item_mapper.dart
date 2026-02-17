@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/features/events/data/mappers/song_preview_mapper.dart';
 import 'package:camabelcommunity/features/events/data/models/mass_program_item_model.dart';
 import 'package:camabelcommunity/features/events/domain/entities/mass_program_item.dart';
 import 'package:camabelcommunity/features/events/domain/enums/mass_item_type.dart';
@@ -15,7 +16,7 @@ class MassProgramItemMapper {
         (part) => part.name == massProgramItemModel.massPart,
       ),
       text: massProgramItemModel.text,
-      songId: massProgramItemModel.songId,
+      songPreview: SongPreviewMapper.toEntity(massProgramItemModel.songPreview),
     );
   }
 
@@ -26,7 +27,7 @@ class MassProgramItemMapper {
       contentType: massProgramItem.contentType.name,
       massPart: massProgramItem.massPart.name,
       text: massProgramItem.text,
-      songId: massProgramItem.songId,
+      songPreview: SongPreviewMapper.toModel(massProgramItem.songPreview),
     );
   }
 }

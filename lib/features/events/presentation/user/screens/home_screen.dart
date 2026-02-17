@@ -44,15 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: BlocBuilder<EventsBloc, EventsState>(
           builder: (context, state) {
             if (state is! EventsSucces) {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: .center,
-                  children: [
-                    CircularProgressIndicator(),
-                    Text("Chargement des messes..."),
-                  ],
-                ),
-              );
+              return Center(child: const CircularProgressIndicator());
             }
             // if (state is EventsSucces) {
             final events = state.events;

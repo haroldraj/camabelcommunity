@@ -1,19 +1,65 @@
-import 'package:camabelcommunity/features/events/data/datasources/mock/mock_songs.dart';
+import 'package:camabelcommunity/features/events/presentation/bloc/song/song_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SongLyricsScreen extends StatelessWidget {
+class SongLyricsScreen extends StatefulWidget {
   final String songId;
-  const SongLyricsScreen({required this.songId, super.key});
+  final String songTitle;
+  const SongLyricsScreen({
+    required this.songId,
+    super.key,
+    required this.songTitle,
+  });
+
+  @override
+  State<SongLyricsScreen> createState() => _SongLyricsScreenState();
+}
+
+class _SongLyricsScreenState extends State<SongLyricsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<SongBloc>().add(GetSongByIdRequested(widget.songId));
+  }
 
   @override
   Widget build(BuildContext context) {
-    final song = mockSongs.firstWhere((song) => song.id == songId);
     return Scaffold(
-      appBar: AppBar(title: Text(song.title)),
-      body: Container(
-        margin: .symmetric(vertical: 15, horizontal: 25),
-        child: SingleChildScrollView(
-          child: Text(song.lyrics ?? "", style: TextStyle(fontSize: 22)),
+      appBar: AppBar(title: Text(widget.songTitle)),
+      body: BlocListener<SongBloc, SongState>(
+        listener: (context, state) {
+          if (state is SongFailure) {
+            showDialog(
+              barrierDismissible: false,
+              context: context,
+              builder: (_) => AlertDialog(
+                title: Text("Error", style: TextStyle(color: Colors.red[800])),
+                content: Text(state.errorMessage),
+                backgroundColor: Colors.white,
+                // actions: [
+                //   TextButton(
+                //     onPressed: () => Navigator.pop(context),
+                //     child: Text("OK"),
+                //   ),
+                // ],
+              ),
+            );
+          }
+        },
+        child: BlocBuilder<SongBloc, SongState>(
+          builder: (context, state) {
+            if (state is! SongSuccess) {
+              return Center(child: const CircularProgressIndicator());
+            }
+
+            final song = state.song;
+            return Container(
+              margin: .symmetric(vertical: 15, horizontal: 25),
+              child: SingleChildScrollView(
+                child: Text(song.lyrics ?? "", style: TextStyle(fontSize: 22)),
+              ),
+            );
+          },
         ),
       ),
     );

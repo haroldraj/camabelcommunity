@@ -1,7 +1,9 @@
+import 'package:camabelcommunity/features/events/domain/enums/book_name.dart';
+
 class Song {
   final String id;
   final String title;
-  final String? book;
+  final BookName book;
   final List<String> keywords;
   final int? page;
   final String? lyrics;
@@ -15,7 +17,7 @@ class Song {
     required this.hasLyrics,
     this.lyrics,
     this.page,
-    this.book,
+    required this.book,
     this.key,
   });
 }

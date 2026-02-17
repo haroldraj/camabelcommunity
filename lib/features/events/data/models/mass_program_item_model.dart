@@ -1,10 +1,12 @@
+import 'package:camabelcommunity/features/events/data/models/song_preview_model.dart';
+
 class MassProgramItemModel {
   final String id;
   final int order;
   final String contentType;
   final String massPart;
   final String? text;
-  final String? songId;
+  final SongPreviewModel? songPreview;
 
   MassProgramItemModel({
     required this.id,
@@ -12,7 +14,7 @@ class MassProgramItemModel {
     required this.contentType,
     required this.massPart,
     this.text,
-    this.songId,
+    this.songPreview,
   });
 
   Map<String, dynamic> toJson() {
@@ -21,8 +23,8 @@ class MassProgramItemModel {
       "contentType": contentType,
       "massPart": massPart,
       "text": text,
-      "songId": songId,
-    };
+      "songPreview": songPreview?.toJson(),
+    }..removeWhere((key, value) => value == null);
   }
 
   factory MassProgramItemModel.fromJson(
@@ -34,8 +36,10 @@ class MassProgramItemModel {
       order: json["order"],
       contentType: json["contentType"],
       massPart: json["massPart"],
-      songId: json["songId"],
-      text: json["text"]
+      songPreview: json["songPreview"] == null
+          ? null
+          : SongPreviewModel.fromJson(json["songPreview"]),
+      text: json["text"],
     );
   }
 }

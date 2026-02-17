@@ -55,15 +55,7 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
         child: BlocBuilder<DayProgramBloc, DayProgramState>(
           builder: (context, state) {
             if (state is! DayProgramSuccess) {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: .center,
-                  children: [
-                    CircularProgressIndicator(),
-                    Text("Chargement du programme..."),
-                  ],
-                ),
-              );
+              return Center(child: const CircularProgressIndicator());
             }
 
             final dayProgram = state.dayProgram;
@@ -140,11 +132,6 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
                                       children: [
                                         TextButton(
                                           onPressed: () {
-                                            print(
-                                              dayProgram
-                                                  .items[index]
-                                                  .massProgramId!,
-                                            );
                                             Navigator.of(context).push(
                                               MaterialPageRoute(
                                                 builder: (_) =>

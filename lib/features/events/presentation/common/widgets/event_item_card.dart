@@ -21,10 +21,10 @@ class EventItemCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          print("tapped");
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (_) => DayProgramScreen(dayProgramId: event.dayProgramId),
+              builder: (_) =>
+                  DayProgramScreen(dayProgramId: event.dayProgramId),
             ),
           );
         },
@@ -110,35 +110,6 @@ class EventItemCard extends StatelessWidget {
                       ],
                     ),
                   ),
-
-                  // child: Column(
-                  //   crossAxisAlignment: CrossAxisAlignment.start,
-                  //   children: [
-                  //     Container(
-                  //       padding: EdgeInsets.all(10),
-                  //       decoration: BoxDecoration(
-                  //         color: CustomColors.darkBlue,
-                  //         borderRadius: BorderRadius.circular(50),
-                  //       ),
-                  //       child: Text(
-                  //         EventType.mass.label,
-                  //         style: TextStyle(
-                  //           color: Colors.white,
-                  //           fontWeight: FontWeight.bold,
-                  //           fontSize: 20,
-                  //         ),
-                  //       ),
-                  //     ),
-                  //     // SizedBox(height: 5),
-                  //     // Text(
-                  //     //   event.date.toString(),
-                  //     //   style: TextStyle(
-                  //     //     color: Colors.white,
-                  //     //     fontWeight: FontWeight.bold,
-                  //     //     fontSize: 25,
-                  //     //   ),
-                  //     // ),
-                  //   ],
                 ),
               ],
             ),
@@ -181,10 +152,7 @@ class EventItemCard extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Icon(
-                                Icons.calendar_month_outlined,
-                                color: Colors.white,
-                              ),
+                              Icon(Icons.access_time, color: Colors.white),
                               Text(
                                 DateFormat.Hm().format(event.date).toString(),
                                 style: TextStyle(

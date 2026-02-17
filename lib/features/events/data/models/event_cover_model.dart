@@ -6,7 +6,8 @@ class EventCoverModel {
   EventCoverModel({required this.source, this.url, this.path});
 
   Map<String, dynamic> toJson() {
-    return {"source": source, "url": url, "path": path};
+    return {"source": source, "url": url, "path": path}
+      ..removeWhere((key, value) => value == null);
   }
 
   factory EventCoverModel.fromJson(Map<String, dynamic> json) {

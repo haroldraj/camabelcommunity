@@ -8,31 +8,52 @@
                 "contentType": "song",
                 "massPart": "fidirana",
                 "order": 1,
-                "songId": "song1",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song1",
+                    "book": "hasina",
+                    "key": "C",
+                    "page": 32,
+                    "hasLyrics": true,
+                    "title": "Ianao no hazavana"
+                }
             },
             {
                 "id": "massItem2",
                 "contentType": "song",
                 "massPart": "fifonana",
                 "order": 2,
-                "songId": "song2",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song2",
+                    "book": "hasina",
+                    "key": "G",
+                    "page": 669,
+                    "hasLyrics": true,
+                    "title": "Mifona aho Aba"
+                }
             },
             {
                 "id": "massItem3",
                 "contentType": "song",
                 "massPart": "voninahitra",
                 "order": 3,
-                "songId": "song3",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song3",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "A",
+                    "page": 421,
+                    "title": "Voninahitra sy Dera anie ho an'Andriamanitra"
+                }
             },
             {
                 "id": "massItem4",
                 "contentType": "text",
                 "massPart": "vakitenyVoalohany",
                 "order": 4,
-                "songId": null,
+                "songPreview": null,
                 "text": "Bokin'i Malakia Mpaminany Mal. 3,1-4"
             },
             {
@@ -40,15 +61,22 @@
                 "contentType": "song",
                 "massPart": "salamo",
                 "order": 5,
-                "songId": "song5",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song5",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "B",
+                    "page": 33,
+                    "title": "Manjaka Andriamanitra. Aleloia, aleloia!"
+                }
             },
             {
                 "id": "massItem6",
                 "contentType": "text",
                 "massPart": "vakitenyFaharoa",
                 "order": 6,
-                "songId": null,
+                "songPreview": null,
                 "text": "Taratasy ho an'ny kristianina Hebrio 2, 14-18"
             },
             {
@@ -56,112 +84,188 @@
                 "contentType": "song",
                 "massPart": "fihobianaNyEvanjely",
                 "order": 7,
-                "songId": "song7",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song7",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 752,
+                    "title": "Aleloia, raisinay tenin-Jagnahary e"
+                }
             },
             {
                 "id": "massItem8",
                 "contentType": "text",
                 "massPart": "vakitenyEvanjely",
                 "order": 8,
-                "songId": null,
-                "text": "Evanjely Masina nosoratan'i Md. Lioka 2,22-40"
+                "songPreview": null,
+                "text": "Evanjely Masina nosoratan'i Md. Lioka 2, 22-40"
             },
             {
                 "id": "massItem9",
                 "contentType": "song",
                 "massPart": "fiekempinoana",
                 "order": 9,
-                "songId": "song9",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song9",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "C",
+                    "page": 160,
+                    "title": "Mino aho, Tompo ô, Andriamanitra tokana"
+                }
             },
             {
                 "id": "massItem10",
                 "contentType": "song",
                 "massPart": "ranombavaka",
                 "order": 10,
-                "songId": "song10",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song10",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "A",
+                    "page": 164,
+                    "title": "Ampio 'zahay"
+                }
             },
             {
                 "id": "massItem11",
                 "contentType": "song",
-                "massPart": "rakitra",
+                "massPart": "rakitraFanolorana",
                 "order": 11,
-                "songId": "song11",
-                "text": null
-            },
-            {
-                "id": "massItem12",
-                "contentType": "song",
-                "massPart": "fanolorana",
-                "order": 12,
-                "songId": "song11",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song11",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 379,
+                    "title": "Amin'ny fo madio Baba"
+                }
             },
             {
                 "id": "massItem13",
                 "contentType": "song",
                 "massPart": "masina",
                 "order": 13,
-                "songId": "song13",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song13",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "key": "G",
+                    "page": null,
+                    "title": "Masina Ianao, ry Tompo"
+                }
             },
             {
                 "id": "massItem14",
                 "contentType": "song",
                 "massPart": "anaminezy",
                 "order": 14,
-                "songId": "song14",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song14",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "B",
+                    "page": 355,
+                    "title": "Natsangan'Andriamanitra ny Tompo, Aleloia"
+                }
             },
             {
                 "id": "massItem15",
                 "contentType": "song",
                 "massPart": "rainay",
                 "order": 15,
-                "songId": "song15",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song15",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "key": "E",
+                    "page": null,
+                    "title": "Notre Père By Glorious"
+                }
             },
             {
                 "id": "massItem16",
                 "contentType": "song",
                 "massPart": "fiadanana",
                 "order": 16,
-                "songId": "song16",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song16",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": null,
+                    "title": "Raha mifankatia isika"
+                }
             },
             {
                 "id": "massItem17",
                 "contentType": "song",
                 "massPart": "zanakondry",
                 "order": 17,
-                "songId": "song17",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song17",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "key": "C",
+                    "page": null,
+                    "title": "Ry Zanak'ondrin’Andriamanitra"
+                }
             },
             {
                 "id": "massItem18",
                 "contentType": "song",
                 "massPart": "komonio",
                 "order": 18,
-                "songId": "song18",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song18",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "A",
+                    "page": 186,
+                    "title": "Inty ny ora sarobidy"
+                }
             },
             {
                 "id": "massItem19",
                 "contentType": "song",
                 "massPart": "fisaorana",
                 "order": 19,
-                "songId": "song19",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song19",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "key": "D",
+                    "page": null,
+                    "title": "Misaotra roa Andrianagnahary"
+                }
             },
             {
                 "id": "massItem20",
                 "contentType": "song",
                 "massPart": "fanirahana",
                 "order": 20,
-                "songId": "song20",
-                "text": null
+                "text": null,
+                "songPreview": {
+                    "id": "song20",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "G",
+                    "page": 750,
+                    "title": "Zaho anie ry Reny"
+                }
             }
         ]
     }

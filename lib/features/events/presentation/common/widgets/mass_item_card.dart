@@ -1,5 +1,6 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
 import 'package:camabelcommunity/features/events/domain/entities/mass_program_item.dart';
+import 'package:camabelcommunity/features/events/domain/enums/book_name.dart';
 import 'package:camabelcommunity/features/events/domain/enums/mass_item_type.dart';
 import 'package:camabelcommunity/features/events/domain/enums/mass_part.dart';
 import 'package:flutter/material.dart';
@@ -44,12 +45,13 @@ class MassItemCard extends StatelessWidget {
         subtitle: Column(
           crossAxisAlignment: .start,
           children: [
-            Text(songPreview?.title ?? "Hira", style: TextStyle(fontSize: 20)),
-            if (hasPreview &&
-                songPreview.book != null &&
-                songPreview.page != null)
+            Text(
+              songPreview?.title ?? item.text!,
+              style: TextStyle(fontSize: 20),
+            ),
+            if (hasPreview && songPreview.page != null)
               Text(
-                "${songPreview.book} P. ${songPreview.page}",
+                "${songPreview.book.label} P. ${songPreview.page}",
                 style: TextStyle(fontSize: 19, color: Colors.grey[600]),
               ),
           ],

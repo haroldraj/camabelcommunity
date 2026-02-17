@@ -1,19 +1,15 @@
-class SongModel {
+class SongPreviewModel {
   final String id;
   final String title;
   final String? book;
-  final List<String> keywords;
   final int? page;
-  final String? lyrics;
   final bool hasLyrics;
   final String? key;
 
-  SongModel({
+  SongPreviewModel({
     required this.id,
     required this.title,
-    required this.keywords,
     required this.hasLyrics,
-    this.lyrics,
     this.page,
     this.book,
     this.key,
@@ -21,28 +17,23 @@ class SongModel {
 
   Map<String, dynamic> toJson() {
     return {
+      "id": id,
       "title": title,
       "book": book,
-      "keywords": keywords,
       "page": page,
-      "lyrics": lyrics,
       "hasLyrics": hasLyrics,
       "key": key,
     }..removeWhere((key, value) => value == null);
   }
 
-  factory SongModel.fromJson(Map<String, dynamic> json, {String? id}) {
-    return SongModel(
+  factory SongPreviewModel.fromJson(Map<String, dynamic> json, {String? id}) {
+    return SongPreviewModel(
       id: id ?? json["id"],
       title: json["title"],
-      keywords: (json["keywords"] as List<dynamic>? ?? [])
-          .map((keyword) => keyword.toString())
-          .toList(),
       hasLyrics: json["hasLyrics"],
       page: json["page"],
       book: json["book"],
       key: json["key"],
-      lyrics: json["lyrics"],
     );
   }
 }

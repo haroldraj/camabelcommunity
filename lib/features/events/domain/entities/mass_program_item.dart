@@ -8,7 +8,6 @@ class MassProgramItem {
   final MassItemType contentType;
   final MassPart massPart;
   final String? text;
-  final String? songId;
   final SongPreview? songPreview;
 
   MassProgramItem({
@@ -17,7 +16,6 @@ class MassProgramItem {
     required this.contentType,
     required this.massPart,
     this.text,
-    this.songId,
     this.songPreview,
   });
 }

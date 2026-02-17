@@ -10,4 +10,5 @@ abstract interface class EmbeddedDatasource {
   Future<List<MassProgramModel>> getAllMassPrograms();
   Future<DayProgramModel> getDayProgramById(String id);
   Future<MassProgramModel> getMassProgramById(String id);
+  Future<SongModel> getSongById(String id);
 }

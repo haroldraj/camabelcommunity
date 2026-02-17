@@ -1,10 +1,11 @@
 import 'package:camabelcommunity/features/events/domain/entities/song.dart';
+import 'package:camabelcommunity/features/events/domain/enums/book_name.dart';
 
 final List<Song> mockSongs = [
   Song(
     id: "song_001",
     title: "Ry Tompo ô",
-    book: "Fihirana",
+    book: BookName.hasina,
     page: 120,
     key: "C",
     hasLyrics: false,
@@ -14,7 +15,7 @@ final List<Song> mockSongs = [
   Song(
     id: "song_002",
     title: "Misaotra Anao Izahay",
-    book: "Fihirana",
+    book: BookName.hasina,
     page: 45,
     key: "G",
     hasLyrics: true,
@@ -24,7 +25,7 @@ final List<Song> mockSongs = [
   Song(
     id: "song_003",
     title: "Fanahy Masina",
-    book: "Fihirana",
+    book: BookName.hasina,
     page: 210,
     key: "D",
     hasLyrics: false,
@@ -34,7 +35,7 @@ final List<Song> mockSongs = [
   Song(
     id: "song_004",
     title: "Hira Fiderana",
-    book: null,
+    book: BookName.noBook,
     page: null,
     key: "A",
     hasLyrics: true,
@@ -44,7 +45,7 @@ final List<Song> mockSongs = [
   Song(
     id: "song_005",
     title: "Tompo ô Mamelà",
-    book: "Fihirana",
+    book: BookName.hasina,
     page: 88,
     key: "E",
     hasLyrics: true,
@@ -54,7 +55,7 @@ final List<Song> mockSongs = [
   Song(
     id: "song_006",
     title: "Andriamanitra Ray",
-    book: "Fihirana",
+    book: BookName.hasina,
     page: 12,
     key: "F",
     hasLyrics: false,
@@ -64,7 +65,7 @@ final List<Song> mockSongs = [
   Song(
     id: "song_007",
     title: "Mifalia",
-    book: null,
+    book: BookName.noBook,
     page: null,
     key: "G",
     hasLyrics: true,
@@ -74,7 +75,7 @@ final List<Song> mockSongs = [
   Song(
     id: "song_008",
     title: "Hira Fampiraisana",
-    book: "Fihirana",
+    book: BookName.hasina,
     page: 302,
     key: "Bb",
     hasLyrics: false,
@@ -84,7 +85,7 @@ final List<Song> mockSongs = [
   Song(
     id: "song_009",
     title: "Hira Famaranana",
-    book: null,
+    book: BookName.noBook,
     page: null,
     key: "D",
     hasLyrics: true,
@@ -94,7 +95,7 @@ final List<Song> mockSongs = [
   Song(
     id: "song_010",
     title: "Aoka ho iray",
-    book: "Fihirana",
+    book: BookName.hasina,
     page: 155,
     key: "Am",
     hasLyrics: true,

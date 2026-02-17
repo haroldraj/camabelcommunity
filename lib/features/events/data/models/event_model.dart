@@ -52,7 +52,7 @@ class EventModel {
       "createdAt": createdAt.toIso8601String(),
       "dayProgramId": dayProgramId,
       "massProgramId": massProgramId,
-    };
+    }..removeWhere((key, value) => value == null);
   }
 
   factory EventModel.fromJson(Map<String, dynamic> json, {String? id}) {

@@ -51,15 +51,7 @@ class _MassProgramScreenState extends State<MassProgramScreen> {
         child: BlocBuilder<MassProgramBloc, MassProgramState>(
           builder: (context, state) {
             if (state is! MassProgramSuccess) {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: .center,
-                  children: [
-                    CircularProgressIndicator(),
-                    Text("Chargement du programme..."),
-                  ],
-                ),
-              );
+              return Center(child: const CircularProgressIndicator());
             }
             final massProgram = state.massProgram;
             return RefreshIndicator(
@@ -82,6 +74,8 @@ class _MassProgramScreenState extends State<MassProgramScreen> {
                           MaterialPageRoute(
                             builder: (_) => SongLyricsScreen(
                               songId: massProgram.items[index].songPreview!.id,
+                              songTitle:
+                                  massProgram.items[index].songPreview!.title,
                             ),
                           ),
                         );

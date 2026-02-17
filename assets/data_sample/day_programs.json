@@ -2,7 +2,7 @@
     {
         "id": "day1",
         "label": "Programme",
-        "date":"2026-02-01T12:30:00",
+        "date": "2026-02-01T12:30:00",
         "items": [
             {
                 "id": "programItem1",
@@ -41,8 +41,7 @@
                 "massProgramId": null,
                 "startAt": "2026-02-01T17:00:00",
                 "title": "Dessert",
-                "type": "dayTimeline",
-                "description": "Desserts  et divers"
+                "type": "dayTimeline"
             }
         ]
     }

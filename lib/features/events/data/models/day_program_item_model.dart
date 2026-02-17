@@ -22,7 +22,7 @@ class DayProgramItemModel {
       "description": description,
       "type": type,
       "massProgramId": massProgramId,
-    };
+    }..removeWhere((key, value) => value == null);
   }
 
   factory DayProgramItemModel.fromJson(

@@ -13,7 +13,7 @@ class DayProgramModel {
       "label": label,
       "date": date.toIso8601String(),
       "items": items.map((item) => item.toJson()).toList(),
-    };
+    }..removeWhere((key, value) => value == null);
   }
 
   factory DayProgramModel.fromJson(Map<String, dynamic> json, {String? id}) {

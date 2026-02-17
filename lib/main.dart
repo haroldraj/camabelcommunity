@@ -3,8 +3,8 @@ import 'package:camabelcommunity/core/theme/app_theme.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/day_program/day_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/events/events_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/mass_program/mass_program_bloc.dart';
+import 'package:camabelcommunity/features/events/presentation/bloc/song/song_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/home_screen.dart';
-// import 'package:camabelcommunity/models/song_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -87,27 +87,15 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => sl<EventsBloc>()),
         BlocProvider(create: (context) => sl<DayProgramBloc>()),
-        BlocProvider(create: (context) => sl<MassProgramBloc>())
+        BlocProvider(create: (context) => sl<MassProgramBloc>()),
+        BlocProvider(create: (context) => sl<SongBloc>()),
       ],
-
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Camabel Community',
         theme: appTheme,
-        // home: Scaffold(
-        //   floatingActionButton: FloatingActionButton(
-        //     onPressed: () {
-        //       print_song();
-        //     },
-        //   ),
-        // ),
         home: HomeScreen(),
       ),
-
-      // home: HomeScreen(),
-      // home: MassProgramScreen(),
-      //home: EventListScreen(getEvents: ,),
-      //home: const MyHomePage(title: 'Camabel Community'),
     );
   }
 }
