@@ -11,6 +11,6 @@ class GetSongByIdUseCase implements UseCase<Song, String> {
 
   @override
   Future<Either<Failure, Song>> call(String id) async {
-    return songRepository.getSongById(id);
+    return await songRepository.getSongById(id);
   }
 }

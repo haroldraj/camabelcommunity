@@ -1,6 +1,7 @@
 import 'package:camabelcommunity/core/usecase/usecase.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_all_events_use_case.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_all_upcoming_events_use_case.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/web.dart';
@@ -10,8 +11,13 @@ part 'events_state.dart';
 
 class EventsBloc extends Bloc<EventsEvent, EventsState> {
   final GetAllEventsUseCase getAllEvents;
-  EventsBloc({required this.getAllEvents}) : super(EventsInitial()) {
+  final GetAllUpcomingEventsUseCase getAllUpcomingEventsUseCase;
+  EventsBloc({
+    required this.getAllEvents,
+    required this.getAllUpcomingEventsUseCase,
+  }) : super(EventsInitial()) {
     on<GetAllEventsRequested>(_getAllEventsRequested);
+    on<GetAllUpcomingEventsRequested>(_getAllUpcomingEventsRequested);
   }
 
   Future<void> _getAllEventsRequested(
@@ -22,6 +28,30 @@ class EventsBloc extends Bloc<EventsEvent, EventsState> {
 
     try {
       final result = await getAllEvents(NoParams());
+
+      result.fold(
+        (failure) {
+          Logger().e("Error: ${failure.message}");
+          emit(EventsFailure(failure.message));
+        },
+        (events) {
+          Logger().i("EventId: ${events[0].id}");
+          emit(EventsSucces(events));
+        },
+      );
+    } catch (e) {
+      emit(EventsFailure(e.toString()));
+    }
+  }
+
+  Future<void> _getAllUpcomingEventsRequested(
+    GetAllUpcomingEventsRequested event,
+    Emitter<EventsState> emit,
+  ) async {
+    emit(EventsLoading());
+
+    try {
+      final result = await getAllUpcomingEventsUseCase(NoParams());
 
       result.fold(
         (failure) {

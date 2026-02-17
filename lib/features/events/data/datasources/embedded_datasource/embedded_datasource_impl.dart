@@ -26,6 +26,18 @@ class EmbeddedDatasourceImpl implements EmbeddedDatasource {
   }
 
   @override
+  Future<List<EventModel>> getAllUpcomingEvents() async {
+    try {
+      final events = await getAllEvents();
+      return events
+          .where((event) => !event.date.isBefore(DateTime.now()))
+          .toList();
+    } catch (error) {
+      throw Exception(error.toString());
+    }
+  }
+
+  @override
   Future<List<DayProgramModel>> getAllDayPrograms() async {
     try {
       final String response = await rootBundle.loadString(

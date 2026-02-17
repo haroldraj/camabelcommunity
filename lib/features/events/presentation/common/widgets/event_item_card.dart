@@ -118,7 +118,7 @@ class EventItemCard extends StatelessWidget {
                     event.title,
                     style: TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.w400,
                       fontSize: 20,
                       fontStyle: FontStyle.italic,
                     ),

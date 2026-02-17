@@ -3,24 +3,24 @@ import 'package:camabelcommunity/features/events/presentation/common/widgets/eve
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class UpcomingEventScreeen extends StatefulWidget {
+  const UpcomingEventScreeen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<UpcomingEventScreeen> createState() => _UpcomingEventScreeenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _UpcomingEventScreeenState extends State<UpcomingEventScreeen> {
   @override
   void initState() {
     super.initState();
-    context.read<EventsBloc>().add(GetAllEventsRequested());
+    context.read<EventsBloc>().add(GetAllUpcomingEventsRequested());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Messes à venir"), centerTitle: true),
+      appBar: AppBar(title: Text("Evènements à venir"), centerTitle: true),
       body: BlocListener<EventsBloc, EventsState>(
         listener: (context, state) {
           if (state is EventsFailure) {
@@ -50,8 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
             final events = state.events;
             return RefreshIndicator(
               backgroundColor: Colors.white,
-              onRefresh: () async =>
-                  context.read<EventsBloc>().add(GetAllEventsRequested()),
+              onRefresh: () async => context.read<EventsBloc>().add(
+                GetAllUpcomingEventsRequested(),
+              ),
               child: ListView.builder(
                 itemCount: events.length,
                 itemBuilder: (context, index) {

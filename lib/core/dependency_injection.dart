@@ -10,6 +10,7 @@ import 'package:camabelcommunity/features/events/domain/repositories/day_program
 import 'package:camabelcommunity/features/events/domain/repositories/event_repository.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/mass_program_repository.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/song_repository.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_all_upcoming_events_use_case.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_day_program_by_id_use_case.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_all_events_use_case.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_mass_program_by_id_use_case.dart';
@@ -60,6 +61,10 @@ Future<void> setup() async {
     () => GetAllEventsUseCase(sl<EventRepository>()),
   );
 
+  sl.registerLazySingleton<GetAllUpcomingEventsUseCase>(
+    () => GetAllUpcomingEventsUseCase(sl<EventRepository>()),
+  );
+
   sl.registerLazySingleton<GetMassProgramByIdUseCase>(
     () => GetMassProgramByIdUseCase(sl<MassProgramRepository>()),
   );
@@ -69,7 +74,10 @@ Future<void> setup() async {
   );
 
   sl.registerFactory<EventsBloc>(
-    () => EventsBloc(getAllEvents: sl<GetAllEventsUseCase>()),
+    () => EventsBloc(
+      getAllEvents: sl<GetAllEventsUseCase>(),
+      getAllUpcomingEventsUseCase: sl<GetAllUpcomingEventsUseCase>(),
+    ),
   );
 
   sl.registerFactory<DayProgramBloc>(
