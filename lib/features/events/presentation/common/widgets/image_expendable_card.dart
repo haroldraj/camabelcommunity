@@ -12,25 +12,23 @@ class _ImageExpandableCardState extends State<ImageExpandableCard> {
   bool _expanded = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: AnimatedSize(
-        duration: const Duration(milliseconds: 200),
-        child: Column(
-          children: [
-            Text(widget.text, maxLines: _expanded ? null : 2),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: TextButton(
-                onPressed: () {
-                  setState(() {
-                    _expanded = !_expanded;
-                  });
-                },
-                child: Text(_expanded ? "afficher moins" : "afficher plus..."),
-              ),
+    return AnimatedSize(
+      duration: const Duration(milliseconds: 200),
+      child: Column(
+        children: [
+          Text(widget.text, maxLines: _expanded ? null : 2),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: TextButton(
+              onPressed: () {
+                setState(() {
+                  _expanded = !_expanded;
+                });
+              },
+              child: Text(_expanded ? "afficher moins" : "afficher plus..."),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
