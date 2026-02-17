@@ -44,5 +44,51 @@
                 "type": "dayTimeline"
             }
         ]
+    },
+    {
+        "id": "day2",
+        "label": "Programme",
+        "date": "2026-02-01T12:30:00",
+        "items": [
+            {
+                "id": "programItem1",
+                "massProgramId": null,
+                "startAt": "2026-02-01T12:30:00",
+                "title": "Accueil",
+                "type": "dayTimeline",
+                "description": "Accueil des arrivants"
+            },
+            {
+                "id": "programItem2",
+                "massProgramId": null,
+                "startAt": "2026-02-01T13:15:00",
+                "title": "Repas",
+                "type": "dayTimeline",
+                "description": "Repas fraternel auberge Espagnol"
+            },
+            {
+                "id": "programItem3",
+                "massProgramId": null,
+                "startAt": "2026-02-01T14:30:00",
+                "title": "Répétition de chants",
+                "type": "dayTimeline",
+                "description": "Répétition des chants de la messe"
+            },
+            {
+                "id": "programItem4",
+                "massProgramId": "mass2",
+                "startAt": "2026-02-01T15:00:00",
+                "title": "Célébration Eucharistique",
+                "type": "massProgram",
+                "description": "Début de la célébration Eucharistique"
+            },
+            {
+                "id": "programItem5",
+                "massProgramId": null,
+                "startAt": "2026-02-01T17:00:00",
+                "title": "Dessert",
+                "type": "dayTimeline"
+            }
+        ]
     }
 ]

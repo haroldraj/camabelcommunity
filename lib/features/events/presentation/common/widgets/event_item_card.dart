@@ -111,6 +111,19 @@ class EventItemCard extends StatelessWidget {
                     ),
                   ),
                 ),
+                Positioned(
+                  bottom: 5,
+                  left: 14,
+                  child: Text(
+                    event.title,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 20,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ),
               ],
             ),
             Container(
