@@ -12,7 +12,7 @@ class DayProgramModel {
     return {
       "label": label,
       "date": date.toIso8601String(),
-      "items": items.map((item) => item.toJson()).toList(),
+     // "items": items.map((item) => item.toJson()).toList(),
     }..removeWhere((key, value) => value == null);
   }
 

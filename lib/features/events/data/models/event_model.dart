@@ -1,5 +1,4 @@
 import 'package:camabelcommunity/features/events/data/models/event_cover_model.dart';
-import 'package:logger/web.dart';
 
 class EventModel {
   final String id;
@@ -56,11 +55,10 @@ class EventModel {
   }
 
   factory EventModel.fromJson(Map<String, dynamic> json, {String? id}) {
-    Logger().i(json);
     return EventModel(
       id: id ?? json["id"],
       title: json["title"],
-      date: DateTime.parse(json["date"]).toLocal(),
+      date: DateTime.parse(json["date"]),
       locationName: json["locationName"],
       locationAddress: json["locationAddress"],
       locationLat: json["locationLat"],
@@ -69,7 +67,7 @@ class EventModel {
       status: json["status"],
       cover: EventCoverModel.fromJson(json["cover"]),
       hasMassProgram: json["hasMassProgram"],
-      createdAt: DateTime.parse(json["createdAt"]).toLocal(),
+      createdAt: DateTime.parse(json["createdAt"]),
       dayProgramId: json["dayProgramId"],
       massProgramId: json["massProgramId"],
     );

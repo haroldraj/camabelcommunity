@@ -2,6 +2,7 @@
     {
         "id": "mass1",
         "label": "Sorona Masina",
+        "date": "2026-02-01T12:30:00",
         "items": [
             {
                 "id": "massItem1",
@@ -234,6 +235,7 @@
     {
         "id": "mass2",
         "label": "Sorona Masina",
+        "date": "2026-02-01T12:30:00",
         "items": [
             {
                 "id": "massItem1",
@@ -338,7 +340,6 @@
                 "contentType": "song",
                 "massPart": "rakitraFanolorana",
                 "order": 11,
-                "text": null,
                 "songPreview": {
                     "id": "song11",
                     "book": "hasina",
@@ -352,12 +353,10 @@
                 "contentType": "song",
                 "massPart": "masina",
                 "order": 13,
-                "text": null,
                 "songPreview": {
                     "id": "song13",
                     "book": "noBook",
                     "hasLyrics": true,
-                    "page": null,
                     "title": "Masina Ianao, ry Tompo"
                 }
             },
@@ -366,7 +365,6 @@
                 "contentType": "song",
                 "massPart": "anaminezy",
                 "order": 14,
-                "text": null,
                 "songPreview": {
                     "id": "song14",
                     "book": "hasina",
@@ -380,12 +378,10 @@
                 "contentType": "song",
                 "massPart": "rainay",
                 "order": 15,
-                "text": null,
                 "songPreview": {
                     "id": "song15",
                     "book": "noBook",
                     "hasLyrics": true,
-                    "page": null,
                     "title": "Notre Père By Glorious"
                 }
             },
@@ -394,12 +390,10 @@
                 "contentType": "song",
                 "massPart": "fiadanana",
                 "order": 16,
-                "text": null,
                 "songPreview": {
                     "id": "song16",
                     "book": "noBook",
                     "hasLyrics": true,
-                    "page": null,
                     "title": "Raha mifankatia isika"
                 }
             },
@@ -408,12 +402,10 @@
                 "contentType": "song",
                 "massPart": "zanakondry",
                 "order": 17,
-                "text": null,
                 "songPreview": {
                     "id": "song17",
                     "book": "noBook",
                     "hasLyrics": true,
-                    "page": null,
                     "title": "Ry Zanak'ondrin’Andriamanitra"
                 }
             },
@@ -422,7 +414,6 @@
                 "contentType": "song",
                 "massPart": "komonio",
                 "order": 18,
-                "text": null,
                 "songPreview": {
                     "id": "song18",
                     "book": "hasina",
@@ -436,12 +427,10 @@
                 "contentType": "song",
                 "massPart": "fisaorana",
                 "order": 19,
-                "text": null,
                 "songPreview": {
                     "id": "song19",
                     "book": "noBook",
                     "hasLyrics": true,
-                    "page": null,
                     "title": "Misaotra roa Andrianagnahary"
                 }
             },
@@ -450,7 +439,6 @@
                 "contentType": "song",
                 "massPart": "fanirahana",
                 "order": 20,
-                "text": null,
                 "songPreview": {
                     "id": "song20",
                     "book": "hasina",

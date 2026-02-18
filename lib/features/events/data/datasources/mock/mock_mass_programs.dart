@@ -9,11 +9,15 @@ final List<MassProgram> mockMassPrograms = [
   MassProgram(
     id: "mass_001",
     label: "Programme de la messe - Dimanche 18 Janvier 2026",
+    date: DateTime.now(),
+
     items: mockMassProgramItems,
   ),
   MassProgram(
     id: "mass_002",
     label: "Programme de la messe - Dimanche 25 Janvier 2026",
+    date: DateTime.now(),
+
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.id == "mpi_002") {
@@ -40,6 +44,8 @@ final List<MassProgram> mockMassPrograms = [
   MassProgram(
     id: "mass_003",
     label: "Programme de la messe - Fête spéciale",
+    date: DateTime.now(),
+
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -67,6 +73,8 @@ final List<MassProgram> mockMassPrograms = [
   MassProgram(
     id: "mass_004",
     label: "Programme de la messe - Messe des jeunes",
+    date: DateTime.now(),
+
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -94,6 +102,8 @@ final List<MassProgram> mockMassPrograms = [
   MassProgram(
     id: "mass_005",
     label: "Programme de la messe - Messe commémorative",
+    date: DateTime.now(),
+
     items: [
       ...mockMassProgramItems.map(
         (e) => MassProgramItem(
@@ -109,6 +119,8 @@ final List<MassProgram> mockMassPrograms = [
   ),
   MassProgram(
     id: "mass_006",
+    date: DateTime.now(),
+
     label: "Programme de la messe - Temps ordinaire",
     items: [
       ...mockMassProgramItems.map(
@@ -126,6 +138,7 @@ final List<MassProgram> mockMassPrograms = [
   MassProgram(
     id: "mass_007",
     label: "Programme de la messe - Messe en semaine",
+    date: DateTime.now(),
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -153,6 +166,8 @@ final List<MassProgram> mockMassPrograms = [
   MassProgram(
     id: "mass_008",
     label: "Programme de la messe - Messe de la communauté",
+    date: DateTime.now(),
+
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -180,6 +195,8 @@ final List<MassProgram> mockMassPrograms = [
   MassProgram(
     id: "mass_009",
     label: "Programme de la messe - Messe d’action de grâce",
+    date: DateTime.now(),
+
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&
@@ -207,6 +224,8 @@ final List<MassProgram> mockMassPrograms = [
   MassProgram(
     id: "mass_010",
     label: "Programme de la messe - Messe de clôture",
+    date: DateTime.now(),
+
     items: [
       ...mockMassProgramItems.map((e) {
         if (e.contentType == MassItemType.song &&

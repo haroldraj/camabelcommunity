@@ -7,6 +7,7 @@ class MassProgramMapper {
     return MassProgram(
       id: massProgramModel.id,
       label: massProgramModel.label,
+      date:massProgramModel.date,
       items: massProgramModel.items
           .map((item) => MassProgramItemMapper.toEntity(item))
           .toList(),
@@ -17,6 +18,7 @@ class MassProgramMapper {
     return MassProgramModel(
       id: massProgram.id,
       label: massProgram.label,
+      date: massProgram.date,
       items: massProgram.items
           .map((item) => MassProgramItemMapper.toModel(item))
           .toList(),

@@ -3,11 +3,13 @@ import 'package:camabelcommunity/features/events/domain/entities/mass_program_it
 class MassProgram {
   final String id;
   final String label;
+  final DateTime date;
   final List<MassProgramItem> items;
 
   MassProgram({
     required this.id,
     required this.label,
+    required this.date,
     required List<MassProgramItem> items,
   }) : items = List.unmodifiable(
          List<MassProgramItem>.of(items)..sort(_compareItems),
