@@ -1,4 +1,5 @@
 import 'package:camabelcommunity/features/events/data/models/song_preview_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class MassProgramItemModel {
   final String id;
@@ -7,6 +8,8 @@ class MassProgramItemModel {
   final String massPart;
   final String? text;
   final SongPreviewModel? songPreview;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   MassProgramItemModel({
     required this.id,
@@ -15,6 +18,8 @@ class MassProgramItemModel {
     required this.massPart,
     this.text,
     this.songPreview,
+    this.createdAt,
+    this.updatedAt,
   });
 
   Map<String, dynamic> toJson() {
@@ -24,6 +29,8 @@ class MassProgramItemModel {
       "massPart": massPart,
       "text": text,
       "songPreview": songPreview?.toJson(),
+      "createdAt": FieldValue.serverTimestamp(),
+      "updatedAt": FieldValue.serverTimestamp(),
     }..removeWhere((key, value) => value == null);
   }
 
@@ -40,6 +47,8 @@ class MassProgramItemModel {
           ? null
           : SongPreviewModel.fromJson(json["songPreview"]),
       text: json["text"],
+      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
+      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
     );
   }
 }

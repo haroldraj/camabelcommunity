@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class DayProgramItemModel {
   final String id;
   final String title;
@@ -5,6 +7,8 @@ class DayProgramItemModel {
   final String? description;
   final String type;
   final String? massProgramId;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   DayProgramItemModel({
     required this.id,
@@ -13,15 +17,19 @@ class DayProgramItemModel {
     required this.type,
     this.description,
     this.massProgramId,
+    this.createdAt,
+    this.updatedAt,
   });
 
   Map<String, dynamic> toJson() {
     return {
       "title": title,
-      "startAt": startAt.toIso8601String(),
+      "startAt": startAt,
       "description": description,
       "type": type,
       "massProgramId": massProgramId,
+      "createdAt": FieldValue.serverTimestamp(),
+      "updatedAt": FieldValue.serverTimestamp(),
     }..removeWhere((key, value) => value == null);
   }
 
@@ -32,10 +40,12 @@ class DayProgramItemModel {
     return DayProgramItemModel(
       id: id ?? json["id"],
       title: json["title"],
-      startAt: DateTime.parse(json["startAt"]).toLocal(),
+      startAt: DateTime.parse(json["startAt"]),
       description: json["description"],
       type: json["type"],
       massProgramId: json["massProgramId"],
+      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
+      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
     );
   }
 }

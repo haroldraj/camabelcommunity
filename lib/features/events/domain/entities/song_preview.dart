@@ -7,6 +7,8 @@ class SongPreview {
   final int? page;
   final bool hasLyrics;
   final String? key;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   SongPreview({
     required this.id,
@@ -14,6 +16,8 @@ class SongPreview {
     required this.hasLyrics,
     required this.book,
     this.page,
-    this.key
+    this.key,
+    this.createdAt,
+    this.updatedAt,
   });
 }

@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class SongModel {
   final String id;
   final String title;
@@ -7,6 +9,8 @@ class SongModel {
   final String? lyrics;
   final bool hasLyrics;
   final String? key;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   SongModel({
     required this.id,
@@ -17,6 +21,8 @@ class SongModel {
     this.page,
     this.book,
     this.key,
+    this.createdAt,
+    this.updatedAt,
   });
 
   Map<String, dynamic> toJson() {
@@ -28,6 +34,8 @@ class SongModel {
       "lyrics": lyrics,
       "hasLyrics": hasLyrics,
       "key": key,
+      "createdAt": FieldValue.serverTimestamp(),
+      "updatedAt": FieldValue.serverTimestamp(),
     }..removeWhere((key, value) => value == null);
   }
 
@@ -43,6 +51,8 @@ class SongModel {
       book: json["book"],
       key: json["key"],
       lyrics: json["lyrics"],
+      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
+      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
     );
   }
 }

@@ -43,25 +43,36 @@ class _UpcomingEventScreeenState extends State<UpcomingEventScreeen> {
         },
         child: BlocBuilder<EventsBloc, EventsState>(
           builder: (context, state) {
-            if (state is! EventsSucces) {
+            if (state is EventsLoading) {
               return Center(child: const CircularProgressIndicator());
             }
-            // if (state is EventsSucces) {
-            final events = state.events;
-            return RefreshIndicator(
-              backgroundColor: Colors.white,
-              onRefresh: () async => context.read<EventsBloc>().add(
-                GetAllUpcomingEventsRequested(),
-              ),
-              child: ListView.builder(
-                itemCount: events.length,
-                itemBuilder: (context, index) {
-                  return EventItemCard(event: events[index]);
-                },
-              ),
-            );
-            // }
-            // return const SizedBox();
+            if (state is EventsSucces) {
+              final events = state.events;
+              if (events.isEmpty) {
+                return const Center(
+                  child: Column(
+                    mainAxisAlignment: .center,
+                    children: [
+                      Text("Aucun évènement."),
+                      Text("Assurez-vous d'avoir accès à internet."),
+                    ],
+                  ),
+                );
+              }
+              return RefreshIndicator(
+                backgroundColor: Colors.white,
+                onRefresh: () async => context.read<EventsBloc>().add(
+                  GetAllUpcomingEventsRequested(),
+                ),
+                child: ListView.builder(
+                  itemCount: events.length,
+                  itemBuilder: (context, index) {
+                    return EventItemCard(event: events[index]);
+                  },
+                ),
+              );
+            }
+            return const SizedBox();
           },
         ),
       ),

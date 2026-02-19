@@ -2,7 +2,7 @@ import 'package:camabelcommunity/core/error/exceptions.dart';
 import 'package:camabelcommunity/core/error/failures.dart';
 import 'package:camabelcommunity/features/events/data/datasources/embedded_datasource/embedded_datasource.dart';
 import 'package:camabelcommunity/features/events/data/datasources/mock/mock_events.dart';
-import 'package:camabelcommunity/features/events/data/datasources/remote_datasource/event_remote_datasource.dart';
+import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/event_firestore_datasource.dart';
 import 'package:camabelcommunity/features/events/data/mappers/event_mapper.dart';
 import 'package:camabelcommunity/features/events/data/models/event_model.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
@@ -10,10 +10,10 @@ import 'package:camabelcommunity/features/events/domain/repositories/event_repos
 import 'package:fpdart/fpdart.dart';
 
 class EventRepositoryImpl implements EventRepository {
-  final EventRemoteDatasource eventRemoteDatasource;
+  final EventFirestoreDatasource eventRFIrestoreDatasource;
   final EmbeddedDatasource embeddedDatasource;
 
-  EventRepositoryImpl(this.eventRemoteDatasource, this.embeddedDatasource);
+  EventRepositoryImpl(this.eventRFIrestoreDatasource, this.embeddedDatasource);
 
   @override
   Future<Either<Failure, List<Event>>> getAllEvents() async {

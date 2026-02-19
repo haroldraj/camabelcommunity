@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class SongPreviewModel {
   final String id;
   final String title;
@@ -5,6 +7,8 @@ class SongPreviewModel {
   final int? page;
   final bool hasLyrics;
   final String? key;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   SongPreviewModel({
     required this.id,
@@ -13,6 +17,8 @@ class SongPreviewModel {
     this.page,
     this.book,
     this.key,
+    this.createdAt,
+    this.updatedAt,
   });
 
   Map<String, dynamic> toJson() {
@@ -23,6 +29,8 @@ class SongPreviewModel {
       "page": page,
       "hasLyrics": hasLyrics,
       "key": key,
+      "createdAt": FieldValue.serverTimestamp(),
+      "updatedAt": FieldValue.serverTimestamp(),
     }..removeWhere((key, value) => value == null);
   }
 
@@ -34,6 +42,8 @@ class SongPreviewModel {
       page: json["page"],
       book: json["book"],
       key: json["key"],
+      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
+      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
     );
   }
 }

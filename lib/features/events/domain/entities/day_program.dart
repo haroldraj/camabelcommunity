@@ -5,12 +5,16 @@ class DayProgram {
   final String label;
   final DateTime date;
   final List<DayProgramItem> items;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   DayProgram({
     required this.id,
     required this.label,
     required this.date,
     required List<DayProgramItem> items,
+    this.createdAt,
+    this.updatedAt,
   }) : items = List.unmodifiable(
          (List<DayProgramItem>.of(items))..sort(_compareItems),
        );

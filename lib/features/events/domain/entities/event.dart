@@ -15,9 +15,9 @@ class Event {
   final EventStatus status;
   final EventCover cover;
   final bool hasMassProgram;
-  final DateTime createdAt;
   final String dayProgramId;
-  final String? massProgramId;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   Event({
     required this.id,
@@ -29,11 +29,11 @@ class Event {
     required this.status,
     required this.cover,
     required this.hasMassProgram,
-    required this.createdAt,
     required this.dayProgramId,
-    required this.massProgramId,
     this.headline,
     this.locationLat,
     this.locationLong,
+    this.createdAt,
+    this.updatedAt,
   });
 }

@@ -7,6 +7,8 @@ class DayProgramItem {
   final String? description;
   final ProgramType type;
   final String? massProgramId;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   DayProgramItem({
     required this.id,
@@ -15,5 +17,7 @@ class DayProgramItem {
     required this.type,
     this.description,
     this.massProgramId,
+    this.createdAt,
+    this.updatedAt,
   });
 }

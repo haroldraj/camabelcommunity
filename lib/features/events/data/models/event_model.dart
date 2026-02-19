@@ -1,4 +1,5 @@
 import 'package:camabelcommunity/features/events/data/models/event_cover_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class EventModel {
   final String id;
@@ -13,9 +14,9 @@ class EventModel {
   final String status;
   final EventCoverModel cover;
   final bool hasMassProgram;
-  final DateTime createdAt;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
   final String dayProgramId;
-  final String? massProgramId;
 
   EventModel({
     required this.id,
@@ -27,12 +28,12 @@ class EventModel {
     required this.status,
     required this.cover,
     required this.hasMassProgram,
-    required this.createdAt,
     required this.dayProgramId,
-    required this.massProgramId,
     this.headline,
     this.locationLat,
     this.locationLong,
+    this.createdAt,
+    this.updatedAt,
   });
 
   Map<String, dynamic> toJson() {
@@ -44,13 +45,13 @@ class EventModel {
       "locationLong": locationLong,
       "headline": headline,
       "type": type,
-      "date": date.toIso8601String(),
+      "date": date,
       "status": status,
       "cover": cover.toJson(),
       "hasMassProgram": hasMassProgram,
-      "createdAt": createdAt.toIso8601String(),
       "dayProgramId": dayProgramId,
-      "massProgramId": massProgramId,
+      "createdAt": FieldValue.serverTimestamp(),
+      "updatedAt": FieldValue.serverTimestamp(),
     }..removeWhere((key, value) => value == null);
   }
 
@@ -67,9 +68,9 @@ class EventModel {
       status: json["status"],
       cover: EventCoverModel.fromJson(json["cover"]),
       hasMassProgram: json["hasMassProgram"],
-      createdAt: DateTime.parse(json["createdAt"]),
       dayProgramId: json["dayProgramId"],
-      massProgramId: json["massProgramId"],
+      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
+      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
     );
   }
 }

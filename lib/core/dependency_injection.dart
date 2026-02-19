@@ -1,7 +1,7 @@
 import 'package:camabelcommunity/features/events/data/datasources/embedded_datasource/embedded_datasource.dart';
 import 'package:camabelcommunity/features/events/data/datasources/embedded_datasource/embedded_datasource_impl.dart';
-import 'package:camabelcommunity/features/events/data/datasources/remote_datasource/event_remote_datasource.dart';
-import 'package:camabelcommunity/features/events/data/datasources/remote_datasource/event_remote_datasource_impl.dart';
+import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/event_firestore_datasource.dart';
+import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/event_firestore_datasource_impl.dart';
 import 'package:camabelcommunity/features/events/data/repositories/day_program_repository_impl.dart';
 import 'package:camabelcommunity/features/events/data/repositories/event_repository_impl.dart';
 import 'package:camabelcommunity/features/events/data/repositories/mass_program_repository_impl.dart';
@@ -30,13 +30,13 @@ Future<void> setup() async {
 
   sl.registerLazySingleton<EmbeddedDatasource>(() => EmbeddedDatasourceImpl());
 
-  sl.registerLazySingleton<EventRemoteDatasource>(
-    () => EventRemoteDatasourceWithMockDataImpl(sl<FirebaseFirestore>()),
+  sl.registerLazySingleton<EventFirestoreDatasource>(
+    () => EventFirestoreDatasourceImpl(sl<FirebaseFirestore>()),
   );
 
   sl.registerLazySingleton<EventRepository>(
     () => EventRepositoryImpl(
-      sl<EventRemoteDatasource>(),
+      sl<EventFirestoreDatasource>(),
       sl<EmbeddedDatasource>(),
     ),
   );

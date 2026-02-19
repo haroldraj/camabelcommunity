@@ -25,7 +25,6 @@ class EventMapper {
       //     .toList(),
       createdAt: eventModel.createdAt,
       dayProgramId: eventModel.dayProgramId,
-      massProgramId: eventModel.massProgramId
     );
   }
 
@@ -42,7 +41,6 @@ class EventMapper {
       hasMassProgram: event.hasMassProgram,
       createdAt: event.createdAt,
       dayProgramId: event.dayProgramId,
-      massProgramId: event.massProgramId
     );
   }
 }

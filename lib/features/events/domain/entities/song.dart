@@ -9,6 +9,8 @@ class Song {
   final String? lyrics;
   final bool hasLyrics;
   final String? key;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   Song({
     required this.id,
@@ -19,5 +21,7 @@ class Song {
     this.page,
     required this.book,
     this.key,
+    this.createdAt,
+    this.updatedAt,
   });
 }

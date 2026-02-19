@@ -9,6 +9,8 @@ class MassProgramItem {
   final MassPart massPart;
   final String? text;
   final SongPreview? songPreview;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
 
   MassProgramItem({
     required this.id,
@@ -17,5 +19,7 @@ class MassProgramItem {
     required this.massPart,
     this.text,
     this.songPreview,
+    this.createdAt,
+    this.updatedAt,
   });
 }

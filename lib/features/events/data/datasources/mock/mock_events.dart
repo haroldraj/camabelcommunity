@@ -19,8 +19,6 @@ final List<Event> mockEvents = List.generate(10, (index) {
   final hasMassProgram =
       type == EventType.mass && status != EventStatus.cancelled;
 
-
-
   return Event(
     id: eventId,
     title: hasMassProgram
@@ -40,6 +38,5 @@ final List<Event> mockEvents = List.generate(10, (index) {
     hasMassProgram: hasMassProgram,
     createdAt: DateTime(2026, 1, 1).add(Duration(days: i)),
     dayProgramId: "dayProgramId",
-    massProgramId: "massProgramId"
   );
 });
