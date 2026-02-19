@@ -19,7 +19,7 @@ class MassProgramBloc extends Bloc<MassProgramEvent, MassProgramState> {
     GetMassProgramByIdRequested event,
     Emitter<MassProgramState> emit,
   ) async {
-    emit(MassProgramInital());
+    emit(MassProgramLoading());
 
     try {
       final result = await getMassProgramByIdUseCase(event.massProgramId);
