@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/core/helpers/helpers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SongPreviewModel {
@@ -42,8 +43,8 @@ class SongPreviewModel {
       page: json["page"],
       book: json["book"],
       key: json["key"],
-      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
-      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
+      createdAt: Helpers.parseDate(json["createdAt"]),
+      updatedAt: Helpers.parseDate(json["updatedAt"]),
     );
   }
 }

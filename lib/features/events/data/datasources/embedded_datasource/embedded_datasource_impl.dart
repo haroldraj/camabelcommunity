@@ -30,7 +30,7 @@ class EmbeddedDatasourceImpl implements EmbeddedDatasource {
     try {
       final events = await getAllEvents();
       return events
-          .where((event) => !event.date.isBefore(DateTime.now()))
+          .where((event) => !event.date!.isBefore(DateTime.now()))
           .toList();
     } catch (error) {
       throw Exception(error.toString());

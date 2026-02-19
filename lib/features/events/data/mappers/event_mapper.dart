@@ -5,9 +5,7 @@ import 'package:camabelcommunity/features/events/domain/enums/event_status.dart'
 import 'package:camabelcommunity/features/events/domain/enums/event_type.dart';
 
 class EventMapper {
-  static Event toEntity(
-    EventModel eventModel
-  ) {
+  static Event toEntity(EventModel eventModel) {
     return Event(
       id: eventModel.id,
       title: eventModel.title,
@@ -24,6 +22,7 @@ class EventMapper {
       //     .map(DayProgramItemMapper.toEntity)
       //     .toList(),
       createdAt: eventModel.createdAt,
+      updatedAt: eventModel.updatedAt,
       dayProgramId: eventModel.dayProgramId,
     );
   }
@@ -40,6 +39,7 @@ class EventMapper {
       cover: EventCoverMapper.toModel(event.cover),
       hasMassProgram: event.hasMassProgram,
       createdAt: event.createdAt,
+      updatedAt: event.updatedAt,
       dayProgramId: event.dayProgramId,
     );
   }

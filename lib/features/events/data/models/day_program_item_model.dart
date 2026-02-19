@@ -1,9 +1,10 @@
+import 'package:camabelcommunity/core/helpers/helpers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DayProgramItemModel {
   final String id;
   final String title;
-  final DateTime startAt;
+  final DateTime? startAt;
   final String? description;
   final String type;
   final String? massProgramId;
@@ -40,12 +41,12 @@ class DayProgramItemModel {
     return DayProgramItemModel(
       id: id ?? json["id"],
       title: json["title"],
-      startAt: DateTime.parse(json["startAt"]),
+      startAt: Helpers.parseDate(json["startAt"]),
       description: json["description"],
       type: json["type"],
       massProgramId: json["massProgramId"],
-      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
-      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
+      createdAt: Helpers.parseDate(json["createdAt"]),
+      updatedAt: Helpers.parseDate(json["updatedAt"]),
     );
   }
 }

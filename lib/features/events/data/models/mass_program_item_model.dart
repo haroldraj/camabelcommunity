@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/core/helpers/helpers.dart';
 import 'package:camabelcommunity/features/events/data/models/song_preview_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -47,8 +48,8 @@ class MassProgramItemModel {
           ? null
           : SongPreviewModel.fromJson(json["songPreview"]),
       text: json["text"],
-      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
-      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
+      createdAt: Helpers.parseDate(json["createdAt"]),
+      updatedAt: Helpers.parseDate(json["updatedAt"]),
     );
   }
 }

@@ -10,10 +10,10 @@ import 'package:camabelcommunity/features/events/domain/repositories/event_repos
 import 'package:fpdart/fpdart.dart';
 
 class EventRepositoryImpl implements EventRepository {
-  final EventFirestoreDatasource eventRFIrestoreDatasource;
+  final EventFirestoreDatasource eventFirestoreDatasource;
   final EmbeddedDatasource embeddedDatasource;
 
-  EventRepositoryImpl(this.eventRFIrestoreDatasource, this.embeddedDatasource);
+  EventRepositoryImpl(this.eventFirestoreDatasource, this.embeddedDatasource);
 
   @override
   Future<Either<Failure, List<Event>>> getAllEvents() async {
@@ -47,7 +47,9 @@ class EventRepositoryImpl implements EventRepository {
   @override
   Future<Either<Failure, List<Event>>> getAllUpcomingEvents() async {
     try {
-      final List<EventModel> events = await embeddedDatasource
+      // final List<EventModel> events = await embeddedDatasource
+      //     .getAllUpcomingEvents();
+      final List<EventModel> events = await eventFirestoreDatasource
           .getAllUpcomingEvents();
       return right(events.map((event) => EventMapper.toEntity(event)).toList());
     } catch (error) {

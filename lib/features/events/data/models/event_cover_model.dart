@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/core/helpers/helpers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class EventCoverModel {
@@ -30,8 +31,8 @@ class EventCoverModel {
       source: json["source"],
       url: json["url"],
       path: json["path"],
-      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
-      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
+      createdAt: Helpers.parseDate(json["createdAt"]),
+      updatedAt: Helpers.parseDate(json["updatedAt"]),
     );
   }
 }

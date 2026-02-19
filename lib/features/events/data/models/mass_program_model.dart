@@ -1,10 +1,11 @@
+import 'package:camabelcommunity/core/helpers/helpers.dart';
 import 'package:camabelcommunity/features/events/data/models/mass_program_item_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class MassProgramModel {
   final String id;
   final String label;
-  final DateTime date;
+  final DateTime? date;
   final List<MassProgramItemModel> items;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -17,6 +18,22 @@ class MassProgramModel {
     this.createdAt,
     this.updatedAt,
   });
+
+  MassProgramModel copywith({
+    final String? id,
+    final String? label,
+    final DateTime? date,
+    final List<MassProgramItemModel>? items,
+    final DateTime? createdAt,
+    final DateTime? updatedAt,
+  }) {
+    return MassProgramModel(
+      id: id ?? this.id,
+      label: label ?? this.label,
+      items: items ?? this.items,
+      date: date ?? this.date,
+    );
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -32,12 +49,13 @@ class MassProgramModel {
     return MassProgramModel(
       id: id ?? json["id"],
       label: json["label"],
-      date: DateTime.parse(json["date"]),
-      items: (json["items"] as List)
-          .map((item) => MassProgramItemModel.fromJson(item))
-          .toList(),
-      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
-      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
+      date: Helpers.parseDate(json["date"]),
+      items: [],
+      // items: (json["items"] as List)
+      //     .map((item) => MassProgramItemModel.fromJson(item))
+      //     .toList(),
+      createdAt: Helpers.parseDate(json["createdAt"]),
+      updatedAt: Helpers.parseDate(json["updatedAt"]),
     );
   }
 }

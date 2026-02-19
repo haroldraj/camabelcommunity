@@ -3,7 +3,7 @@ import 'package:camabelcommunity/features/events/domain/entities/day_program_ite
 class DayProgram {
   final String id;
   final String label;
-  final DateTime date;
+  final DateTime? date;
   final List<DayProgramItem> items;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -20,6 +20,6 @@ class DayProgram {
        );
 
   static int _compareItems(DayProgramItem a, DayProgramItem b) {
-    return a.startAt.compareTo(b.startAt);
+    return a.startAt!.compareTo(b.startAt!);
   }
 }

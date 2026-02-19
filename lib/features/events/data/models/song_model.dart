@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/core/helpers/helpers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SongModel {
@@ -51,8 +52,8 @@ class SongModel {
       book: json["book"],
       key: json["key"],
       lyrics: json["lyrics"],
-      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
-      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
+      createdAt: Helpers.parseDate(json["createdAt"]),
+      updatedAt: Helpers.parseDate(json["updatedAt"]),
     );
   }
 }

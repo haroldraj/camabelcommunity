@@ -76,7 +76,7 @@ class EventItemCard extends StatelessWidget {
                         Text(
                           DateFormat.d(
                             "fr_FR",
-                          ).format(event.date).toString().toUpperCase(),
+                          ).format(event.date!).toString().toUpperCase(),
                           style: TextStyle(
                             height: 1,
                             fontWeight: FontWeight.w900,
@@ -87,7 +87,7 @@ class EventItemCard extends StatelessWidget {
                         Text(
                           DateFormat.MMM(
                             "fr_FR",
-                          ).format(event.date).toString().toUpperCase(),
+                          ).format(event.date!).toString().toUpperCase(),
                           style: TextStyle(
                             height: 1,
                             fontWeight: FontWeight.w900,
@@ -99,7 +99,7 @@ class EventItemCard extends StatelessWidget {
                         Text(
                           DateFormat.y(
                             "fr_FR",
-                          ).format(event.date).toString().toUpperCase(),
+                          ).format(event.date!).toString().toUpperCase(),
                           style: TextStyle(
                             height: 1,
                             fontWeight: FontWeight.w900,
@@ -167,7 +167,7 @@ class EventItemCard extends StatelessWidget {
                             children: [
                               Icon(Icons.access_time, color: Colors.white),
                               Text(
-                                DateFormat.Hm().format(event.date).toString(),
+                                DateFormat.Hm().format(event.date!).toString(),
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w900,

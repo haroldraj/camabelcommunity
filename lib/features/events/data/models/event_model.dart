@@ -1,3 +1,4 @@
+import 'package:camabelcommunity/core/helpers/helpers.dart';
 import 'package:camabelcommunity/features/events/data/models/event_cover_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -10,7 +11,7 @@ class EventModel {
   final String? locationLong;
   final String? headline;
   final String type;
-  final DateTime date;
+  final DateTime? date;
   final String status;
   final EventCoverModel cover;
   final bool hasMassProgram;
@@ -59,7 +60,7 @@ class EventModel {
     return EventModel(
       id: id ?? json["id"],
       title: json["title"],
-      date: DateTime.parse(json["date"]),
+      date: Helpers.parseDate(json["date"]),
       locationName: json["locationName"],
       locationAddress: json["locationAddress"],
       locationLat: json["locationLat"],
@@ -69,8 +70,8 @@ class EventModel {
       cover: EventCoverModel.fromJson(json["cover"]),
       hasMassProgram: json["hasMassProgram"],
       dayProgramId: json["dayProgramId"],
-      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
-      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
+      createdAt: Helpers.parseDate(json["createdAt"]),
+      updatedAt: Helpers.parseDate(json["updatedAt"]),
     );
   }
 }

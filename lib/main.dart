@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Camabel Community',
         theme: appTheme,
-        home:DataUpload(),
+        home: UpcomingEventScreeen(),
       ),
     );
   }

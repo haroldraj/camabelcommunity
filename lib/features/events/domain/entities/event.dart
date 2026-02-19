@@ -11,7 +11,7 @@ class Event {
   final String? locationLong;
   final String? headline;
   final EventType type;
-  final DateTime date;
+  final DateTime? date;
   final EventStatus status;
   final EventCover cover;
   final bool hasMassProgram;

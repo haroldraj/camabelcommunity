@@ -33,7 +33,7 @@ class _UpcomingEventScreeenState extends State<UpcomingEventScreeen> {
                 backgroundColor: Colors.white,
                 actions: [
                   TextButton(
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => Navigator.of(context).maybePop(),
                     child: Text("OK"),
                   ),
                 ],

@@ -41,12 +41,15 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
                 title: Text("Error", style: TextStyle(color: Colors.red[800])),
                 content: Text(state.errorMessage),
                 backgroundColor: Colors.white,
-                // actions: [
-                //   TextButton(
-                //     onPressed: () => Navigator.pop(context),
-                //     child: Text("OK"),
-                //   ),
-                // ],
+                actions: [
+                 TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).maybePop();
+                    },
+                    child: Text("OK"),
+                  ),
+                ],
               ),
             );
           }
@@ -54,114 +57,117 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
 
         child: BlocBuilder<DayProgramBloc, DayProgramState>(
           builder: (context, state) {
-            if (state is! DayProgramSuccess) {
+            if (state is DayProgramLoading) {
               return Center(child: const CircularProgressIndicator());
             }
+            if (state is DayProgramSuccess) {
+              final dayProgram = state.dayProgram;
 
-            final dayProgram = state.dayProgram;
-
-            return RefreshIndicator(
-              backgroundColor: Colors.white,
-              onRefresh: () async => context.read<DayProgramBloc>().add(
-                GetDayProgramByIdRequested(widget.dayProgramId),
-              ),
-              child: ListView.builder(
-                itemCount: dayProgram.items.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return IntrinsicHeight(
-                    child: Row(
-                      crossAxisAlignment: .start,
-                      children: [
-                        SizedBox(
-                          width: 40,
-                          child: Column(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(top: 5),
-                                height: 12,
-                                width: 12,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    width: index % 2 == 0 ? 6 : 1,
+              return RefreshIndicator(
+                backgroundColor: Colors.white,
+                onRefresh: () async => context.read<DayProgramBloc>().add(
+                  GetDayProgramByIdRequested(widget.dayProgramId),
+                ),
+                child: ListView.builder(
+                  itemCount: dayProgram.items.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return IntrinsicHeight(
+                      child: Row(
+                        crossAxisAlignment: .start,
+                        children: [
+                          SizedBox(
+                            width: 40,
+                            child: Column(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(top: 5),
+                                  height: 12,
+                                  width: 12,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      width: index % 2 == 0 ? 6 : 1,
+                                      color: CustomColors.darkBlue,
+                                    ),
+                                    // color: CustomColors.darkBlue,
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: VerticalDivider(
+                                    thickness: 0.5,
                                     color: CustomColors.darkBlue,
                                   ),
-                                  // color: CustomColors.darkBlue,
-                                  borderRadius: BorderRadius.circular(30),
                                 ),
-                              ),
-                              Expanded(
-                                child: VerticalDivider(
-                                  thickness: 0.5,
-                                  color: CustomColors.darkBlue,
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: .start,
-                            children: [
-                              Text(
-                                DateFormat.Hm(
-                                  "fr_FR",
-                                ).format(dayProgram.items[index].startAt),
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.grey[700],
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: .start,
+                              children: [
+                                Text(
+                                  DateFormat.Hm(
+                                    "fr_FR",
+                                  ).format(dayProgram.items[index].startAt!),
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    color: Colors.grey[700],
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                dayProgram.items[index].title,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 25,
-                                  color: CustomColors.darkBlue,
+                                Text(
+                                  dayProgram.items[index].title,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25,
+                                    color: CustomColors.darkBlue,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                dayProgram.items[index].description ?? "",
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              SizedBox(height: 10),
-                              dayProgram.items[index].massProgramId != null &&
-                                      dayProgram.items[index].type ==
-                                          ProgramType.massProgram
-                                  ? Row(
-                                      mainAxisAlignment: .end,
-                                      children: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.of(context).push(
-                                              MaterialPageRoute(
-                                                builder: (_) =>
-                                                    MassProgramScreen(
-                                                      massProgramId: dayProgram
-                                                          .items[index]
-                                                          .massProgramId!,
-                                                    ),
-                                              ),
-                                            );
-                                          },
-                                          child: Text(
-                                            "Ouvrir le programme liturjique...",
-                                            style: TextStyle(fontSize: 15),
+                                Text(
+                                  dayProgram.items[index].description ?? "",
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                SizedBox(height: 10),
+                                dayProgram.items[index].massProgramId != null &&
+                                        dayProgram.items[index].type ==
+                                            ProgramType.massProgram
+                                    ? Row(
+                                        mainAxisAlignment: .end,
+                                        children: [
+                                          TextButton(
+                                            onPressed: () {
+                                              Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                  builder: (_) =>
+                                                      MassProgramScreen(
+                                                        massProgramId:
+                                                            dayProgram
+                                                                .items[index]
+                                                                .massProgramId!,
+                                                      ),
+                                                ),
+                                              );
+                                            },
+                                            child: Text(
+                                              "Ouvrir le programme liturjique...",
+                                              style: TextStyle(fontSize: 15),
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    )
-                                  : SizedBox(),
+                                        ],
+                                      )
+                                    : SizedBox(),
 
-                              SizedBox(height: 35),
-                            ],
+                                SizedBox(height: 35),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            );
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              );
+            }
+            return const SizedBox();
           },
         ),
       ),

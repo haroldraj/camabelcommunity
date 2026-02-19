@@ -1,10 +1,11 @@
+import 'package:camabelcommunity/core/helpers/helpers.dart';
 import 'package:camabelcommunity/features/events/data/models/day_program_item_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DayProgramModel {
   final String id;
   final String label;
-  final DateTime date;
+  final DateTime? date;
   final List<DayProgramItemModel> items;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -17,6 +18,22 @@ class DayProgramModel {
     this.createdAt,
     this.updatedAt,
   });
+
+  DayProgramModel copywith({
+    final String? id,
+    final String? label,
+    final DateTime? date,
+    final List<DayProgramItemModel>? items,
+    final DateTime? createdAt,
+    final DateTime? updatedAt,
+  }) {
+    return DayProgramModel(
+      id: id ?? this.id,
+      label: label ?? this.label,
+      date: date ?? this.date,
+      items: items ?? this.items,
+    );
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -32,12 +49,13 @@ class DayProgramModel {
     return DayProgramModel(
       id: id ?? json["id"],
       label: json["label"],
-      date: DateTime.parse(json["date"]),
-      items: (json["items"] as List)
-          .map((item) => DayProgramItemModel.fromJson(item))
-          .toList(),
-      createdAt: (json["createdAt"] as Timestamp?)?.toDate(),
-      updatedAt: (json["updatedAt"] as Timestamp?)?.toDate(),
+      date: Helpers.parseDate(json["date"]),
+      items: [],
+      // items: (json["items"] as List)
+      //     .map((item) => DayProgramItemModel.fromJson(item))
+      //     .toList(),
+      createdAt: Helpers.parseDate(json["createdAt"]),
+      updatedAt: Helpers.parseDate(json["updatedAt"]),
     );
   }
 }

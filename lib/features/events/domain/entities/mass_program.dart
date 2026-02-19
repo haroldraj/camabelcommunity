@@ -3,7 +3,7 @@ import 'package:camabelcommunity/features/events/domain/entities/mass_program_it
 class MassProgram {
   final String id;
   final String label;
-  final DateTime date;
+  final DateTime? date;
   final List<MassProgramItem> items;
   final DateTime? createdAt;
   final DateTime? updatedAt;

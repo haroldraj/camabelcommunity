@@ -38,53 +38,60 @@ class _MassProgramScreenState extends State<MassProgramScreen> {
                 title: Text("Error", style: TextStyle(color: Colors.red[800])),
                 content: Text(state.errorMessage),
                 backgroundColor: Colors.white,
-                // actions: [
-                //   TextButton(
-                //     onPressed: () => Navigator.pop(context),
-                //     child: Text("OK"),
-                //   ),
-                // ],
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).maybePop();
+                    },
+                    child: Text("OK"),
+                  ),
+                ],
               ),
             );
           }
         },
         child: BlocBuilder<MassProgramBloc, MassProgramState>(
           builder: (context, state) {
-            if (state is! MassProgramSuccess) {
+            if (state is MassProgramLoading) {
               return Center(child: const CircularProgressIndicator());
             }
-            final massProgram = state.massProgram;
-            return RefreshIndicator(
-              backgroundColor: Colors.white,
-              onRefresh: () async => context.read<MassProgramBloc>().add(
-                GetMassProgramByIdRequested(widget.massProgramId),
-              ),
-              child: ListView.builder(
-                itemCount: massProgram.items.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return MassItemCard(
-                    item: massProgram.items[index],
-                    index: index,
-                    onTap: () {
-                      if (massProgram.items[index].contentType.name ==
-                              MassItemType.song.name &&
-                          massProgram.items[index].songPreview != null) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => SongLyricsScreen(
-                              songId: massProgram.items[index].songPreview!.id,
-                              songTitle:
-                                  massProgram.items[index].songPreview!.title,
+            if (state is MassProgramSuccess) {
+              final massProgram = state.massProgram;
+              return RefreshIndicator(
+                backgroundColor: Colors.white,
+                onRefresh: () async => context.read<MassProgramBloc>().add(
+                  GetMassProgramByIdRequested(widget.massProgramId),
+                ),
+                child: ListView.builder(
+                  itemCount: massProgram.items.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return MassItemCard(
+                      item: massProgram.items[index],
+                      index: index,
+                      onTap: () {
+                        if (massProgram.items[index].contentType.name ==
+                                MassItemType.song.name &&
+                            massProgram.items[index].songPreview != null) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => SongLyricsScreen(
+                                songId:
+                                    massProgram.items[index].songPreview!.id,
+                                songTitle:
+                                    massProgram.items[index].songPreview!.title,
+                              ),
                             ),
-                          ),
-                        );
-                      }
-                    },
-                  );
-                },
-              ),
-            );
+                          );
+                        }
+                      },
+                    );
+                  },
+                ),
+              );
+            }
+            return const SizedBox();
           },
         ),
       ),

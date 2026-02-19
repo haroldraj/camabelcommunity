@@ -36,29 +36,37 @@ class _SongLyricsScreenState extends State<SongLyricsScreen> {
                 title: Text("Error", style: TextStyle(color: Colors.red[800])),
                 content: Text(state.errorMessage),
                 backgroundColor: Colors.white,
-                // actions: [
-                //   TextButton(
-                //     onPressed: () => Navigator.pop(context),
-                //     child: Text("OK"),
-                //   ),
-                // ],
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).maybePop();
+                    },
+                    child: Text("OK"),
+                  ),
+                ],
               ),
             );
           }
         },
         child: BlocBuilder<SongBloc, SongState>(
           builder: (context, state) {
-            if (state is! SongSuccess) {
+            if (state is SongLoading) {
               return Center(child: const CircularProgressIndicator());
             }
-
-            final song = state.song;
-            return Container(
-              margin: .symmetric(vertical: 15, horizontal: 25),
-              child: SingleChildScrollView(
-                child: Text(song.lyrics ?? "", style: TextStyle(fontSize: 22)),
-              ),
-            );
+            if (state is SongSuccess) {
+              final song = state.song;
+              return Container(
+                margin: .symmetric(vertical: 15, horizontal: 25),
+                child: SingleChildScrollView(
+                  child: Text(
+                    song.lyrics ?? "",
+                    style: TextStyle(fontSize: 22),
+                  ),
+                ),
+              );
+            }
+            return const SizedBox();
           },
         ),
       ),

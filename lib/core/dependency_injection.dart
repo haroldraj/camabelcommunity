@@ -1,7 +1,13 @@
 import 'package:camabelcommunity/features/events/data/datasources/embedded_datasource/embedded_datasource.dart';
 import 'package:camabelcommunity/features/events/data/datasources/embedded_datasource/embedded_datasource_impl.dart';
+import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/day_program_firestore_datasource.dart';
+import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/day_program_firestore_datasource_impl.dart';
 import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/event_firestore_datasource.dart';
 import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/event_firestore_datasource_impl.dart';
+import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/mass_program_firestore_datasource.dart';
+import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/mass_program_firestore_datasource_impl.dart';
+import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/song_firestore_datasource.dart';
+import 'package:camabelcommunity/features/events/data/datasources/firestore_datasource/song_firestore_datasource_impl.dart';
 import 'package:camabelcommunity/features/events/data/repositories/day_program_repository_impl.dart';
 import 'package:camabelcommunity/features/events/data/repositories/event_repository_impl.dart';
 import 'package:camabelcommunity/features/events/data/repositories/mass_program_repository_impl.dart';
@@ -26,14 +32,29 @@ import 'package:logger/web.dart';
 var sl = GetIt.instance;
 
 Future<void> setup() async {
+  //Firebase Firestore
   sl.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);
 
+  //Datasources
   sl.registerLazySingleton<EmbeddedDatasource>(() => EmbeddedDatasourceImpl());
+
+  sl.registerLazySingleton<SongFirestoreDatasource>(
+    () => SongFirestoreDatasourceImpl(sl<FirebaseFirestore>()),
+  );
+
+    sl.registerLazySingleton<DayProgramFirestoreDatasource>(
+    () => DayProgramFirestoreDatasourceImpl(sl<FirebaseFirestore>()),
+  );
+
+    sl.registerLazySingleton<MassProgramFirestoreDatasource>(
+    () => MassProgramFirestoreDatasourceImpl(sl<FirebaseFirestore>()),
+  );
 
   sl.registerLazySingleton<EventFirestoreDatasource>(
     () => EventFirestoreDatasourceImpl(sl<FirebaseFirestore>()),
   );
 
+  //Repositories
   sl.registerLazySingleton<EventRepository>(
     () => EventRepositoryImpl(
       sl<EventFirestoreDatasource>(),
@@ -42,17 +63,27 @@ Future<void> setup() async {
   );
 
   sl.registerLazySingleton<DayProgramRepository>(
-    () => DayProgramRepositoryImpl(sl<EmbeddedDatasource>()),
+    () => DayProgramRepositoryImpl(
+      sl<EmbeddedDatasource>(),
+      sl<DayProgramFirestoreDatasource>(),
+    ),
   );
 
   sl.registerLazySingleton<MassProgramRepository>(
-    () => MassProgramRepositoryImpl(sl<EmbeddedDatasource>()),
+    () => MassProgramRepositoryImpl(
+      sl<EmbeddedDatasource>(),
+      sl<MassProgramFirestoreDatasource>(),
+    ),
   );
 
   sl.registerLazySingleton<SongRepository>(
-    () => SongRepositoryImpl(sl<EmbeddedDatasource>()),
+    () => SongRepositoryImpl(
+      sl<EmbeddedDatasource>(),
+      sl<SongFirestoreDatasource>(),
+    ),
   );
 
+  //Usecases
   sl.registerLazySingleton<GetDayProgramByIdUseCase>(
     () => GetDayProgramByIdUseCase(sl<DayProgramRepository>()),
   );
@@ -73,6 +104,8 @@ Future<void> setup() async {
     () => GetSongByIdUseCase(sl<SongRepository>()),
   );
 
+
+  //Blocs
   sl.registerFactory<EventsBloc>(
     () => EventsBloc(
       getAllEvents: sl<GetAllEventsUseCase>(),
