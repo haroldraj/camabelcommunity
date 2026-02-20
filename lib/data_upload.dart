@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:camabelcommunity/core/dependency_injection.dart';
-import 'package:camabelcommunity/features/events/data/models/day_program_item_model.dart';
 import 'package:camabelcommunity/features/events/data/models/day_program_model.dart';
 import 'package:camabelcommunity/features/events/data/models/event_model.dart';
 import 'package:camabelcommunity/features/events/data/models/mass_program_model.dart';

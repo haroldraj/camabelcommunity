@@ -1,7 +1,7 @@
 import 'package:camabelcommunity/core/usecase/usecase.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
-import 'package:camabelcommunity/features/events/domain/usecases/get_all_events_use_case.dart';
-import 'package:camabelcommunity/features/events/domain/usecases/get_all_upcoming_events_use_case.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_all_events_usecase.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_all_upcoming_events_usecase.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/web.dart';
@@ -10,8 +10,8 @@ part 'events_event.dart';
 part 'events_state.dart';
 
 class EventsBloc extends Bloc<EventsEvent, EventsState> {
-  final GetAllEventsUseCase getAllEvents;
-  final GetAllUpcomingEventsUseCase getAllUpcomingEventsUseCase;
+  final GetAllEventsUsecase getAllEvents;
+  final GetAllUpcomingEventsUsecase getAllUpcomingEventsUseCase;
   EventsBloc({
     required this.getAllEvents,
     required this.getAllUpcomingEventsUseCase,

@@ -16,11 +16,11 @@ import 'package:camabelcommunity/features/events/domain/repositories/day_program
 import 'package:camabelcommunity/features/events/domain/repositories/event_repository.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/mass_program_repository.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/song_repository.dart';
-import 'package:camabelcommunity/features/events/domain/usecases/get_all_upcoming_events_use_case.dart';
-import 'package:camabelcommunity/features/events/domain/usecases/get_day_program_by_id_use_case.dart';
-import 'package:camabelcommunity/features/events/domain/usecases/get_all_events_use_case.dart';
-import 'package:camabelcommunity/features/events/domain/usecases/get_mass_program_by_id_use_case.dart';
-import 'package:camabelcommunity/features/events/domain/usecases/get_song_by_id_use_case.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_all_upcoming_events_usecase.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_day_program_by_id_usecase.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_all_events_usecase.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_mass_program_by_id_usecase.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_song_by_id_usecase.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/day_program/day_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/events/events_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/mass_program/mass_program_bloc.dart';
@@ -84,49 +84,49 @@ Future<void> setup() async {
   );
 
   //Usecases
-  sl.registerLazySingleton<GetDayProgramByIdUseCase>(
-    () => GetDayProgramByIdUseCase(sl<DayProgramRepository>()),
+  sl.registerLazySingleton<GetDayProgramByIdUsecase>(
+    () => GetDayProgramByIdUsecase(sl<DayProgramRepository>()),
   );
 
-  sl.registerLazySingleton<GetAllEventsUseCase>(
-    () => GetAllEventsUseCase(sl<EventRepository>()),
+  sl.registerLazySingleton<GetAllEventsUsecase>(
+    () => GetAllEventsUsecase(sl<EventRepository>()),
   );
 
-  sl.registerLazySingleton<GetAllUpcomingEventsUseCase>(
-    () => GetAllUpcomingEventsUseCase(sl<EventRepository>()),
+  sl.registerLazySingleton<GetAllUpcomingEventsUsecase>(
+    () => GetAllUpcomingEventsUsecase(sl<EventRepository>()),
   );
 
-  sl.registerLazySingleton<GetMassProgramByIdUseCase>(
-    () => GetMassProgramByIdUseCase(sl<MassProgramRepository>()),
+  sl.registerLazySingleton<GetMassProgramByIdUsecase>(
+    () => GetMassProgramByIdUsecase(sl<MassProgramRepository>()),
   );
 
-  sl.registerLazySingleton<GetSongByIdUseCase>(
-    () => GetSongByIdUseCase(sl<SongRepository>()),
+  sl.registerLazySingleton<GetSongByIdUsecase>(
+    () => GetSongByIdUsecase(sl<SongRepository>()),
   );
 
 
   //Blocs
   sl.registerFactory<EventsBloc>(
     () => EventsBloc(
-      getAllEvents: sl<GetAllEventsUseCase>(),
-      getAllUpcomingEventsUseCase: sl<GetAllUpcomingEventsUseCase>(),
+      getAllEvents: sl<GetAllEventsUsecase>(),
+      getAllUpcomingEventsUseCase: sl<GetAllUpcomingEventsUsecase>(),
     ),
   );
 
   sl.registerFactory<DayProgramBloc>(
     () => DayProgramBloc(
-      getDayProgramByIdUseCase: sl<GetDayProgramByIdUseCase>(),
+      getDayProgramByIdUseCase: sl<GetDayProgramByIdUsecase>(),
     ),
   );
 
   sl.registerFactory<MassProgramBloc>(
     () => MassProgramBloc(
-      getMassProgramByIdUseCase: sl<GetMassProgramByIdUseCase>(),
+      getMassProgramByIdUseCase: sl<GetMassProgramByIdUsecase>(),
     ),
   );
 
   sl.registerFactory<SongBloc>(
-    () => SongBloc(getSongByIdUseCase: sl<GetSongByIdUseCase>()),
+    () => SongBloc(getSongByIdUseCase: sl<GetSongByIdUsecase>()),
   );
 
   Logger().i("Dependancies injection done.");

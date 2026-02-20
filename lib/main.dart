@@ -1,6 +1,5 @@
 import 'package:camabelcommunity/core/dependency_injection.dart';
 import 'package:camabelcommunity/core/theme/app_theme.dart';
-import 'package:camabelcommunity/data_upload.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/day_program/day_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/events/events_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/mass_program/mass_program_bloc.dart';

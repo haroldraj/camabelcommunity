@@ -1,5 +1,5 @@
 import 'package:camabelcommunity/features/events/domain/entities/day_program.dart';
-import 'package:camabelcommunity/features/events/domain/usecases/get_day_program_by_id_use_case.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_day_program_by_id_usecase.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +9,7 @@ part 'day_program_event.dart';
 part 'day_program_state.dart';
 
 class DayProgramBloc extends Bloc<DayProgramEvent, DayProgramState> {
-  final GetDayProgramByIdUseCase getDayProgramByIdUseCase;
+  final GetDayProgramByIdUsecase getDayProgramByIdUseCase;
 
   DayProgramBloc({required this.getDayProgramByIdUseCase})
     : super(DayProgramInitial()) {

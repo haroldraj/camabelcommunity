@@ -4,13 +4,13 @@ import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/event_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
-class GetAllUpcomingEventsUseCase implements UseCase<List<Event>, NoParams> {
+class GetAllEventsUsecase implements Usecase<List<Event>, NoParams> {
   final EventRepository eventRepository;
 
-  GetAllUpcomingEventsUseCase(this.eventRepository);
+  GetAllEventsUsecase(this.eventRepository);
 
   @override
-  Future<Either<Failure, List<Event>>> call(NoParams params) async{
-    return await eventRepository.getAllUpcomingEvents();
+  Future<Either<Failure, List<Event>>> call(NoParams params) async {
+    return await eventRepository.getAllEventsFromJson();
   }
 }
