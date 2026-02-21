@@ -1,7 +1,6 @@
 import 'package:camabelcommunity/core/theme/custom_colors.dart';
 import 'package:camabelcommunity/features/events/domain/enums/program_type.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/day_program/day_program_bloc.dart';
-import 'package:camabelcommunity/features/events/presentation/user/screens/mass_program_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -25,7 +24,7 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final title = "Programme du jour";
+    final title = "Programme de la journée";
 
     return Scaffold(
       appBar: AppBar(title: Text(title)),
@@ -42,7 +41,7 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
                 content: Text(state.errorMessage),
                 backgroundColor: Colors.white,
                 actions: [
-                 TextButton(
+                  TextButton(
                     onPressed: () {
                       Navigator.of(context).pop();
                       Navigator.of(context).maybePop();
@@ -135,21 +134,20 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
                                         children: [
                                           TextButton(
                                             onPressed: () {
-                                              Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                  builder: (_) =>
-                                                      MassProgramScreen(
-                                                        massProgramId:
-                                                            dayProgram
-                                                                .items[index]
-                                                                .massProgramId!,
-                                                      ),
-                                                ),
+                                              Navigator.of(context).pushNamed(
+                                                "/mass-program?massProgramId=${dayProgram.items[index].massProgramId!}",
                                               );
                                             },
+
                                             child: Text(
-                                              "Ouvrir le programme liturjique...",
-                                              style: TextStyle(fontSize: 15),
+                                              "Ouvrir le programme liturjique",
+                                              style: TextStyle(
+                                                fontSize: 15,
+                                                decoration:
+                                                    TextDecoration.underline,
+                                                decorationColor:
+                                                    CustomColors.darkBlue,
+                                              ),
                                             ),
                                           ),
                                         ],

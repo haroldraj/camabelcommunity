@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -54,6 +45,7 @@ class DefaultFirebaseOptions {
     appId: '1:455488282428:android:0a8e3de70324d4caf14839',
     messagingSenderId: '455488282428',
     projectId: 'camabelcommunity',
+    databaseURL: 'https://camabelcommunity-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'camabelcommunity.firebasestorage.app',
   );
 
@@ -62,7 +54,41 @@ class DefaultFirebaseOptions {
     appId: '1:455488282428:ios:4b0f949593c40491f14839',
     messagingSenderId: '455488282428',
     projectId: 'camabelcommunity',
+    databaseURL: 'https://camabelcommunity-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'camabelcommunity.firebasestorage.app',
     iosBundleId: 'com.hrajaona.camabelcommunity.camabelcommunity',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyD1-azBHUwCaz0YgJSQ_wCB4WX_pT70l8o',
+    appId: '1:455488282428:web:910cbc0a75be21e2f14839',
+    messagingSenderId: '455488282428',
+    projectId: 'camabelcommunity',
+    authDomain: 'camabelcommunity.firebaseapp.com',
+    databaseURL: 'https://camabelcommunity-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'camabelcommunity.firebasestorage.app',
+    measurementId: 'G-9J348TF1LD',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCqgfKC2CAitox8ce_N6IrhaBGed7IeCcQ',
+    appId: '1:455488282428:ios:632c2896a2c05bdff14839',
+    messagingSenderId: '455488282428',
+    projectId: 'camabelcommunity',
+    databaseURL: 'https://camabelcommunity-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'camabelcommunity.firebasestorage.app',
+    iosBundleId: 'com.hrajaona.camabelcommunity',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyD1-azBHUwCaz0YgJSQ_wCB4WX_pT70l8o',
+    appId: '1:455488282428:web:a6db12294fc8f873f14839',
+    messagingSenderId: '455488282428',
+    projectId: 'camabelcommunity',
+    authDomain: 'camabelcommunity.firebaseapp.com',
+    databaseURL: 'https://camabelcommunity-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'camabelcommunity.firebasestorage.app',
+    measurementId: 'G-Z2WT566GLN',
+  );
+
 }

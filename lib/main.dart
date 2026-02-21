@@ -4,17 +4,25 @@ import 'package:camabelcommunity/features/events/presentation/bloc/day_program/d
 import 'package:camabelcommunity/features/events/presentation/bloc/events/events_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/mass_program/mass_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/song/song_bloc.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/day_program_screen.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/mass_program_screen.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/upcoming_event_screeen.dart';
+import 'package:camabelcommunity/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:logger/logger.dart';
 
 var logger = Logger();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  setUrlStrategy(PathUrlStrategy());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
   await setup();
   await initializeDateFormatting("fr_FR");
 
@@ -37,8 +45,84 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Camabel Community',
         theme: appTheme,
-        home: UpcomingEventScreeen(),
+        initialRoute: "/",
+        // home: UpcomingEventScreeen(),
+        onGenerateRoute: (settings) {
+          final uri = Uri.parse(settings.name ?? "/");
+
+          if (uri.path == "/") {
+            return MaterialPageRoute(
+              builder: (_) => UpcomingEventScreeen(),
+              settings: settings,
+            );
+          }
+
+          if (uri.path == "/day-program") {
+            final dayProgramId = uri.queryParameters["dayProgramId"];
+            if (dayProgramId == null || dayProgramId.isEmpty) {
+              return MaterialPageRoute(
+                builder: (_) =>
+                    const UnknownRouteScreen(message: "Missing dayProgramId"),
+                settings: settings,
+              );
+            }
+            return MaterialPageRoute(
+              builder: (_) => DayProgramScreen(dayProgramId: dayProgramId),
+              settings: settings,
+            );
+          }
+
+          if (uri.path == "/mass-program") {
+            final massProgramId = uri.queryParameters["massProgramId"];
+            if (massProgramId == null || massProgramId.isEmpty) {
+              return MaterialPageRoute(
+                builder: (_) =>
+                    const UnknownRouteScreen(message: "Missing massProgramId"),
+                settings: settings,
+              );
+            }
+            return MaterialPageRoute(
+              builder: (_) => MassProgramScreen(massProgramId: massProgramId),
+              settings: settings,
+            );
+          }
+
+          if (uri.path == "/song") {
+            final songId = uri.queryParameters["songId"];
+            final songTitle = uri.queryParameters['title'] ?? '';
+
+            if (songId == null || songId.isEmpty) {
+              return MaterialPageRoute(
+                builder: (_) =>
+                    const UnknownRouteScreen(message: "Missing songId"),
+                settings: settings,
+              );
+            }
+            return MaterialPageRoute(
+              builder: (_) =>
+                  SongLyricsScreen(songId: songId, songTitle: songTitle),
+              settings: settings,
+            );
+          }
+          return MaterialPageRoute(
+            builder: (_) => const UnknownRouteScreen(message: "Page not found"),
+            settings: settings,
+          );
+        },
       ),
+    );
+  }
+}
+
+class UnknownRouteScreen extends StatelessWidget {
+  final String message;
+  const UnknownRouteScreen({super.key, required this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Camabel Community")),
+      body: Center(child: Text(message)),
     );
   }
 }

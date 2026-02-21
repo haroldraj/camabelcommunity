@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "455488282428",
+    "firebase_url": "https://camabelcommunity-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "camabelcommunity",
     "storage_bucket": "camabelcommunity.firebasestorage.app"
   },

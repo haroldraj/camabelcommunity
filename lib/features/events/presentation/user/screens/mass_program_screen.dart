@@ -1,7 +1,6 @@
 import 'package:camabelcommunity/features/events/domain/enums/mass_item_type.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/mass_program/mass_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/common/widgets/mass_item_card.dart';
-import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -70,19 +69,17 @@ class _MassProgramScreenState extends State<MassProgramScreen> {
                       item: massProgram.items[index],
                       index: index,
                       onTap: () {
-                        if (massProgram.items[index].contentType.name ==
-                                MassItemType.song.name &&
-                            massProgram.items[index].songPreview != null) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => SongLyricsScreen(
-                                songId:
-                                    massProgram.items[index].songPreview!.id,
-                                songTitle:
-                                    massProgram.items[index].songPreview!.title,
-                              ),
-                            ),
+                        final item = massProgram.items[index];
+
+                        if (item.contentType.name == MassItemType.song.name &&
+                            item.songPreview != null) {
+                          final songId = item.songPreview!.id;
+                          final titleEncoded = Uri.encodeComponent(
+                            item.songPreview!.title,
+                          );
+
+                          Navigator.of(context).pushNamed(
+                            '/song?songId=$songId&title=$titleEncoded',
                           );
                         }
                       },
