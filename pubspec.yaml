@@ -41,6 +41,7 @@ flutter:
     - assets/img/covers/
     - assets/data_sample/
     - assets/img/splash/
+    - assets/flavicon/
 
 
 flutter_launcher_icons:
