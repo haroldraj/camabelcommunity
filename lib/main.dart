@@ -1,10 +1,12 @@
 import 'package:camabelcommunity/core/dependency_injection.dart';
+import 'package:camabelcommunity/core/enums/screen_uri_path.dart';
 import 'package:camabelcommunity/core/theme/app_theme.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/day_program/day_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/events/events_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/mass_program/mass_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/song/song_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/day_program_screen.dart';
+import 'package:camabelcommunity/features/events/presentation/user/screens/event_history_screen.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/mass_program_screen.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/upcoming_event_screeen.dart';
@@ -20,9 +22,7 @@ var logger = Logger();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setUrlStrategy(PathUrlStrategy());
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await setup();
   await initializeDateFormatting("fr_FR");
 
@@ -30,7 +30,8 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+  final String homePath = ScreenUriPath.home.label;
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +46,26 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Camabel Community',
         theme: appTheme,
-        initialRoute: "/",
+        initialRoute: homePath,
         // home: UpcomingEventScreeen(),
         onGenerateRoute: (settings) {
-          final uri = Uri.parse(settings.name ?? "/");
+          final uri = Uri.parse(settings.name ?? homePath);
 
-          if (uri.path == "/") {
+          if (uri.path == homePath) {
             return MaterialPageRoute(
               builder: (_) => UpcomingEventScreeen(),
               settings: settings,
             );
           }
 
-          if (uri.path == "/day-program") {
+          if (uri.path == ScreenUriPath.eventHistory.label) {
+            return MaterialPageRoute(
+              builder: (_) => EventHistoryScreen(),
+              settings: settings,
+            );
+          }
+
+          if (uri.path == ScreenUriPath.dayProgram.label) {
             final dayProgramId = uri.queryParameters["dayProgramId"];
             if (dayProgramId == null || dayProgramId.isEmpty) {
               return MaterialPageRoute(
@@ -72,7 +80,7 @@ class MyApp extends StatelessWidget {
             );
           }
 
-          if (uri.path == "/mass-program") {
+          if (uri.path == ScreenUriPath.massProgram.label) {
             final massProgramId = uri.queryParameters["massProgramId"];
             if (massProgramId == null || massProgramId.isEmpty) {
               return MaterialPageRoute(
@@ -87,7 +95,7 @@ class MyApp extends StatelessWidget {
             );
           }
 
-          if (uri.path == "/song") {
+          if (uri.path == ScreenUriPath.song.label) {
             final songId = uri.queryParameters["songId"];
             final songTitle = uri.queryParameters['title'] ?? '';
 

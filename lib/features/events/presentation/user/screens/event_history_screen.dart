@@ -5,26 +5,28 @@ import 'package:camabelcommunity/features/events/presentation/common/widgets/eve
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class UpcomingEventScreeen extends StatefulWidget {
-  const UpcomingEventScreeen({super.key});
+class EventHistoryScreen extends StatefulWidget {
+  const EventHistoryScreen({super.key});
 
   @override
-  State<UpcomingEventScreeen> createState() => _UpcomingEventScreeenState();
+  State<EventHistoryScreen> createState() => _EventHistoryScreenState();
 }
 
-class _UpcomingEventScreeenState extends State<UpcomingEventScreeen> {
+class _EventHistoryScreenState extends State<EventHistoryScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<EventsBloc>().add(GetAllUpcomingEventsRequested());
+    context.read<EventsBloc>().add(GetAllPastEventsRequested());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(ScreenName.home.title), centerTitle: true),
-      drawer: AppDrawer(screenName: ScreenName.home),
-
+      appBar: AppBar(
+        title: Text(ScreenName.eventHistory.title),
+        centerTitle: true,
+      ),
+      drawer: AppDrawer(screenName: ScreenName.eventHistory),
       body: BlocListener<EventsBloc, EventsState>(
         listener: (context, state) {
           if (state is EventsFailure) {
@@ -56,18 +58,14 @@ class _UpcomingEventScreeenState extends State<UpcomingEventScreeen> {
                 return const Center(
                   child: Column(
                     mainAxisAlignment: .center,
-                    children: [
-                      Text("Aucun évènement."),
-                      Text("Assurez-vous d'avoir accès à internet."),
-                    ],
+                    children: [Text("Aucun évènement.")],
                   ),
                 );
               }
               return RefreshIndicator(
                 backgroundColor: Colors.white,
-                onRefresh: () async => context.read<EventsBloc>().add(
-                  GetAllUpcomingEventsRequested(),
-                ),
+                onRefresh: () async =>
+                    context.read<EventsBloc>().add(GetAllPastEventsRequested()),
                 child: ListView.builder(
                   itemCount: events.length,
                   itemBuilder: (context, index) {

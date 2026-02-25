@@ -6,5 +6,6 @@ class CustomColors {
   static const Color green = Color(0xFF3DA73D);
   static const Color black = Color(0xFF000000);
   static const Color darkBlue = Color(0xFF002B5C);
+  static const Color drawerSelectedItem = Color(0xCC002B5C);
   static const Color yellow = Color(0xFFF2C924);
 }

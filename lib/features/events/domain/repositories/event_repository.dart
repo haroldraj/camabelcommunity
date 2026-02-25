@@ -8,4 +8,5 @@ abstract interface class EventRepository {
   // Future<Event?> getEventById(String id);
   Future<Either<Failure, List<Event>>> getAllEventsFromJson();
   Future<Either<Failure, List<Event>>> getAllUpcomingEvents();
+  Future<Either<Failure, List<Event>>> getAllPastEvents();
 }

@@ -1,6 +1,7 @@
 import 'package:camabelcommunity/core/usecase/usecase.dart';
 import 'package:camabelcommunity/features/events/domain/entities/event.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_all_events_usecase.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_all_past_events_usecase.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_all_upcoming_events_usecase.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,12 +13,15 @@ part 'events_state.dart';
 class EventsBloc extends Bloc<EventsEvent, EventsState> {
   final GetAllEventsUsecase getAllEvents;
   final GetAllUpcomingEventsUsecase getAllUpcomingEventsUseCase;
+  final GetAllPastEventsUsecase getAllPastEventsUsecase;
   EventsBloc({
     required this.getAllEvents,
     required this.getAllUpcomingEventsUseCase,
+    required this.getAllPastEventsUsecase,
   }) : super(EventsInitial()) {
     on<GetAllEventsRequested>(_getAllEventsRequested);
     on<GetAllUpcomingEventsRequested>(_getAllUpcomingEventsRequested);
+    on<GetAllPastEventsRequested>(_getAllPastEventsRequested);
   }
 
   Future<void> _getAllEventsRequested(
@@ -62,6 +66,29 @@ class EventsBloc extends Bloc<EventsEvent, EventsState> {
           Logger().i("EventId: ${events[0].id}");
           emit(EventsSucces(events));
         },
+      );
+    } catch (e) {
+      emit(EventsFailure(e.toString()));
+    }
+  }
+
+  Future<void> _getAllPastEventsRequested(
+    GetAllPastEventsRequested event,
+    Emitter<EventsState> emit,
+  ) async {
+    emit(EventsLoading());
+    try {
+      final result = await getAllPastEventsUsecase(NoParams());
+
+      result.fold(
+        ((failure) {
+          Logger().e("Error: ${failure.message}");
+          emit(EventsFailure(failure.message));
+        }),
+        ((events) {
+          Logger().i("EventId: ${events[0].id}");
+          emit(EventsSucces(events));
+        }),
       );
     } catch (e) {
       emit(EventsFailure(e.toString()));

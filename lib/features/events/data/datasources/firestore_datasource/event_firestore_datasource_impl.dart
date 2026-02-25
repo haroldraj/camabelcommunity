@@ -40,4 +40,23 @@ class EventFirestoreDatasourceImpl implements EventFirestoreDatasource {
       throw Exception(e.toString());
     }
   }
+
+  @override
+  Future<List<EventModel>> getAllPastEvents() async {
+    try {
+      final now = DateTime.now();
+      final snapshot = await _eventsRef
+          .where("date", isLessThan: now)
+          .orderBy("date")
+          .get();
+      return snapshot.docs.map((doc) {
+        Logger().i(
+          "Event: ${EventModel.fromJson(doc.data(), id: doc.id).date}",
+        );
+        return EventModel.fromJson(doc.data(), id: doc.id);
+      }).toList();
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
 }

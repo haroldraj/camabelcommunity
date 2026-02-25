@@ -16,6 +16,7 @@ import 'package:camabelcommunity/features/events/domain/repositories/day_program
 import 'package:camabelcommunity/features/events/domain/repositories/event_repository.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/mass_program_repository.dart';
 import 'package:camabelcommunity/features/events/domain/repositories/song_repository.dart';
+import 'package:camabelcommunity/features/events/domain/usecases/get_all_past_events_usecase.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_all_upcoming_events_usecase.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_day_program_by_id_usecase.dart';
 import 'package:camabelcommunity/features/events/domain/usecases/get_all_events_usecase.dart';
@@ -42,11 +43,11 @@ Future<void> setup() async {
     () => SongFirestoreDatasourceImpl(sl<FirebaseFirestore>()),
   );
 
-    sl.registerLazySingleton<DayProgramFirestoreDatasource>(
+  sl.registerLazySingleton<DayProgramFirestoreDatasource>(
     () => DayProgramFirestoreDatasourceImpl(sl<FirebaseFirestore>()),
   );
 
-    sl.registerLazySingleton<MassProgramFirestoreDatasource>(
+  sl.registerLazySingleton<MassProgramFirestoreDatasource>(
     () => MassProgramFirestoreDatasourceImpl(sl<FirebaseFirestore>()),
   );
 
@@ -96,6 +97,10 @@ Future<void> setup() async {
     () => GetAllUpcomingEventsUsecase(sl<EventRepository>()),
   );
 
+  sl.registerLazySingleton<GetAllPastEventsUsecase>(
+    () => GetAllPastEventsUsecase(sl<EventRepository>()),
+  );
+
   sl.registerLazySingleton<GetMassProgramByIdUsecase>(
     () => GetMassProgramByIdUsecase(sl<MassProgramRepository>()),
   );
@@ -104,12 +109,12 @@ Future<void> setup() async {
     () => GetSongByIdUsecase(sl<SongRepository>()),
   );
 
-
   //Blocs
   sl.registerFactory<EventsBloc>(
     () => EventsBloc(
       getAllEvents: sl<GetAllEventsUsecase>(),
       getAllUpcomingEventsUseCase: sl<GetAllUpcomingEventsUsecase>(),
+      getAllPastEventsUsecase: sl<GetAllPastEventsUsecase>(),
     ),
   );
 

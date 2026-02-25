@@ -341,11 +341,10 @@
                 "massPart": "rakitraFanolorana",
                 "order": 11,
                 "songPreview": {
-                    "id": "song11",
-                    "book": "hasina",
+                    "id": "song30",
+                    "book": "noBook",
                     "hasLyrics": true,
-                    "page": 379,
-                    "title": "Amin'ny fo madio Baba"
+                    "title": "Atolotra Anao e, ry Tompo, ireto fanatitray ireto"
                 }
             },
             {
@@ -354,10 +353,10 @@
                 "massPart": "masina",
                 "order": 13,
                 "songPreview": {
-                    "id": "song13",
+                    "id": "song31",
                     "book": "noBook",
-                    "hasLyrics": true,
-                    "title": "Masina Ianao, ry Tompo"
+                    "hasLyrics": false,
+                    "title": "Mifanenjika"
                 }
             },
             {
@@ -366,11 +365,10 @@
                 "massPart": "anaminezy",
                 "order": 14,
                 "songPreview": {
-                    "id": "song14",
-                    "book": "hasina",
+                    "id": "song32",
+                    "book": "noBook",
                     "hasLyrics": true,
-                    "page": 355,
-                    "title": "Natsangan'Andriamanitra ny Tompo, Aleloia"
+                    "title": "Vonjeo izahay, ry Mpamonjy, fa nanavotra anay Ianao"
                 }
             },
             {
