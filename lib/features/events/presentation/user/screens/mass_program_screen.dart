@@ -78,9 +78,23 @@ class _MassProgramScreenState extends State<MassProgramScreen> {
                             item.songPreview!.title,
                           );
 
-                          Navigator.of(context).pushNamed(
-                            '/song?songId=$songId&title=$titleEncoded',
-                          );
+                          if (!item.songPreview!.hasLyrics) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: const Text("Paroles non disponible!"),
+                                backgroundColor: Colors.orange,
+                                behavior: SnackBarBehavior.floating,
+                                margin: const EdgeInsets.all(16),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                              ),
+                            );
+                          } else {
+                            Navigator.of(context).pushNamed(
+                              '/song?songId=$songId&title=$titleEncoded',
+                            );
+                          }
                         }
                       },
                     );

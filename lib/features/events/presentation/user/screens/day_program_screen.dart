@@ -61,7 +61,7 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
             }
             if (state is DayProgramSuccess) {
               final dayProgram = state.dayProgram;
-
+              print(dayProgram.items);
               return RefreshIndicator(
                 backgroundColor: Colors.white,
                 onRefresh: () async => context.read<DayProgramBloc>().add(

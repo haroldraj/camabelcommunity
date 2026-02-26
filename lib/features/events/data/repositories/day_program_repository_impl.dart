@@ -19,9 +19,10 @@ class DayProgramRepositoryImpl implements DayProgramRepository {
   @override
   Future<Either<Failure, DayProgram>> getDayProgramById(String id) async {
     try {
-      final DayProgramModel dayProgram = await dayProgramFirestoreDatasource
-          .getDayProgamById(id);
-      //await embeddedDatasource.getDayProgramById(id);
+      // final DayProgramModel dayProgram = await dayProgramFirestoreDatasource
+      //     .getDayProgamById(id);
+      final DayProgramModel dayProgram = await embeddedDatasource
+          .getDayProgramById(id);
 
       return right(DayProgramMapper.toEntity(dayProgram));
     } catch (error) {

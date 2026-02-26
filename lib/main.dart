@@ -1,6 +1,7 @@
 import 'package:camabelcommunity/core/dependency_injection.dart';
 import 'package:camabelcommunity/core/enums/screen_uri_path.dart';
 import 'package:camabelcommunity/core/theme/app_theme.dart';
+import 'package:camabelcommunity/core/url_strategy/url_strategy.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/day_program/day_program_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/events/events_bloc.dart';
 import 'package:camabelcommunity/features/events/presentation/bloc/mass_program/mass_program_bloc.dart';
@@ -11,17 +12,21 @@ import 'package:camabelcommunity/features/events/presentation/user/screens/mass_
 import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/upcoming_event_screeen.dart';
 import 'package:camabelcommunity/firebase_options.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+// import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:logger/logger.dart';
 
 var logger = Logger();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  setUrlStrategy(PathUrlStrategy());
+  // if (kIsWeb) {
+  //   setUrlStrategy(PathUrlStrategy());
+  // }
+  configureUrlStrategy();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await setup();
   await initializeDateFormatting("fr_FR");
