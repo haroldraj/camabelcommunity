@@ -52,15 +52,11 @@ class _UpcomingEventScreeenState extends State<UpcomingEventScreeen> {
             }
             if (state is EventsSucces) {
               final events = state.events;
-              print(events);
               if (events.isEmpty) {
                 return const Center(
                   child: Column(
                     mainAxisAlignment: .center,
-                    children: [
-                      Text("Aucun évènement."),
-                      Text("Assurez-vous d'avoir accès à internet."),
-                    ],
+                    children: [Text("Aucun évènement à venir.")],
                   ),
                 );
               }
