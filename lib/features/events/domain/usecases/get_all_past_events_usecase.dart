@@ -11,6 +11,7 @@ class GetAllPastEventsUsecase implements Usecase<List<Event>, NoParams> {
 
   @override
   Future<Either<Failure, List<Event>>> call(NoParams params) async {
+    print("past Event");
     return await eventRepository.getAllPastEvents();
   }
 }

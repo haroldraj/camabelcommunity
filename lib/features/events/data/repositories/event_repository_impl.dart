@@ -47,10 +47,10 @@ class EventRepositoryImpl implements EventRepository {
   @override
   Future<Either<Failure, List<Event>>> getAllUpcomingEvents() async {
     try {
-      final List<EventModel> events = await embeddedDatasource
-          .getAllUpcomingEvents();
-      // final List<EventModel> events = await eventFirestoreDatasource
+      // final List<EventModel> events = await embeddedDatasource
       //     .getAllUpcomingEvents();
+      final List<EventModel> events = await eventFirestoreDatasource
+          .getAllUpcomingEvents();
       return right(events.map((event) => EventMapper.toEntity(event)).toList());
     } catch (error) {
       return left(Failure(error.toString()));
@@ -62,8 +62,10 @@ class EventRepositoryImpl implements EventRepository {
     try {
       final List<EventModel> events = await eventFirestoreDatasource
           .getAllPastEvents();
+      print(events);
       return right(events.map((event) => EventMapper.toEntity(event)).toList());
     } catch (e) {
+      print(e.toString());
       return left(Failure(e.toString()));
     }
   }

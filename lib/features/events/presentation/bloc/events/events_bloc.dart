@@ -63,7 +63,7 @@ class EventsBloc extends Bloc<EventsEvent, EventsState> {
           emit(EventsFailure(failure.message));
         },
         (events) {
-          Logger().i("EventId: ${events[0].id}");
+          Logger().i("Events: ${events}");
           emit(EventsSucces(events));
         },
       );
@@ -86,7 +86,7 @@ class EventsBloc extends Bloc<EventsEvent, EventsState> {
           emit(EventsFailure(failure.message));
         }),
         ((events) {
-          Logger().i("EventId: ${events[0].id}");
+          Logger().i("Events: ${events}");
           emit(EventsSucces(events));
         }),
       );

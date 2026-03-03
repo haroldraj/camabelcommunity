@@ -16,8 +16,8 @@ class SongRepositoryImpl implements SongRepository {
   @override
   Future<Either<Failure, Song>> getSongById(String id) async {
     try {
-      // final song = await songFirestoreDatasource.getSongById(id);
-      final SongModel song = await embeddedDatasource.getSongById(id);
+      final song = await songFirestoreDatasource.getSongById(id);
+      // final SongModel song = await embeddedDatasource.getSongById(id);
       return right(SongMapper.toEntity(song));
     } catch (error) {
       return left(Failure(error.toString()));

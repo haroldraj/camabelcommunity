@@ -19,10 +19,10 @@ class MassProgramRepositoryImpl implements MassProgramRepository {
   @override
   Future<Either<Failure, MassProgram>> getMassProgramById(String id) async {
     try {
-      // final massProgram = await massProgramFirestoreDatasource
-      //     .getMassProgramById(id);
-      final MassProgramModel massProgram = await embeddedDatasource
+      final massProgram = await massProgramFirestoreDatasource
           .getMassProgramById(id);
+      // final MassProgramModel massProgram = await embeddedDatasource
+      //     .getMassProgramById(id);
       return right(MassProgramMapper.toEntity(massProgram));
     } catch (error) {
       return left(Failure(error.toString()));

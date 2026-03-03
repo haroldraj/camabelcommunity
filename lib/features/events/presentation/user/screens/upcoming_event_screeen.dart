@@ -52,6 +52,7 @@ class _UpcomingEventScreeenState extends State<UpcomingEventScreeen> {
             }
             if (state is EventsSucces) {
               final events = state.events;
+              print(events);
               if (events.isEmpty) {
                 return const Center(
                   child: Column(

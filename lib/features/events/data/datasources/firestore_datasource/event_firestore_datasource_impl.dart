@@ -26,8 +26,10 @@ class EventFirestoreDatasourceImpl implements EventFirestoreDatasource {
   Future<List<EventModel>> getAllUpcomingEvents() async {
     try {
       final now = DateTime.now();
+      final today = DateTime(now.year, now.month, now.day);
+
       final snapshot = await _eventsRef
-          .where("date", isGreaterThanOrEqualTo: now)
+          .where("date", isGreaterThanOrEqualTo: today)
           .orderBy("date")
           .get();
       return snapshot.docs.map((doc) {
@@ -45,17 +47,20 @@ class EventFirestoreDatasourceImpl implements EventFirestoreDatasource {
   Future<List<EventModel>> getAllPastEvents() async {
     try {
       final now = DateTime.now();
+      final today = DateTime(now.year, now.month, now.day);
       final snapshot = await _eventsRef
-          .where("date", isLessThan: now)
+          .where("date", isLessThan: today)
           .orderBy("date")
           .get();
       return snapshot.docs.map((doc) {
+        print(doc.data());
         Logger().i(
           "Event: ${EventModel.fromJson(doc.data(), id: doc.id).date}",
         );
         return EventModel.fromJson(doc.data(), id: doc.id);
       }).toList();
     } catch (e) {
+      print(e.toString());
       throw Exception(e.toString());
     }
   }
