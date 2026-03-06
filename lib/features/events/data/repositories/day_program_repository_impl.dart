@@ -20,7 +20,7 @@ class DayProgramRepositoryImpl implements DayProgramRepository {
   Future<Either<Failure, DayProgram>> getDayProgramById(String id) async {
     try {
       final DayProgramModel dayProgram = await dayProgramFirestoreDatasource
-          .getDayProgamById(id);
+          .getDayProgramById(id);
       // final DayProgramModel dayProgram = await embeddedDatasource
       //     .getDayProgramById(id);
 

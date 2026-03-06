@@ -62,10 +62,8 @@ class EventRepositoryImpl implements EventRepository {
     try {
       final List<EventModel> events = await eventFirestoreDatasource
           .getAllPastEvents();
-      print(events);
       return right(events.map((event) => EventMapper.toEntity(event)).toList());
     } catch (e) {
-      print(e.toString());
       return left(Failure(e.toString()));
     }
   }

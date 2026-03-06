@@ -53,7 +53,6 @@ class EventFirestoreDatasourceImpl implements EventFirestoreDatasource {
           .orderBy("date")
           .get();
       return snapshot.docs.map((doc) {
-        print(doc.data());
         Logger().i(
           "Event: ${EventModel.fromJson(doc.data(), id: doc.id).date}",
         );

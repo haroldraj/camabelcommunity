@@ -13,7 +13,7 @@ class DayProgramFirestoreDatasourceImpl
       firestore.collection("dayPrograms");
 
   @override
-  Future<DayProgramModel> getDayProgamById(String id) async {
+  Future<DayProgramModel> getDayProgramById(String id) async {
     try {
       final doc = await _dayProgramsRef.doc(id).get();
       if (doc.data() == null || !doc.exists) {
