@@ -12,20 +12,16 @@ import 'package:camabelcommunity/features/events/presentation/user/screens/mass_
 import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/upcoming_event_screeen.dart';
 import 'package:camabelcommunity/firebase_options.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:logger/logger.dart';
 
 var logger = Logger();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // if (kIsWeb) {
-  //   setUrlStrategy(PathUrlStrategy());
-  // }
+
   configureUrlStrategy();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await setup();
@@ -52,7 +48,6 @@ class MyApp extends StatelessWidget {
         title: 'Camabel Community',
         theme: appTheme,
         initialRoute: homePath,
-        // home: UpcomingEventScreeen(),
         onGenerateRoute: (settings) {
           final uri = Uri.parse(settings.name ?? homePath);
 

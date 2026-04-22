@@ -21,8 +21,6 @@ class DayProgramRepositoryImpl implements DayProgramRepository {
     try {
       final DayProgramModel dayProgram = await dayProgramFirestoreDatasource
           .getDayProgramById(id);
-      // final DayProgramModel dayProgram = await embeddedDatasource
-      //     .getDayProgramById(id);
 
       return right(DayProgramMapper.toEntity(dayProgram));
     } catch (error) {

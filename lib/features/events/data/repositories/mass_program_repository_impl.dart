@@ -21,8 +21,6 @@ class MassProgramRepositoryImpl implements MassProgramRepository {
     try {
       final MassProgramModel massProgram = await massProgramFirestoreDatasource
           .getMassProgramById(id);
-      // final MassProgramModel massProgram = await embeddedDatasource
-      //     .getMassProgramById(id);
       return right(MassProgramMapper.toEntity(massProgram));
     } catch (error) {
       return left(Failure(error.toString()));

@@ -51,9 +51,6 @@ class DayProgramModel {
       label: json["label"],
       date: Helpers.parseDate(json["date"]),
       items: [],
-      // items: (json["items"] as List)
-      //     .map((item) => DayProgramItemModel.fromJson(item))
-      //     .toList(),
       createdAt: Helpers.parseDate(json["createdAt"]),
       updatedAt: Helpers.parseDate(json["updatedAt"]),
     );
