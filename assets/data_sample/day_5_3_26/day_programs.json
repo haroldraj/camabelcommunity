@@ -1,0 +1,44 @@
+[
+    {
+        "id": "day3",
+        "label": "Programme",
+        "date": "2026-05-03T12:30:00",
+        "items": [
+            {
+                "id": "programItem1",
+                "startAt": "2026-05-03T12:30:00",
+                "title": "Accueil",
+                "type": "dayTimeline",
+                "description": "Accueil des arrivants"
+            },
+            {
+                "id": "programItem2",
+                "startAt": "2026-05-03T13:15:00",
+                "title": "Repas",
+                "type": "dayTimeline",
+                "description": "Repas fraternel auberge Espagnol"
+            },
+            {
+                "id": "programItem3",
+                "startAt": "2026-05-03T14:30:00",
+                "title": "Répétition de chants",
+                "type": "dayTimeline",
+                "description": "Répétition des chants de la messe"
+            },
+            {
+                "id": "programItem4",
+                "massProgramId": "mass3",
+                "startAt": "2026-05-03T15:00:00",
+                "title": "Célébration Eucharistique",
+                "type": "massProgram",
+                "description": "Début de la célébration Eucharistique"
+            },
+            {
+                "id": "programItem5",
+                "startAt": "2026-05-03T17:00:00",
+                "title": "Dessert",
+                "type": "dayTimeline"
+            }
+        ]
+    }
+]

@@ -23,7 +23,7 @@ class _DataUploadState extends State<DataUpload> {
     try {
       final db = sl<FirebaseFirestore>();
 
-      final basePath = "assets/data_sample";
+      final basePath = "assets/data_sample/day_5_3_26";
       final eventJson = await rootBundle.loadString("$basePath/events.json");
       final List<dynamic> eventData = await json.decode(eventJson);
       final eventModels = eventData

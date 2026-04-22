@@ -13,20 +13,5 @@
         "cover": {
             "source": "byDefault"
         }
-    },
-    {
-        "id": "event2",
-        "hasMassProgram": true,
-        "date": "2026-03-01T12:30:00",
-        "headline": "Alahady faharoa KAREMY",
-        "locationAddress": "Bd Saint-Michel 24, 1040 Bruxelles",
-        "locationName": "Forum Saint-Michel",
-        "status": "published",
-        "type": "mass",
-        "title": "Alahady faharoa KAREMY",
-        "dayProgramId": "day2",
-        "cover": {
-            "source": "byDefault"
-        }
     }
 ]

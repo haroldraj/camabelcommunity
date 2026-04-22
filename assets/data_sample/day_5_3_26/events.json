@@ -1,0 +1,17 @@
+[
+    {
+        "id": "event3",
+        "hasMassProgram": true,
+        "date": "2026-05-03T12:30:00",
+        "headline": "I Kristy no Lalana sy Fahamarinana ary Fiainana",
+        "locationAddress": "Bd Saint-Michel 24, 1040 Bruxelles",
+        "locationName": "Forum Saint-Michel",
+        "status": "published",
+        "type": "mass",
+        "title": "Alahady fahadimy fankalazana ny Paka",
+        "dayProgramId": "day3",
+        "cover": {
+            "source": "byDefault"
+        }
+    }
+]

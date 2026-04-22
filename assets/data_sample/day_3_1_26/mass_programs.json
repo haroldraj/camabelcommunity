@@ -1,0 +1,217 @@
+[
+    {
+        "id": "mass2",
+        "label": "Sorona Masina",
+        "date": "2026-02-01T12:30:00",
+        "items": [
+            {
+                "id": "massItem1",
+                "contentType": "song",
+                "massPart": "fidirana",
+                "order": 1,
+                "songPreview": {
+                    "id": "song21",
+                    "book": "hasina",
+                    "page": 68,
+                    "hasLyrics": true,
+                    "title": "Miverena ianao, ô ry mpanota ô"
+                }
+            },
+            {
+                "id": "massItem2",
+                "contentType": "song",
+                "massPart": "fifonana",
+                "order": 2,
+                "songPreview": {
+                    "id": "song22",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Bôrobôroko fiainagna"
+                }
+            },
+            {
+                "id": "massItem3",
+                "contentType": "text",
+                "massPart": "vakitenyVoalohany",
+                "order": 3,
+                "text": "Boky Jenezy 12, 1-4a"
+            },
+            {
+                "id": "massItem4",
+                "contentType": "song",
+                "massPart": "salamo",
+                "order": 4,
+                "songPreview": {
+                    "id": "song24",
+                    "book": "hasina",
+                    "page": 206,
+                    "hasLyrics": true,
+                    "title": "Zavatra iray loha no angatahiko amin'Iaveh"
+                }
+            },
+            {
+                "id": "massItem5",
+                "contentType": "text",
+                "massPart": "vakitenyFaharoa",
+                "order": 5,
+                "text": "Taratasin’i Md. Paoly Apôstôly ho an’i Timôte 1,8b-10"
+            },
+            {
+                "id": "massItem6",
+                "contentType": "song",
+                "massPart": "fihobianaNyEvanjely",
+                "order": 6,
+                "songPreview": {
+                    "id": "song26",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 655,
+                    "title": "Ny teninao Tompo o! no faniloko"
+                }
+            },
+            {
+                "id": "massItem7",
+                "contentType": "text",
+                "massPart": "vakitenyEvanjely",
+                "order": 7,
+                "text": "Evanjely Masina nosoratan'i Md. Matio 17, 1-9"
+            },
+            {
+                "id": "massItem8",
+                "contentType": "song",
+                "massPart": "fiekempinoana",
+                "order": 8,
+                "songPreview": {
+                    "id": "song28",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 803,
+                    "title": "Zaho mino an'Andriamanitra, Zanahary mahefa ny raha jiaby"
+                }
+            },
+            {
+                "id": "massItem9",
+                "contentType": "song",
+                "massPart": "ranombavaka",
+                "order": 9,
+                "songPreview": {
+                    "id": "song29",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 165,
+                    "title": "Ray ô, tia anay"
+                }
+            },
+            {
+                "id": "massItem11",
+                "contentType": "song",
+                "massPart": "rakitraFanolorana",
+                "order": 11,
+                "songPreview": {
+                    "id": "song30",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Atolotra Anao e, ry Tompo, ireto fanatitray ireto"
+                }
+            },
+            {
+                "id": "massItem13",
+                "contentType": "song",
+                "massPart": "masina",
+                "order": 13,
+                "songPreview": {
+                    "id": "song31",
+                    "book": "noBook",
+                    "hasLyrics": false,
+                    "title": "Mifanenjika"
+                }
+            },
+            {
+                "id": "massItem14",
+                "contentType": "song",
+                "massPart": "anaminezy",
+                "order": 14,
+                "songPreview": {
+                    "id": "song32",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Vonjeo izahay, ry Mpamonjy, fa nanavotra anay Ianao"
+                }
+            },
+            {
+                "id": "massItem15",
+                "contentType": "song",
+                "massPart": "rainay",
+                "order": 15,
+                "songPreview": {
+                    "id": "song15",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Notre Père By Glorious"
+                }
+            },
+            {
+                "id": "massItem16",
+                "contentType": "song",
+                "massPart": "fiadanana",
+                "order": 16,
+                "songPreview": {
+                    "id": "song16",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Raha mifankatia isika"
+                }
+            },
+            {
+                "id": "massItem17",
+                "contentType": "song",
+                "massPart": "zanakondry",
+                "order": 17,
+                "songPreview": {
+                    "id": "song17",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Ry Zanak'ondrin’Andriamanitra"
+                }
+            },
+            {
+                "id": "massItem18",
+                "contentType": "song",
+                "massPart": "komonio",
+                "order": 18,
+                "songPreview": {
+                    "id": "song18",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 186,
+                    "title": "Inty ny ora sarobidy"
+                }
+            },
+            {
+                "id": "massItem19",
+                "contentType": "song",
+                "massPart": "fisaorana",
+                "order": 19,
+                "songPreview": {
+                    "id": "song19",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Misaotra roa Andrianagnahary"
+                }
+            },
+            {
+                "id": "massItem20",
+                "contentType": "song",
+                "massPart": "fanirahana",
+                "order": 20,
+                "songPreview": {
+                    "id": "song20",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 750,
+                    "title": "Zaho anie ry Reny"
+                }
+            }
+        ]
+    }
+]

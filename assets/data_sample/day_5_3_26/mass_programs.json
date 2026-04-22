@@ -1,0 +1,234 @@
+[
+    {
+        "id": "mass3",
+        "label": "Sorona Masina",
+        "date": "2026-05-03T12:30:00",
+        "items": [
+            {
+                "id": "massItem1",
+                "contentType": "song",
+                "massPart": "fidirana",
+                "order": 1,
+                "songPreview": {
+                    "id": "song41",
+                    "book": "hasina",
+                    "key": "C",
+                    "page": 75,
+                    "hasLyrics": true,
+                    "title": "Nandresy ny Tompotsika"
+                }
+            },
+            {
+                "id": "massItem2",
+                "contentType": "song",
+                "massPart": "fifonana",
+                "order": 2,
+                "songPreview": {
+                    "id": "song42",
+                    "book": "hasina",
+                    "key": "G",
+                    "page": 303,
+                    "hasLyrics": true,
+                    "title": "Diso taminao aho Tompo"
+                }
+            },
+            {
+                "id": "massItem3",
+                "contentType": "song",
+                "massPart": "voninahitra",
+                "order": 3,
+                "songPreview": {
+                    "id": "song43",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 747,
+                    "title": "Voninahitra ho an'Andriamanitra... Zanaharinay mahery"
+                }
+            },
+            {
+                "id": "massItem4",
+                "contentType": "text",
+                "massPart": "vakitenyVoalohany",
+                "order": 4,
+                "text": "Boky mitantara ny Asan'ny Apôstôly 7, 1-7"
+            },
+            {
+                "id": "massItem5",
+                "contentType": "song",
+                "massPart": "salamo",
+                "order": 5,
+                "songPreview": {
+                    "id": "song45",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 270,
+                    "title": "Derao ny Tompo any an-tampon'ny lanitra"
+                }
+            },
+            {
+                "id": "massItem6",
+                "contentType": "text",
+                "massPart": "vakitenyFaharoa",
+                "order": 6,
+                "text": "Taratasy voalohan'i Md. Piera Apôstôly 2, 4-9"
+            },
+            {
+                "id": "massItem7",
+                "contentType": "song",
+                "massPart": "fihobianaNyEvanjely",
+                "order": 7,
+                "songPreview": {
+                    "id": "song47",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Aleloia ha ha Aleloia"
+                }
+            },
+            {
+                "id": "massItem8",
+                "contentType": "text",
+                "massPart": "vakitenyEvanjely",
+                "order": 8,
+                "text": "Evanjely Masina nosoratan'i Md. Joany 14, 1-12"
+            },
+            {
+                "id": "massItem9",
+                "contentType": "song",
+                "massPart": "fiekempinoana",
+                "order": 9,
+                "songPreview": {
+                    "id": "song49",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 161,
+                    "title": "'Zaho mino an'Andriamanitra Ray, Zanaka sy Fanahy"
+                }
+            },
+            {
+                "id": "massItem10",
+                "contentType": "song",
+                "massPart": "ranombavaka",
+                "order": 10,
+                "songPreview": {
+                    "id": "song50",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Mitalaho an-tanandroa aminao izahay"
+                }
+            },
+            {
+                "id": "massItem11",
+                "contentType": "song",
+                "massPart": "rakitraFanolorana",
+                "order": 11,
+                "songPreview": {
+                    "id": "song51",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 783,
+                    "title": "Miara-manolotra amin'i Jesoa"
+                }
+            },
+            {
+                "id": "massItem13",
+                "contentType": "song",
+                "massPart": "masina",
+                "order": 13,
+                "songPreview": {
+                    "id": "song53",
+                    "book": "hasina",
+                    "page": 577,
+                    "hasLyrics": true,
+                    "title": "Masina, masina, masina ny Tompo Andriamanitry ny hery rehetra"
+                }
+            },
+            {
+                "id": "massItem14",
+                "contentType": "song",
+                "massPart": "anaminezy",
+                "order": 14,
+                "songPreview": {
+                    "id": "song54",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 76,
+                    "title": "Nitsangana tamin'ny maty i Jesoa Mpamonjy antsika"
+                }
+            },
+            {
+                "id": "massItem15",
+                "contentType": "song",
+                "massPart": "rainay",
+                "order": 15,
+                "songPreview": {
+                    "id": "song15",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Notre Père By Glorious"
+                }
+            },
+            {
+                "id": "massItem16",
+                "contentType": "song",
+                "massPart": "fiadanana",
+                "order": 16,
+                "songPreview": {
+                    "id": "song56",
+                    "book": "hasina",
+                    "page": 181,
+                    "hasLyrics": true,
+                    "title": "Fiadanana e, homba antsika mianakavy anie ny fiadanana"
+                }
+            },
+            {
+                "id": "massItem17",
+                "contentType": "song",
+                "massPart": "zanakondry",
+                "order": 17,
+                "songPreview": {
+                    "id": "song57",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Anak' Aondrin'Andriananahary"
+                }
+            },
+            {
+                "id": "massItem18",
+                "contentType": "song",
+                "massPart": "komonio",
+                "order": 18,
+                "songPreview": {
+                    "id": "song58",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Le Seigneur nous a aimés"
+                }
+            },
+            {
+                "id": "massItem19",
+                "contentType": "song",
+                "massPart": "fisaorana",
+                "order": 19,
+                "songPreview": {
+                    "id": "song59",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "title": "Medley (Mahaiza àry mankasitraka - Misaotra Bevata - Be ankitiny - Mifiopioka)"
+                }
+            },
+            {
+                "id": "massItem20",
+                "contentType": "song",
+                "massPart": "fanirahana",
+                "order": 20,
+                "songPreview": {
+                    "id": "song60",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "page": 774,
+                    "title": "Mandehana ianareo amin'izao tontolo izao"
+                }
+            }
+        ]
+    }
+]
