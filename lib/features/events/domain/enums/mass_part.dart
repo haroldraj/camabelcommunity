@@ -36,11 +36,11 @@ extension MassPartLabel on MassPart {
       case MassPart.fankalazanaNyTeninAndriamanitra:
         return "Fankalazana ny tenin'Andriamanitra";
       case MassPart.vakitenyVoalohany:
-        return "Vakiteny voalohany";
+        return "Vakiteny Masina voalohany";
       case MassPart.salamo:
         return "Salamo";
       case MassPart.vakitenyFaharoa:
-        return "Vakiteny faharoa";
+        return "Vakiteny Masina faharoa";
       case MassPart.fihobianaNyEvanjely:
         return "Fihobiana ny Evanjely";
       case MassPart.vakitenyEvanjely:
