@@ -141,7 +141,7 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
                                               final massProgramId = dayProgram.items[index].massProgramId!;
                                               final massDate = DateFormat("d MMMM yyyy","fr_FR").format(dayProgram.date!).toString();
                                               Navigator.of(context).pushNamed(
-                                                "/mass-program?massProgramId=$massProgramId&date=$massDate",
+                                                "/mass-program?id=$massProgramId&date=$massDate",
                                               );
                                             },
 

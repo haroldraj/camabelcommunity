@@ -100,7 +100,7 @@ class _MassProgramScreenState extends State<MassProgramScreen> {
                             );
                           } else {
                             Navigator.of(context).pushNamed(
-                              '/song?songId=$songId&title=$titleEncoded',
+                              '/song?id=$songId&title=$titleEncoded',
                             );
                           }
                         }

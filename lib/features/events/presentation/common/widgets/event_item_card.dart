@@ -25,7 +25,7 @@ class EventItemCard extends StatelessWidget {
       child: InkWell(
         onTap: () {
           Navigator.of(context).pushNamed(
-            "/day-program?dayProgramId=${event.dayProgramId}&date=$eventDate",
+            "/day-program?id=${event.dayProgramId}&date=$eventDate",
           );
         },
         child: Column(
