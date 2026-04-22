@@ -7,7 +7,12 @@ import 'package:intl/intl.dart';
 
 class DayProgramScreen extends StatefulWidget {
   final String dayProgramId;
-  const DayProgramScreen({super.key, required this.dayProgramId});
+  final String date;
+  const DayProgramScreen({
+    super.key,
+    required this.dayProgramId,
+    required this.date,
+  });
 
   @override
   State<DayProgramScreen> createState() => _DayProgramScreenState();
@@ -24,7 +29,7 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final title = "Programme de la journée";
+    final title = "Programme du ${widget.date}";
 
     return Scaffold(
       appBar: AppBar(title: Text(title)),
@@ -61,7 +66,6 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
             }
             if (state is DayProgramSuccess) {
               final dayProgram = state.dayProgram;
-              print(dayProgram.items);
               return RefreshIndicator(
                 backgroundColor: Colors.white,
                 onRefresh: () async => context.read<DayProgramBloc>().add(
@@ -134,8 +138,10 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
                                         children: [
                                           TextButton(
                                             onPressed: () {
+                                              final massProgramId = dayProgram.items[index].massProgramId!;
+                                              final massDate = DateFormat("d MMMM yyyy","fr_FR").format(dayProgram.date!).toString();
                                               Navigator.of(context).pushNamed(
-                                                "/mass-program?massProgramId=${dayProgram.items[index].massProgramId!}",
+                                                "/mass-program?massProgramId=$massProgramId&date=$massDate",
                                               );
                                             },
 

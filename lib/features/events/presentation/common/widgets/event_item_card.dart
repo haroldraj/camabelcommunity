@@ -11,6 +11,10 @@ class EventItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final eventDate = DateFormat(
+      "d MMMM yyyy",
+      "fr_FR",
+    ).format(event.date!).toString();
     return Card(
       margin: EdgeInsets.all(10),
       elevation: 5,
@@ -20,9 +24,9 @@ class EventItemCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.of(
-            context,
-          ).pushNamed("/day-program?dayProgramId=${event.dayProgramId}");
+          Navigator.of(context).pushNamed(
+            "/day-program?dayProgramId=${event.dayProgramId}&date=$eventDate",
+          );
         },
         child: Column(
           children: [

@@ -6,7 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MassProgramScreen extends StatefulWidget {
   final String massProgramId;
-  const MassProgramScreen({super.key, required this.massProgramId});
+  final String date;
+  const MassProgramScreen({
+    super.key,
+    required this.massProgramId,
+    required this.date,
+  });
 
   @override
   State<MassProgramScreen> createState() => _MassProgramScreenState();
@@ -24,7 +29,10 @@ class _MassProgramScreenState extends State<MassProgramScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Programme Liturjique"), centerTitle: true),
+      appBar: AppBar(
+        title: Text("Programme Liturjique du ${widget.date}"),
+        centerTitle: true,
+      ),
       backgroundColor: Colors.grey[200],
       body: BlocListener<MassProgramBloc, MassProgramState>(
         listener: (context, state) {

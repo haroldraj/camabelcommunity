@@ -72,7 +72,11 @@ class MyApp extends StatelessWidget {
 
           if (uri.path == ScreenUriPath.dayProgram.label) {
             final dayProgramId = uri.queryParameters["dayProgramId"];
-            if (dayProgramId == null || dayProgramId.isEmpty) {
+            final date = uri.queryParameters["date"];
+            if (dayProgramId == null ||
+                dayProgramId.isEmpty ||
+                date == null ||
+                date.isEmpty) {
               return MaterialPageRoute(
                 builder: (_) =>
                     const UnknownRouteScreen(message: "Missing dayProgramId"),
@@ -80,14 +84,19 @@ class MyApp extends StatelessWidget {
               );
             }
             return MaterialPageRoute(
-              builder: (_) => DayProgramScreen(dayProgramId: dayProgramId),
+              builder: (_) =>
+                  DayProgramScreen(dayProgramId: dayProgramId, date: date),
               settings: settings,
             );
           }
 
           if (uri.path == ScreenUriPath.massProgram.label) {
             final massProgramId = uri.queryParameters["massProgramId"];
-            if (massProgramId == null || massProgramId.isEmpty) {
+            final date = uri.queryParameters["date"];
+            if (massProgramId == null ||
+                massProgramId.isEmpty ||
+                date == null ||
+                date.isEmpty) {
               return MaterialPageRoute(
                 builder: (_) =>
                     const UnknownRouteScreen(message: "Missing massProgramId"),
@@ -95,7 +104,8 @@ class MyApp extends StatelessWidget {
               );
             }
             return MaterialPageRoute(
-              builder: (_) => MassProgramScreen(massProgramId: massProgramId),
+              builder: (_) =>
+                  MassProgramScreen(massProgramId: massProgramId, date: date),
               settings: settings,
             );
           }
@@ -118,7 +128,7 @@ class MyApp extends StatelessWidget {
             );
           }
           return MaterialPageRoute(
-            builder: (_) => const UnknownRouteScreen(message: "Page not found"),
+            builder: (_) => const UpcomingEventScreeen(),
             settings: settings,
           );
         },
