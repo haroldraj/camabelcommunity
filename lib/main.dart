@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
           }
 
           if (uri.path == ScreenUriPath.dayProgram.label) {
-            final dayProgramId = uri.queryParameters["dayProgramId"];
+            final dayProgramId = uri.queryParameters["id"];
             final date = uri.queryParameters["date"];
             if (dayProgramId == null ||
                 dayProgramId.isEmpty ||
@@ -91,7 +91,7 @@ class MyApp extends StatelessWidget {
           }
 
           if (uri.path == ScreenUriPath.massProgram.label) {
-            final massProgramId = uri.queryParameters["massProgramId"];
+            final massProgramId = uri.queryParameters["id"];
             final date = uri.queryParameters["date"];
             if (massProgramId == null ||
                 massProgramId.isEmpty ||
@@ -111,7 +111,7 @@ class MyApp extends StatelessWidget {
           }
 
           if (uri.path == ScreenUriPath.song.label) {
-            final songId = uri.queryParameters["songId"];
+            final songId = uri.queryParameters["id"];
             final songTitle = uri.queryParameters['title'] ?? '';
 
             if (songId == null || songId.isEmpty) {
