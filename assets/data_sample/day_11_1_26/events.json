@@ -1,0 +1,17 @@
+[
+    {
+        "id": "event4",
+        "hasMassProgram": true,
+        "date": "2026-11-01T12:30:00",
+        "headline": "I Kristy no Lalana sy Fahamarinana ary Fiainana",
+        "locationAddress": "Bd Saint-Michel 24, 1040 Bruxelles",
+        "locationName": "Forum Saint-Michel",
+        "status": "published",
+        "type": "mass",
+        "title": "Fankalazana manetriketrika ny Olomasina rehetra",
+        "dayProgramId": "day4",
+        "cover": {
+            "source": "byDefault"
+        }
+    }
+]

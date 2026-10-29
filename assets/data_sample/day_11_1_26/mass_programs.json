@@ -1,0 +1,274 @@
+[
+    {
+        "id": "mass4",
+        "label": "Sorona Masina",
+        "date": "2026-11-01T12:30:00",
+        "items": [
+            {
+                "id": "massItem1",
+                "contentType": "song",
+                "massPart": "fidirana",
+                "order": 1,
+                "songPreview": {
+                    "id": "song64",
+                    "book": "hasina",
+                    "key": "F",
+                    "page": 437,
+                    "hasLyrics": true,
+                    "title": "E, sambatra sy tretrika"
+                }
+            },
+            {
+                "id": "massItem2",
+                "contentType": "song",
+                "massPart": "fifonana",
+                "order": 2,
+                "songPreview": {
+                    "id": "song62",
+                    "book": "hasina",
+                    "key": "F",
+                    "page": 785,
+                    "hasLyrics": true,
+                    "title": "Natsangan-dRae ho zandrinao añay"
+                }
+            },
+            {
+                "id": "massItem3",
+                "contentType": "song",
+                "massPart": "voninahitra",
+                "order": 3,
+                "songPreview": {
+                    "id": "song63",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 802,
+                    "title": "Voninahitra ho an’ny Ray be fitiavana"
+                }
+            },
+            {
+                "id": "massItem4",
+                "contentType": "song",
+                "massPart": "fankalazanaNyTeninAndriamanitra",
+                "order": 4,
+                "songPreview": {
+                    "id": "song64",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 357,
+                    "title": "Ny teninao Andriamanitra ô"
+                }
+            },
+            {
+                "id": "massItem5",
+                "contentType": "text",
+                "massPart": "vakitenyVoalohany",
+                "order": 5,
+                "text": "Boky Fanambaràna nosoratan’i Md. Joany Apôstôly  Apôk. 7, 2-4. 9-14"
+            },
+            {
+                "id": "massItem6",
+                "contentType": "song",
+                "massPart": "salamo",
+                "order": 6,
+                "songPreview": {
+                    "id": "song65",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 143,
+                    "title": "O nivoha ny varavaran'ny lanitra"
+                }
+            },
+            {
+                "id": "massItem7",
+                "contentType": "text",
+                "massPart": "vakitenyFaharoa",
+                "order": 7,
+                "text": "Lecture de la première lettre de saint Jean 3, 1-3"
+            },
+            {
+                "id": "massItem8",
+                "contentType": "song",
+                "massPart": "fihobianaNyEvanjely",
+                "order": 8,
+                "songPreview": {
+                    "id": "song7",
+                    "book": "hasina",
+                    "page": 752,
+                    "hasLyrics": true,
+                    "title": "Aleloia, raisinay tenin-Jagnahary e"
+                }
+            },
+            {
+                "id": "massItem9",
+                "contentType": "text",
+                "massPart": "vakitenyEvanjely",
+                "order": 9,
+                "text": "Evanjely Masina nosoratan’i Md. Matio 5, 1-12a"
+            },
+            {
+                "id": "massItem10",
+                "contentType": "song",
+                "massPart": "fiekempinoana",
+                "order": 10,
+                "songPreview": {
+                    "id": "song66",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 158,
+                    "title": "Averina eto indray ny toky napetratsika"
+                }
+            },
+            {
+                "id": "massItem11",
+                "contentType": "song",
+                "massPart": "ranombavaka",
+                "order": 11,
+                "songPreview": {
+                    "id": "song67",
+                    "hasLyrics": false,
+                    "key": "F",
+                    "title": "Henoy ry Tompo, henoy izao vavaka"
+                }
+            },
+            {
+                "id": "massItem12",
+                "contentType": "song",
+                "massPart": "rakitra",
+                "order": 12,
+                "songPreview": {
+                    "id": "song68",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 764,
+                    "title": "Fañahy (fanahy) maha iraika"
+                }
+            },
+            {
+                "id": "massItem13",
+                "contentType": "song",
+                "massPart": "fanolorana",
+                "order": 13,
+                "songPreview": {
+                    "id": "song69",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 173,
+                    "title": "Ny mofo atolotry ny pretra"
+                }
+            },
+            {
+                "id": "massItem14",
+                "contentType": "song",
+                "massPart": "masina",
+                "order": 14,
+                "songPreview": {
+                    "id": "song70",
+                    "hasLyrics": false,
+                    "key": "F",
+                    "title": "Masina masina ianao ry Tompo, feno ny voninahitra"
+                }
+            },
+            {
+                "id": "massItem15",
+                "contentType": "song",
+                "massPart": "anaminezy",
+                "order": 15,
+                "songPreview": {
+                    "id": "song71",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 76,
+                    "title": "Nitsangana tamin'ny maty i Jesoa Mpamonjy antsika"
+                }
+            },
+            {
+                "id": "massItem16",
+                "contentType": "song",
+                "massPart": "rainay",
+                "order": 16,
+                "songPreview": {
+                    "id": "song72",
+                    "hasLyrics": false,
+                    "key": "F",
+                    "title": "Rainay (frera)"
+                }
+            },
+            {
+                "id": "massItem17",
+                "contentType": "song",
+                "massPart": "fiadanana",
+                "order": 17,
+                "songPreview": {
+                    "id": "song73",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 265,
+                    "title": "Tsara raha ny mpirahalahy"
+                }
+            },
+            {
+                "id": "massItem18",
+                "contentType": "song",
+                "massPart": "zanakondry",
+                "order": 18,
+                "songPreview": {
+                    "id": "song74",
+                    "book": "noBook",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "title": "Anak' Aondrin'Andriananahary"
+                }
+            },
+            {
+                "id": "massItem19",
+                "contentType": "song",
+                "massPart": "komonio",
+                "order": 19,
+                "songPreview": {
+                    "id": "song75",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 765,
+                    "title": "Ho fitiavana aho - Tsy manam-paniriana lehibe afa-tsy ny hitia aho"
+                }
+            },
+            {
+                "id": "massItem20",
+                "contentType": "song",
+                "massPart": "fisaorana",
+                "order": 20,
+                "songPreview": {
+                    "id": "song76",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 825,
+                    "title": "Fa ny fahasoavan'Andriamanitra – Misaotra bevata"
+                }
+            },
+            {
+                "id": "massItem21",
+                "contentType": "song",
+                "massPart": "fanirahana",
+                "order": 21,
+                "songPreview": {
+                    "id": "song77",
+                    "book": "hasina",
+                    "hasLyrics": true,
+                    "key": "F",
+                    "page": 80,
+                    "title": "Aterinay anatrehanao, Reny"
+                }
+            }
+        ]
+    }
+]
