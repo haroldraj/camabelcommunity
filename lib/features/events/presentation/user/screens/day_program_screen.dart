@@ -146,7 +146,7 @@ class _DayProgramScreenState extends State<DayProgramScreen> {
                                             },
 
                                             child: Text(
-                                              "Ouvrir le programme liturjique",
+                                              "Ouvrir le programme liturgique",
                                               style: TextStyle(
                                                 fontSize: 15,
                                                 decoration:
