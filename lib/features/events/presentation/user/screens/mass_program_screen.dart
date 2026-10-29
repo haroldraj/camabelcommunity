@@ -30,7 +30,7 @@ class _MassProgramScreenState extends State<MassProgramScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Programme Liturjique du ${widget.date}"),
+        title: Text("Liturgie du ${widget.date}"),
         centerTitle: true,
       ),
       backgroundColor: Colors.grey[200],

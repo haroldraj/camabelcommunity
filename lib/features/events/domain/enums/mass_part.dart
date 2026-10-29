@@ -44,7 +44,7 @@ extension MassPartLabel on MassPart {
       case MassPart.fihobianaNyEvanjely:
         return "Fihobiana ny Evanjely";
       case MassPart.vakitenyEvanjely:
-        return "Vakiteny Evanjely";
+        return "Evanjely Masina";
       case MassPart.fiekempinoana:
         return "Fiekem-pinoana";
       case MassPart.ranombavaka:
