@@ -11,7 +11,6 @@ import 'package:camabelcommunity/features/events/presentation/user/screens/day_p
 import 'package:camabelcommunity/features/events/presentation/user/screens/event_history_screen.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/mass_program_screen.dart';
 import 'package:camabelcommunity/features/events/presentation/user/screens/song_lyrics_screen.dart';
-import 'package:camabelcommunity/features/events/presentation/user/screens/upcoming_event_screeen.dart';
 import 'package:camabelcommunity/firebase_options.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
