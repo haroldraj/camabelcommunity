@@ -40,6 +40,9 @@ flutter:
     - assets/img/
     - assets/img/covers/
     - assets/data_sample/
+    - assets/data_sample/day_2_1_26/
+    - assets/data_sample/day_3_1_26/
+    - assets/data_sample/day_5_3_26/
     - assets/data_sample/day_11_1_26/
     - assets/img/splash/
     - assets/flavicon/
@@ -54,7 +57,7 @@ flutter_launcher_icons:
 flutter_native_splash:
 
   color: "#FFFFFF"  ##====================================[REQUIRED]==========
-  image: assets/img/splash/logo_splash_text.png  
+  image: assets/img/splash/logo_splash_text.png  ""
 
   color_dark: "#FFFFFF"
   image_dark: assets/img/splash/logo_splash_text.png  

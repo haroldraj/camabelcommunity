@@ -10,7 +10,7 @@
                 "massPart": "fidirana",
                 "order": 1,
                 "songPreview": {
-                    "id": "song64",
+                    "id": "song61",
                     "book": "hasina",
                     "key": "F",
                     "page": 437,
@@ -129,6 +129,7 @@
                 "order": 11,
                 "songPreview": {
                     "id": "song67",
+                    "book" : "noBook",
                     "hasLyrics": false,
                     "key": "F",
                     "title": "Henoy ry Tompo, henoy izao vavaka"
@@ -169,6 +170,7 @@
                 "order": 14,
                 "songPreview": {
                     "id": "song70",
+                    "book": "noBook",
                     "hasLyrics": false,
                     "key": "F",
                     "title": "Masina masina ianao ry Tompo, feno ny voninahitra"
@@ -195,6 +197,7 @@
                 "order": 16,
                 "songPreview": {
                     "id": "song72",
+                    "book": "noBook",
                     "hasLyrics": false,
                     "key": "F",
                     "title": "Rainay (frera)"
